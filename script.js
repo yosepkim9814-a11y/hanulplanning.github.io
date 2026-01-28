@@ -52,29 +52,35 @@ ${data.get("detail")}
 `);
 
   // 여기 이메일 주소만 회사용으로 바꾸면 됨
-  const form = document.getElementById("inquiryForm");
+ // 문의 폼: Formspree로 실제 전송
+const form = document.getElementById("inquiryForm");
 
-form?.addEventListener("submit", async (e) => {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const data = new FormData(form);
+    const data = new FormData(form);
 
-  try {
-    const res = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { "Accept": "application/json" }
-    });
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
 
-    if (res.ok) {
-      alert("문의가 접수되었습니다. 빠르게 회신드리겠습니다!");
-      form.reset();
-    } else {
-      alert("전송에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      if (res.ok) {
+        alert("문의가 접수되었습니다. 빠르게 회신드리겠습니다!");
+        form.reset();
+      } else {
+        // 에러 원인 확인용
+        const text = await res.text();
+        console.error("Formspree error:", res.status, text);
+        alert("전송에 실패했습니다. 입력값/설정 확인 후 다시 시도해주세요.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
     }
-  } catch (err) {
-    alert("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
-  }
-});
+  });
+}
 
-});
