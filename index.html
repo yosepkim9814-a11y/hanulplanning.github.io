@@ -1,62 +1,263 @@
-<form class="form card reveal delay-1"
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>한울플래닝 | 데님 & 우븐 의류 프로덕션</title>
+  <meta name="description" content="한울플래닝은 데님/우븐 의류 개발부터 생산·QC·납기까지 안정적으로 운영하는 의류 프로덕션 파트너입니다." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <span class="dot"></span>
+        <span>HANUL PLANNING</span>
+      </a>
+
+      <nav class="menu">
+        <a href="#about">회사소개</a>
+        <a href="#services">서비스</a>
+        <a href="#products">제품</a>
+        <a href="#contact">문의</a>
+      </nav>
+
+      <a class="call" href="tel:02-2038-4630">☎ 02-2038-4640</a>
+
+      <button class="hamburger" aria-label="메뉴 열기">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">회사소개</a>
+      <a href="#services">서비스</a>
+      <a href="#products">제품</a>
+      <a href="#contact">문의</a>
+    </div>
+  </header>
+
+  <!-- HERO (영상 배경) -->
+  <main id="top" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <!-- 여기 파일명만 맞추면 됨 -->
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <section class="hero-content">
+      <div class="kicker reveal">DENIM & WOVEN GARMENT PRODUCTION PARTNER</div>
+      <h1 class="title reveal delay-1">
+        글로벌 생산 기획 · 소싱<br/>
+        한울플래닝
+      </h1>
+      <p class="sub reveal delay-2">
+        샘플 개발부터 벌크 생산, QC, 납기 관리까지.<br/>
+        브랜드가 “안정적으로 생산”할 수 있도록 실무를 책임집니다.
+      </p>
+
+      <div class="cta reveal delay-3">
+        <a class="btn primary" href="#contact">의류제작 문의</a>
+        <a class="btn ghost" href="#services">서비스 보기</a>
+      </div>
+    </section>
+
+    <div class="scroll-hint">SCROLL</div>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>회사소개</h2>
+        <p>20년+ 의류 프로모션/프로덕션 경험으로, 디테일이 중요한 생산을 안정적으로 운영합니다.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card reveal">
+          <h3>우리가 하는 일</h3>
+          <p>
+            ODM/OEM 생산관리 · 벤더 커뮤니케이션 · 샘플~벌크 진행 ·
+            원단/부자재 핸들링 · 워싱/가공 코디 · 스펙/측정 관리 · 출고 준비
+          </p>
+        </div>
+        <div class="card reveal delay-1">
+          <h3>강점</h3>
+          <p>
+            정확한 스펙 컨트롤, 일정/리스크 관리, 빠른 피드백.
+            데님/우븐 카테고리에서 “안전하게 납기”로 연결되게 만듭니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (스크롤 내리면 카드 쫘라락) -->
+  <section id="services" class="section alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>서비스</h2>
+        <p>브랜드의 생산이 끊기지 않도록 실무 흐름을 한 번에 잡아드립니다.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="tile reveal">
+          <div class="tile-img" style="background-image:url('assets/service-1.jpg')"></div>
+          <div class="tile-body">
+            <h3>샘플 개발</h3>
+            <p>PP/QC/TOP 진행, 소재·부자재 소싱, 워싱/가공 코디</p>
+          </div>
+        </div>
+
+        <div class="tile reveal delay-1">
+          <div class="tile-img" style="background-image:url('assets/service-2.jpg')"></div>
+          <div class="tile-body">
+            <h3>생산 운영</h3>
+            <p>라인 계획, 공장/벤더 관리, 납기 스케줄 컨트롤</p>
+          </div>
+        </div>
+
+        <div class="tile reveal delay-2">
+          <div class="tile-img" style="background-image:url('assets/service-3.jpg')"></div>
+          <div class="tile-body">
+            <h3>QC · 출고</h3>
+            <p>측정/스펙 관리, 패킹·CTN 가이드, 출고 준비</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>제품</h2>
+        <p>데님/우븐 기반의 다양한 아이템을 안정적으로 생산합니다.</p>
+      </div>
+
+      <div class="products">
+        <div class="p-item reveal">
+          <img src="assets/p1.png" alt="스웻셔츠" />
+          <div class="p-name">상의</div>
+        </div>
+        <div class="p-item reveal delay-1">
+          <img src="assets/p2.png" alt="데님팬츠" />
+          <div class="p-name">데님 팬츠</div>
+        </div>
+        <div class="p-item reveal delay-2">
+          <img src="assets/p3.png" alt="우븐 팬츠" />
+          <div class="p-name">우븐 팬츠</div>
+        </div>
+        <div class="p-item reveal delay-3">
+          <img src="assets/p4.png" alt="아우터" />
+          <div class="p-name">아우터</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal"><b>20+</b><span>Years</span></div>
+        <div class="stat reveal delay-1"><b>100+</b><span>Clients</span></div>
+        <div class="stat reveal delay-2"><b>7,000+</b><span>Styles</span></div>
+        <div class="stat reveal delay-3"><b>6,000,000+</b><span>PCS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>의류제작 문의</h2>
+        <p>기획/샘플/벌크 관련 정보를 남겨주시면 빠르게 회신드리겠습니다.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- FAQ -->
+        <div class="faq card reveal">
+          <h3>자주 묻는 질문</h3>
+
+          <details>
+            <summary>생산은 국내/해외 어디서 진행하나요?</summary>
+            <p>아이템/단가/납기에 따라 국내 및 해외 파트너 공장에서 진행 가능합니다.</p>
+          </details>
+
+          <details>
+            <summary>MOQ(최소 수량)과 제작기간은?</summary>
+            <p>품목/원단/가공에 따라 달라집니다. 문의 남겨주시면 기준 안내드려요.</p>
+          </details>
+
+          <details>
+            <summary>샘플 진행 단계(PP/QC/TOP)는 어떻게 관리하나요?</summary>
+            <p>스펙/측정/워싱 레시피 및 일정표 기반으로 단계별 확인 후 진행합니다.</p>
+          </details>
+        </div>
+
+        <!-- FORM -->
+        <form class="form card reveal delay-1"
       id="inquiryForm"
       action="https://formspree.io/f/mkordgjo"
       method="POST">
+          <label>
+            업체명
+            <input name="company" required />
+          </label>
 
-  <!-- 스팸 방지용 (보이지 않음) -->
-  <input type="text" name="_gotcha" style="display:none">
+          <label>
+            카테고리
+            <select name="category" required>
+              <option value="">선택</option>
+              <option>데님</option>
+              <option>우븐</option>
+              <option>니트/컷앤소</option>
+              <option>아우터</option>
+              <option>기타</option>
+            </select>
+          </label>
 
-  <label>
-    업체명
-    <input name="company" required />
-  </label>
+          <label>
+            제작 품목
+            <input name="item" placeholder="예: 데님 팬츠, 우븐 자켓" required />
+          </label>
 
-  <label>
-    카테고리
-    <select name="category" required>
-      <option value="">선택</option>
-      <option>데님</option>
-      <option>우븐</option>
-      <option>니트/컷앤소</option>
-      <option>아우터</option>
-      <option>기타</option>
-    </select>
-  </label>
+          <label>
+            제작 참고사항
+            <textarea name="detail" rows="5" placeholder="원단/가공/원하는 납기, 참고 링크 등을 적어주세요." required></textarea>
+          </label>
 
-  <label>
-    제작 품목
-    <input name="item" placeholder="예: 데님 팬츠, 우븐 자켓" required />
-  </label>
+          <label>
+            예상 수량/예산
+            <input name="qty" placeholder="예: 1,000pcs / 목표단가 12,000원" />
+          </label>
 
-  <label>
-    제작 참고사항
-    <textarea name="detail" rows="5"
-      placeholder="원단/가공/납기/참고 이미지 링크 등을 입력해주세요."
-      required></textarea>
-  </label>
+          <div class="grid-2">
+            <label>
+              연락처
+              <input name="phone" placeholder="010-0000-0000" required />
+            </label>
+            <label>
+              이메일
+              <input name="email" type="email" required />
+            </label>
+          </div>
 
-  <label>
-    예상 수량/예산
-    <input name="qty" placeholder="예: 1,000pcs / 목표단가 12,000원" />
-  </label>
+          <button class="btn primary full" type="submit">문의 보내기</button>
+          <p class="form-hint">※ 버튼 클릭 시 기본은 “메일 앱으로 전송” 방식입니다.</p>
+        </form>
+      </div>
 
-  <div class="grid-2">
-    <label>
-      연락처
-      <input name="phone" placeholder="010-0000-0000" required />
-    </label>
-    <label>
-      이메일
-      <input name="email" type="email" required />
-    </label>
-  </div>
+      <div class="foot reveal">
+        <div>주소: 서울특별시 구로구 디지털로 26길 123 지플러스타워 808호 </div>
+        <div>전화: 02-2038-4630 · 이메일: hanul@hanulplanning.com</div>
+      </div>
+    </div>
+  </section>
 
-  <button class="btn primary full" type="submit">
-    문의 보내기
-  </button>
+  <footer class="footer">
+    <div class="container">© HANUL PLANNING CO., LTD</div>
+  </footer>
 
-  <p class="form-hint">
-    ※ 문의 내용은 서버로 안전하게 전송되며 담당자가 직접 확인 후 회신드립니다.
-  </p>
-
-</form>
+  <script src="script.js"></script>
+</body>
+</html>
