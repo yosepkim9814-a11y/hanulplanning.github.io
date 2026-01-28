@@ -52,34 +52,29 @@ ${data.get("detail")}
 `);
 
   // 여기 이메일 주소만 회사용으로 바꾸면 됨
-  window.location.href = `mailto:YOUR@hanulplanning.com?subject=${subject}&body=${body}`;
-});
-const form = document.getElementById("inquiryForm");
+  const form = document.getElementById("inquiryForm");
 
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+form?.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const data = new FormData(form);
+  const data = new FormData(form);
 
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json"
-        }
-      });
+  try {
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    });
 
-      if (response.ok) {
-        alert("문의가 정상 접수되었습니다.\n빠르게 연락드리겠습니다.");
-        form.reset();
-      } else {
-        alert("전송 실패. 잠시 후 다시 시도해주세요.");
-      }
-
-    } catch (error) {
-      alert("네트워크 오류가 발생했습니다.");
+    if (res.ok) {
+      alert("문의가 접수되었습니다. 빠르게 회신드리겠습니다!");
+      form.reset();
+    } else {
+      alert("전송에 실패했습니다. 잠시 후 다시 시도해주세요.");
     }
-  });
-}
+  } catch (err) {
+    alert("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+  }
+});
+
+});
