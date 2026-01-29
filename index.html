@@ -1,39 +1,43 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>한울플래닝 | 데님 & 우븐 의류 프로덕션</title>
   <meta name="description" content="한울플래닝은 데님/우븐 의류 개발부터 생산·QC·납기까지 안정적으로 운영하는 의류 프로덕션 파트너입니다." />
+
+  <!-- Pretendard -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- NAV -->
   <header class="nav">
-    <div class="nav-inner">
+    <div class="nav-inner container">
       <a class="brand" href="#top">
         <span class="dot"></span>
         <span>HANUL PLANNING</span>
       </a>
 
       <nav class="menu">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">회사소개</a>
+        <a href="#history">연혁</a>
+        <a href="#services">서비스</a>
+        <a href="#products">제품</a>
+        <a href="#contact">문의</a>
       </nav>
 
+      <a class="call" href="tel:02-2038-4630">☎ 02-2038-4630</a>
 
-      <button class="hamburger" aria-label="메뉴 열기">☰</button>
+      <button class="hamburger" aria-label="메뉴 열기" type="button">☰</button>
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
       <a href="#about">회사소개</a>
+      <a href="#history">연혁</a>
       <a href="#services">서비스</a>
       <a href="#products">제품</a>
       <a href="#contact">문의</a>
@@ -43,13 +47,12 @@
   <!-- HERO (영상 배경) -->
   <main id="top" class="hero">
     <video class="hero-video" autoplay muted loop playsinline>
-      <!-- 여기 파일명만 맞추면 됨 -->
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
 
     <div class="hero-overlay"></div>
 
-    <section class="hero-content">
+    <section class="hero-content container">
       <div class="kicker reveal">DENIM & WOVEN GARMENT PRODUCTION PARTNER</div>
       <h1 class="title reveal delay-1">
         글로벌 생산 기획 · 소싱<br/>
@@ -69,9 +72,102 @@
     <div class="scroll-hint">SCROLL</div>
   </main>
 
+  <!-- ABOUT (Company Overview 느낌) -->
+  <section id="about" class="section light">
+    <div class="container">
+      <h2 class="section-title-en reveal">Company Overview</h2>
+      <div class="section-divider reveal"></div>
 
-  <!-- SERVICES (스크롤 내리면 카드 쫘라락) -->
-  <section id="services" class="section alt">
+      <p class="section-lead reveal">
+        (주)한울플래닝은 2001년 설립 이후 20년 이상 글로벌 의류 생산 시장을 선도해 온 OEM 제조·프로덕션 파트너입니다.
+        데님/우븐 중심의 개발부터 벌크 생산, QC, 납기까지 실무 중심으로 안정적인 생산 운영을 제공합니다.
+      </p>
+
+      <div class="overview-grid">
+        <div class="overview-item card-lite reveal">
+          <div class="ico">📅</div>
+          <div>
+            <h3>설립일</h3>
+            <p>2001년 10월 29일</p>
+          </div>
+        </div>
+
+        <div class="overview-item card-lite reveal delay-1">
+          <div class="ico">🧵</div>
+          <div>
+            <h3>사업 분야</h3>
+            <p>프리미엄 데님·우븐 의류 전문 OEM 생산</p>
+          </div>
+        </div>
+
+        <div class="overview-item card-lite reveal">
+          <div class="ico">🏢</div>
+          <div>
+            <h3>본사</h3>
+            <p>서울특별시 구로구 디지털로 26길 123 지플러스타워 808호</p>
+          </div>
+        </div>
+
+        <div class="overview-item card-lite reveal delay-1">
+          <div class="ico">📈</div>
+          <div>
+            <h3>핵심 강점</h3>
+            <p>글로벌 생산 네트워크 + 엄격한 품질관리 시스템 + 지속가능 섬유 R&amp;D</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY (Company History 느낌) -->
+  <section id="history" class="section light">
+    <div class="container">
+      <h2 class="section-title-en reveal">Company History</h2>
+      <div class="section-divider reveal"></div>
+      <p class="section-lead reveal">2001년부터 이어온 한울플래닝의 성장 스토리입니다.</p>
+
+      <div class="timeline reveal">
+        <div class="t-item">
+          <div class="t-year">2001</div>
+          <div class="t-dot">1</div>
+          <div class="t-desc">법인 전환, 상호 변경 (주)한울플래닝</div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-year">2004</div>
+          <div class="t-dot">2</div>
+          <div class="t-desc">구로 사옥 확장 이전</div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-year">2006</div>
+          <div class="t-dot">3</div>
+          <div class="t-desc">베트남 타이빈 HANUL 우븐 공장 설립 (10라인, 월 70,000pcs)</div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-year">2008–2009</div>
+          <div class="t-dot">4</div>
+          <div class="t-desc">중국 조보 HUAJIANG 데님 계약 / 베트남 호치민 DONG NAM 데님 계약</div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-year">2013–2015</div>
+          <div class="t-dot">5</div>
+          <div class="t-desc">R&amp;D 전담부서 구축 / 베트남 호치민 KIM SUN 데님 계약</div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-year">2023</div>
+          <div class="t-dot">6</div>
+          <div class="t-desc">베트남 DN DNC 신규 공장 설립</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section dark">
     <div class="container">
       <div class="section-head reveal">
         <h2>서비스</h2>
@@ -107,7 +203,7 @@
   </section>
 
   <!-- PRODUCTS -->
-  <section id="products" class="section">
+  <section id="products" class="section dark">
     <div class="container">
       <div class="section-head reveal">
         <h2>제품</h2>
@@ -116,11 +212,11 @@
 
       <div class="products">
         <div class="p-item reveal">
-          <img src="assets/p1.png" alt="스웻셔츠" />
+          <img src="assets/p1.png" alt="상의" />
           <div class="p-name">상의</div>
         </div>
         <div class="p-item reveal delay-1">
-          <img src="assets/p2.png" alt="데님팬츠" />
+          <img src="assets/p2.png" alt="데님 팬츠" />
           <div class="p-name">데님 팬츠</div>
         </div>
         <div class="p-item reveal delay-2">
@@ -143,7 +239,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section alt">
+  <section id="contact" class="section light">
     <div class="container">
       <div class="section-head reveal">
         <h2>의류제작 문의</h2>
@@ -151,8 +247,7 @@
       </div>
 
       <div class="contact-grid">
-        <!-- FAQ -->
-        <div class="faq card reveal">
+        <div class="faq card-lite reveal">
           <h3>자주 묻는 질문</h3>
 
           <details>
@@ -171,14 +266,14 @@
           </details>
         </div>
 
-        <!-- FORM -->
-        <form class="form card reveal delay-1"
-      id="inquiryForm"
-      action="https://formspree.io/f/mkordgjo"
-      method="POST">
-          
+        <form class="form card-lite reveal delay-1"
+              id="inquiryForm"
+              action="https://formspree.io/f/mkordgjo"
+              method="POST">
+          <!-- (주의) Formspree 플랜/설정에 따라 _subject는 무시될 수 있음 -->
           <input type="hidden" name="_subject" value="신규 업체 문의 메일입니다 (HANUL PLANNING)" />
-          
+          <input type="hidden" name="page" value="hanulplanning.com" />
+
           <label>
             업체명
             <input name="company" required />
@@ -223,12 +318,15 @@
           </div>
 
           <button class="btn primary full" type="submit">문의 보내기</button>
-          <p class="form-hint">※ 문의는 접수 후 담당자가 확인하여 회신드립니다. </p>
+
+          <p class="form-hint" id="formStatus" aria-live="polite">
+            ※ 문의는 접수 후 담당자가 확인하여 회신드립니다.
+          </p>
         </form>
       </div>
 
       <div class="foot reveal">
-        <div>주소: 서울특별시 구로구 디지털로 26길 123 지플러스타워 808호 </div>
+        <div>주소: 서울특별시 구로구 디지털로 26길 123 지플러스타워 808호</div>
         <div>전화: 02-2038-4630 · 이메일: hanul@hanulplanning.com</div>
       </div>
     </div>
