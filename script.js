@@ -2,59 +2,56 @@
 const btn = document.querySelector(".hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 
-function toggleMobileMenu(force) {
-  if (!mobileMenu || !btn) return;
-  const isOpen = force ?? (mobileMenu.style.display !== "block");
-  mobileMenu.style.display = isOpen ? "block" : "none";
-  btn.setAttribute("aria-expanded", String(isOpen));
-}
-
-btn?.addEventListener("click", () => toggleMobileMenu());
-mobileMenu?.querySelectorAll("a").forEach(a => {
-  a.addEventListener("click", () => toggleMobileMenu(false));
+btn?.addEventListener("click", () => {
+  const isOpen = !mobileMenu.hasAttribute("hidden");
+  if (isOpen) {
+    mobileMenu.setAttribute("hidden", "");
+    btn.setAttribute("aria-expanded", "false");
+  } else {
+    mobileMenu.removeAttribute("hidden");
+    btn.setAttribute("aria-expanded", "true");
+  }
 });
+
+mobileMenu?.querySelectorAll("a").forEach((a) =>
+  a.addEventListener("click", () => {
+    mobileMenu.setAttribute("hidden", "");
+    btn?.setAttribute("aria-expanded", "false");
+  })
+);
 
 // 스크롤 리빌
 const reveals = document.querySelectorAll(".reveal");
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add("show");
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
-reveals.forEach(el => io.observe(el));
+const io = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("show");
+        io.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+reveals.forEach((el) => io.observe(el));
 
-// 히어로 글자 페이드/이동
+// 히어로 텍스트 페이드/이동
 const hero = document.querySelector(".hero-content");
 window.addEventListener("scroll", () => {
   if (!hero) return;
   const y = window.scrollY;
   const fade = Math.max(0, 1 - y / 450);
   hero.style.opacity = String(fade);
-  hero.style.transform = `translateY(${Math.min(26, y / 18)}px)`;
+  hero.style.transform = `translateY(${Math.min(24, y / 18)}px)`;
 });
 
-// Formspree AJAX 전송 (한 번만!)
+// Formspree 전송 (중복 리스너/중복 선언 없이 "1번만" 등록)
 const form = document.getElementById("inquiryForm");
-const msg = document.getElementById("formMsg");
-
-function setMsg(text, type) {
-  if (!msg) return;
-  msg.textContent = text;
-  msg.classList.remove("ok", "bad");
-  if (type) msg.classList.add(type);
-}
+const statusEl = document.getElementById("formStatus");
 
 form?.addEventListener("submit", async (e) => {
   e.preventDefault();
-  if (!form.action) {
-    setMsg("폼 action(전송 주소)이 비어있습니다. Formspree URL을 확인해주세요.", "bad");
-    return;
-  }
-
-  setMsg("전송 중입니다…", null);
+  statusEl && (statusEl.textContent = "전송 중입니다...");
 
   try {
     const data = new FormData(form);
@@ -62,21 +59,22 @@ form?.addEventListener("submit", async (e) => {
     const res = await fetch(form.action, {
       method: "POST",
       body: data,
-      headers: { "Accept": "application/json" }
+      headers: { Accept: "application/json" },
     });
 
     if (res.ok) {
-      setMsg("문의가 접수되었습니다. 빠르게 회신드리겠습니다!", "ok");
+      alert("문의가 접수되었습니다. 빠르게 회신드리겠습니다!");
       form.reset();
-      return;
+      statusEl && (statusEl.textContent = "정상 접수되었습니다.");
+    } else {
+      const text = await res.text();
+      console.error("Formspree error:", res.status, text);
+      alert("전송에 실패했습니다. 입력값/설정 확인 후 다시 시도해주세요.");
+      statusEl && (statusEl.textContent = "전송 실패 (콘솔 로그 확인)");
     }
-
-    // 실패 시 원인 로그
-    const text = await res.text();
-    console.error("Formspree error:", res.status, text);
-    setMsg("전송에 실패했습니다. 입력값/설정 확인 후 다시 시도해주세요.", "bad");
   } catch (err) {
     console.error(err);
-    setMsg("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.", "bad");
+    alert("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+    statusEl && (statusEl.textContent = "네트워크 오류");
   }
 });
