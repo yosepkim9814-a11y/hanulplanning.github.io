@@ -1,84 +1,75 @@
-// =======================
-// 1) 모바일 메뉴
-// =======================
+// 모바일 메뉴
 const btn = document.querySelector(".hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 
-if (btn && mobileMenu) {
-  btn.addEventListener("click", () => {
-    mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
-  });
+btn?.addEventListener("click", () => {
+  const isOpen = mobileMenu.style.display === "block";
+  mobileMenu.style.display = isOpen ? "none" : "block";
+});
 
-  mobileMenu.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      mobileMenu.style.display = "none";
-    });
-  });
-}
+mobileMenu?.querySelectorAll("a").forEach(a =>
+  a.addEventListener("click", () => {
+    mobileMenu.style.display = "none";
+  })
+);
 
-// =======================
-// 2) 스크롤 리빌 (카드/이미지 쫘라락 등장)
-// =======================
+// 스크롤 리빌
 const reveals = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("show");
+        io.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+reveals.forEach((el) => io.observe(el));
 
-if (reveals.length) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("show");
-          io.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  reveals.forEach((el) => io.observe(el));
-}
-
-// =======================
-// 3) 히어로 글자 페이드/이동
-// =======================
+// 히어로 글자 페이드/이동
 const hero = document.querySelector(".hero-content");
-if (hero) {
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    const fade = Math.max(0, 1 - y / 450);
-    hero.style.opacity = String(fade);
-    hero.style.transform = `translateY(${Math.min(24, y / 18)}px)`;
-  });
-}
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+  if (!hero) return;
+  const fade = Math.max(0, 1 - y / 450);
+  hero.style.opacity = String(fade);
+  hero.style.transform = `translateY(${Math.min(24, y / 18)}px)`;
+});
 
-// =======================
-// 4) 문의 폼: Formspree로 실제 전송
-//    (index.html form에 action/method 있어야 함)
-// =======================
-const inquiryForm = document.getElementById("inquiryForm");
+// Formspree 전송(AJAX) + 성공/실패 메시지
+const form = document.getElementById("inquiryForm");
+const statusEl = document.getElementById("formStatus");
 
-if (inquiryForm) {
-  inquiryForm.addEventListener("submit", async (e) => {
+if (form) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    try {
-      const data = new FormData(inquiryForm);
+    if (statusEl) statusEl.textContent = "전송 중입니다...";
 
-      const res = await fetch(inquiryForm.action, {
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
         method: "POST",
         body: data,
-        headers: { Accept: "application/json" },
+        headers: { Accept: "application/json" }
       });
 
       if (res.ok) {
+        form.reset();
+        if (statusEl) statusEl.textContent = "문의가 접수되었습니다. 빠르게 회신드리겠습니다!";
         alert("문의가 접수되었습니다. 빠르게 회신드리겠습니다!");
-        inquiryForm.reset();
       } else {
         const text = await res.text();
         console.error("Formspree error:", res.status, text);
-        alert("전송에 실패했습니다. Formspree 설정/인증을 확인해주세요.");
+        if (statusEl) statusEl.textContent = "전송 실패: 입력값/설정 확인 후 다시 시도해주세요.";
+        alert("전송에 실패했습니다. 입력값/설정 확인 후 다시 시도해주세요.");
       }
     } catch (err) {
       console.error(err);
+      if (statusEl) statusEl.textContent = "네트워크 오류: 잠시 후 다시 시도해주세요.";
       alert("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
     }
   });
