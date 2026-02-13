@@ -1424,3 +1424,20 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
 .process-frame{
   height: min(82vh, 920px);
 }
+/* 이미지 잘림 방지: 프레임 높이 고정 해제 */
+.process-frame{
+  height: auto !important;
+  max-height: 78vh;
+  background: #fff;              /* 화이트 배경 */
+  display: block;
+  padding: 12px;
+  overflow: auto;                /* 그래도 커서 넘치면 스크롤 */
+}
+
+.process-frame img{
+  width: 100%;
+  height: auto !important;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+}
