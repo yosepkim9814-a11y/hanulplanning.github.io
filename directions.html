@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Locations | HANUL PLANNING</title>
+  <title>오시는 길 | 한울플래닝</title>
   <meta name="description" content="한울플래닝 본사 및 베트남 공장 위치 안내" />
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -11,260 +11,158 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="sp-map">
-  <!-- NAV (기존과 동일) -->
+<body class="dir-clean">
+  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="index.html#top">
-        <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING 로고" />
+      <a class="brand" href="index.html#top" aria-label="홈으로">
+        <img src="assets/logo-white.png" class="logo" alt="한울플래닝 로고" />
         <span class="brand-text">HANUL PLANNING</span>
+        <span class="brand-text-ko">한울플래닝</span>
       </a>
 
       <nav class="menu">
-  <a href="about.html" data-ko="회사소개">ABOUT</a>
-  <a href="services.html" data-ko="서비스">SERVICES</a>
-  <a href="products.html" data-ko="제품">PRODUCTS</a>
-  <a class="is-active" href="directions.html" data-ko="오시는 길">LOCATIONS</a>
-  <a href="contact.html" data-ko="문의">CONTACT</a>
-</nav>
-
+        <a href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
+        <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
+        <a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
+        <a class="is-active" href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
+        <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
+      </nav>
 
       <button class="hamburger" aria-label="메뉴 열기">☰</button>
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="about.html" data-ko="회사소개">ABOUT</a>
-  <a href="services.html" data-ko="서비스">SERVICES</a>
-  <a href="products.html" data-ko="제품">PRODUCTS</a>
-  <a class="is-active" href="directions.html" data-ko="오시는 길">LOCATIONS</a>
-  <a href="contact.html" data-ko="문의">CONTACT</a>
-</div>
+      <a href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
+      <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
+      <a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
+      <a class="is-active" href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
+      <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
+    </div>
   </header>
 
-  <!-- PAGE HERO -->
+  <!-- HERO -->
   <main class="page-hero">
     <div class="container">
-      <div class="kicker">VISIT & CONTACT</div>
-      <h1 class="page-title">Locations</h1>
+      <div class="kicker">LOCATION</div>
+      <h1 class="page-title">오시는 길</h1>
       <p class="page-sub">본사 및 베트남 생산 거점 위치 안내입니다.</p>
     </div>
   </main>
 
-  <section class="section alt">
+  <!-- CONTENT -->
+  <section class="section">
     <div class="container">
-      <div class="sp-layout">
+      <div class="dir-grid">
 
-        <!-- LEFT: info + thumbs -->
-        <aside class="sp-side">
-
-          <!-- KOREA -->
-          <div class="sp-card">
-            <div class="sp-card-head">
-              <div>
-                <div class="sp-eyebrow">KOREA</div>
-                <div class="sp-title">Headquarters</div>
-              </div>
-              <div class="sp-chip">SEOUL</div>
+        <!-- KOREA HQ -->
+        <section class="dir-card">
+          <div class="dir-head">
+            <div>
+              <div class="dir-eyebrow">KOREA</div>
+              <h2 class="dir-title">한국 본사</h2>
             </div>
+            <a class="dir-maplink"
+               href="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul"
+               target="_blank" rel="noopener">Google Maps 열기</a>
+          </div>
 
-            <div class="sp-map-wrap">
-              <iframe class="sp-map-iframe"
-                loading="lazy"
-                src="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul&output=embed">
-              </iframe>
-              <a class="sp-map-btn"
-                 href="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul"
-                 target="_blank" rel="noopener">Google Maps</a>
+          <div class="dir-map">
+            <iframe loading="lazy"
+              src="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul&output=embed">
+            </iframe>
+          </div>
+
+          <div class="dir-info">
+            <div class="dir-row">
+              <div class="k">주소</div>
+              <div class="v">서울특별시 구로구 디지털로26길 123, 지플러스타워 808호</div>
             </div>
-
-            <div class="sp-kv">
-              <div class="sp-row">
-                <div class="sp-k">Address</div>
-                <div class="sp-v">#808, G-Plus Tower, 123, Digital-ro 26-gil, Guro-gu, Seoul, Korea</div>
-              </div>
-              <div class="sp-row">
-                <div class="sp-k">Email</div>
-                <div class="sp-v"><a href="mailto:hanul@hanulplanning.com">hanul@hanulplanning.com</a></div>
-              </div>
+            <div class="dir-row">
+              <div class="k">Email</div>
+              <div class="v"><a href="mailto:hanul@hanulplanning.com">hanul@hanulplanning.com</a></div>
             </div>
+          </div>
+        </section>
 
-            <div class="sp-subhead">Office Gallery</div>
-            <div class="sp-thumbs">
-              <button class="sp-thumb is-active" type="button"
-                      data-src="assets/hq/entrance.png" data-cap="입구">
-                <img src="assets/hq/entrance.png" alt="입구" loading="lazy"><span>입구</span>
-              </button>
-
-              <button class="sp-thumb" type="button"
-                      data-src="assets/hq/office.png" data-cap="사무실">
-                <img src="assets/hq/office.png" alt="사무실" loading="lazy"><span>사무실</span>
-              </button>
-
-              <button class="sp-thumb" type="button"
-                      data-src="assets/hq/sample-denim.png" data-cap="샘플실(데님)">
-                <img src="assets/hq/sample-denim.png" alt="샘플실(데님)" loading="lazy"><span>샘플실(데님)</span>
-              </button>
-
-              <button class="sp-thumb" type="button"
-                      data-src="assets/hq/sample-woven.png" data-cap="샘플실(우븐)">
-                <img src="assets/hq/sample-woven.png" alt="샘플실(우븐)" loading="lazy"><span>샘플실(우븐)</span>
-              </button>
-
-              <button class="sp-thumb" type="button"
-                      data-src="assets/hq/finishing.png" data-cap="완성반">
-                <img src="assets/hq/finishing.png" alt="완성반" loading="lazy"><span>완성반</span>
-              </button>
+        <!-- VIETNAM FACTORIES -->
+        <section class="dir-card">
+          <div class="dir-head">
+            <div>
+              <div class="dir-eyebrow">VIETNAM</div>
+              <h2 class="dir-title">공장 정보</h2>
             </div>
           </div>
 
-          <!-- VIETNAM -->
-          <div class="sp-card">
-            <div class="sp-card-head">
+          <!-- Denim -->
+          <div class="factory">
+            <div class="factory-top">
               <div>
-                <div class="sp-eyebrow">VIETNAM</div>
-                <div class="sp-title">Factories</div>
+                <div class="factory-tag">DENIM</div>
+                <div class="factory-name">호치민 데님 공장</div>
               </div>
-              <div class="sp-chip">PRODUCTION</div>
-            </div>
-
-            <div class="sp-subhead">Denim Factory (Ho Chi Minh City)</div>
-            <div class="sp-map-wrap">
-              <iframe class="sp-map-iframe sm"
-                loading="lazy"
-                src="https://www.google.com/maps?q=No%2024/9%20Do%20Van%20Day%20Street%20Hoc%20Mon%20District%20Ho%20Chi%20Minh%20City%20Vietnam&output=embed">
-              </iframe>
-              <a class="sp-map-btn"
+              <a class="factory-link"
                  href="https://www.google.com/maps?q=No%2024/9%20Do%20Van%20Day%20Street,%20Hoc%20Mon%20District,%20Ho%20Chi%20Minh%20City,%20Vietnam"
-                 target="_blank" rel="noopener">Google Maps</a>
+                 target="_blank" rel="noopener">지도 보기</a>
             </div>
 
-            <div class="sp-kv">
-              <div class="sp-row">
-                <div class="sp-k">Address</div>
-                <div class="sp-v">No 24/9 Do Van Day Street, Tan Hoa Hamlet, Tan Hiep Village, Hoc Mon District, Ho Chi Minh City, Vietnam</div>
+            <div class="factory-photos two">
+              <img src="assets/locations/denim-01.png" alt="데님 공장 사진 1" loading="lazy">
+              <img src="assets/locations/denim-02.png" alt="데님 공장 사진 2" loading="lazy">
+            </div>
+
+            <div class="dir-info compact">
+              <div class="dir-row">
+                <div class="k">주소</div>
+                <div class="v">No 24/9 Do Van Day Street, Tan Hoa Hamlet, Tan Hiep Village, Hoc Mon District, Ho Chi Minh City, Vietnam</div>
               </div>
-              <div class="sp-row">
-                <div class="sp-k">Tel</div>
-                <div class="sp-v">(84)8-6659-9639</div>
+              <div class="dir-row">
+                <div class="k">TEL</div>
+                <div class="v">(84)8-6659-9639</div>
               </div>
             </div>
+          </div>
 
-            <div class="sp-thumbs">
-              <button class="sp-thumb" type="button"
-                      data-src="assets/locations/denim-01.png" data-cap="Denim factory photo 1">
-                <img src="assets/locations/denim-01.png" alt="denim-01" loading="lazy"><span>Photo 1</span>
-              </button>
+          <div class="dir-divider"></div>
 
-              <button class="sp-thumb" type="button"
-                      data-src="assets/locations/denim-02.png" data-cap="Denim factory photo 2">
-                <img src="assets/locations/denim-02.png" alt="denim-02" loading="lazy"><span>Photo 2</span>
-              </button>
-            </div>
-
-            <div class="sp-divider"></div>
-
-            <div class="sp-subhead">Woven Factory (Hung Yen Province)</div>
-            <div class="sp-map-wrap">
-              <iframe class="sp-map-iframe sm"
-                loading="lazy"
-                src="https://www.google.com/maps?q=Cong%20Hoa%20Village,%20Kien%20Xuong%20Commune,%20Hung%20Yen%20Province,%20Vietnam&output=embed">
-              </iframe>
-              <a class="sp-map-btn"
+          <!-- Woven -->
+          <div class="factory">
+            <div class="factory-top">
+              <div>
+                <div class="factory-tag">WOVEN</div>
+                <div class="factory-name">헝옌 우븐 공장</div>
+              </div>
+              <a class="factory-link"
                  href="https://www.google.com/maps?q=Cong%20Hoa%20Village,%20Kien%20Xuong%20Commune,%20Hung%20Yen%20Province,%20Vietnam"
-                 target="_blank" rel="noopener">Google Maps</a>
+                 target="_blank" rel="noopener">지도 보기</a>
             </div>
 
-            <div class="sp-kv">
-              <div class="sp-row">
-                <div class="sp-k">Address</div>
-                <div class="sp-v">Cong Hoa Village, Kien Xuong Commune, Hung Yen Province, Vietnam</div>
+            <div class="factory-photos one">
+              <img src="assets/locations/woven-01.png" alt="우븐 공장 사진" loading="lazy">
+            </div>
+
+            <div class="dir-info compact">
+              <div class="dir-row">
+                <div class="k">주소</div>
+                <div class="v">Cong Hoa Village, Kien Xuong Commune, Hung Yen Province, Vietnam</div>
               </div>
-              <div class="sp-row">
-                <div class="sp-k">Tel</div>
-                <div class="sp-v">070-7123-1079</div>
+              <div class="dir-row">
+                <div class="k">TEL</div>
+                <div class="v">070-7123-1079</div>
               </div>
             </div>
-
-            <div class="sp-thumbs">
-              <button class="sp-thumb" type="button"
-                      data-src="assets/locations/woven-01.png" data-cap="Woven factory photo">
-                <img src="assets/locations/woven-01.png" alt="woven-01" loading="lazy"><span>Photo</span>
-              </button>
-            </div>
-
           </div>
 
-        </aside>
-
-        <!-- RIGHT: big viewer -->
-        <section class="sp-view">
-          <div class="sp-view-head">
-            <div class="sp-view-title">Preview</div>
-            <div class="sp-view-sub" id="spCap">입구</div>
-          </div>
-
-          <button class="sp-viewer" type="button" id="spViewerBtn" aria-label="이미지 확대">
-            <img id="spViewerImg" src="assets/hq/entrance.png" alt="입구">
-          </button>
         </section>
 
       </div>
     </div>
   </section>
 
-  <!-- Lightbox -->
-  <dialog class="sp-lb" id="spLb">
-    <button class="sp-lb-x" type="button" aria-label="닫기">×</button>
-    <figure class="sp-lb-fig">
-      <img id="spLbImg" alt="">
-      <figcaption id="spLbCap"></figcaption>
-    </figure>
-  </dialog>
-
-  <footer class="footer"><div class="container">© HANUL PLANNING CO., LTD</div></footer>
+  <footer class="footer">
+    <div class="container">© HANUL PLANNING CO., LTD</div>
+  </footer>
 
   <script src="script.js"></script>
-
-  <script>
-    // Viewer swap
-    const viewerImg = document.getElementById('spViewerImg');
-    const capEl = document.getElementById('spCap');
-    const thumbs = Array.from(document.querySelectorAll('.sp-thumb'));
-
-    function setActive(btn){
-      thumbs.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      const src = btn.getAttribute('data-src');
-      const cap = btn.getAttribute('data-cap') || '';
-      viewerImg.src = src;
-      viewerImg.alt = cap;
-      capEl.textContent = cap;
-    }
-
-    thumbs.forEach(btn => {
-      btn.addEventListener('click', () => setActive(btn));
-    });
-
-    // Lightbox
-    const dlg = document.getElementById('spLb');
-    const lbImg = document.getElementById('spLbImg');
-    const lbCap = document.getElementById('spLbCap');
-    const lbX = document.querySelector('.sp-lb-x');
-
-    document.getElementById('spViewerBtn').addEventListener('click', () => {
-      lbImg.src = viewerImg.src;
-      lbImg.alt = viewerImg.alt;
-      lbCap.textContent = capEl.textContent;
-      dlg.showModal();
-    });
-
-    lbX.addEventListener('click', () => dlg.close());
-    dlg.addEventListener('click', (e) => {
-      const fig = dlg.querySelector('.sp-lb-fig');
-      const r = fig.getBoundingClientRect();
-      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
-      if (!inside) dlg.close();
-    });
-  </script>
 </body>
 </html>
