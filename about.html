@@ -146,6 +146,83 @@
       </div>
     </div>
   </section>
+<!-- OFFICE GALLERY -->
+<section class="section light" id="office">
+  <div class="container">
+    <div class="section-top reveal">
+      <div class="eyebrow">OFFICE GALLERY</div>
+      <h2 class="section-title">본사 시설</h2>
+      <p class="section-lead">업무 및 샘플 개발이 이루어지는 본사 공간을 소개합니다.</p>
+    </div>
+
+    <div class="office-grid">
+      <button class="office-item" type="button" data-lightbox="assets/hq/entrance.png" data-caption="입구">
+        <img src="assets/hq/entrance.png" alt="입구" loading="lazy" />
+        <div class="office-cap">입구</div>
+      </button>
+
+      <button class="office-item" type="button" data-lightbox="assets/hq/office.png" data-caption="사무실">
+        <img src="assets/hq/office.png" alt="사무실" loading="lazy" />
+        <div class="office-cap">사무실</div>
+      </button>
+
+      <button class="office-item" type="button" data-lightbox="assets/hq/sample-denim.png" data-caption="샘플실(데님)">
+        <img src="assets/hq/sample-denim.png" alt="샘플실(데님)" loading="lazy" />
+        <div class="office-cap">샘플실(데님)</div>
+      </button>
+
+      <button class="office-item" type="button" data-lightbox="assets/hq/sample-woven.png" data-caption="샘플실(우븐)">
+        <img src="assets/hq/sample-woven.png" alt="샘플실(우븐)" loading="lazy" />
+        <div class="office-cap">샘플실(우븐)</div>
+      </button>
+
+      <button class="office-item" type="button" data-lightbox="assets/hq/finishing.png" data-caption="완성반">
+        <img src="assets/hq/finishing.png" alt="완성반" loading="lazy" />
+        <div class="office-cap">완성반</div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<dialog class="lb" id="lb">
+  <button class="lb-x" type="button" aria-label="닫기">×</button>
+  <figure class="lb-fig">
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</dialog>
+
+<script>
+  // Office gallery lightbox (no library)
+  (function(){
+    const dlg = document.getElementById('lb');
+    const img = document.getElementById('lbImg');
+    const cap = document.getElementById('lbCap');
+    const closeBtn = dlg?.querySelector('.lb-x');
+
+    const openLB = (src, text) => {
+      img.src = src;
+      img.alt = text || '';
+      cap.textContent = text || '';
+      dlg.showModal();
+    };
+
+    document.addEventListener('click', (e) => {
+      const t = e.target.closest('[data-lightbox]');
+      if (!t) return;
+      openLB(t.getAttribute('data-lightbox'), t.getAttribute('data-caption'));
+    });
+
+    closeBtn?.addEventListener('click', () => dlg.close());
+    dlg?.addEventListener('click', (e) => {
+      const fig = dlg.querySelector('.lb-fig');
+      const r = fig.getBoundingClientRect();
+      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) dlg.close();
+    });
+  })();
+</script>
 
   <footer class="footer">
     <div class="container">© HANUL PLANNING CO., LTD</div>
