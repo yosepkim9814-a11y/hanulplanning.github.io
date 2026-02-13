@@ -1441,3 +1441,57 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
   object-fit: contain;
   display: block;
 }
+/* 서비스 페이지: 이미지 섹션만 화이트 테마 */
+.service-visual{
+  background: #f3f5f7;
+}
+
+.service-visual .section-head h2{
+  color: #0b1020;
+}
+
+.service-visual .section-head p{
+  color: rgba(11,16,32,.65);
+}
+
+/* 이미지 카드도 라이트 톤 */
+.visual-card, .process-slide{
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.10) !important;
+}
+
+.visual-label,
+.process-meta{
+  color: rgba(11,16,32,.86) !important;
+  border-bottom: 1px solid rgba(0,0,0,.06) !important;
+}
+.process-kicker{ color: rgba(11,16,32,.55) !important; }
+.process-title{ color: rgba(11,16,32,.92) !important; }
+.process-sub{ color: rgba(11,16,32,.70) !important; }
+/* SERVICES 상단(소개) About처럼 정렬/폭/타이포 통일 */
+.service-hero{
+  padding-top: 110px;
+  padding-bottom: 54px;
+}
+
+.service-head{
+  max-width: 780px;   /* About page-sub 느낌 */
+}
+
+.service-eyebrow{
+  font-size: 12px;
+  letter-spacing: .22em;
+  color: rgba(255,255,255,.70);
+}
+
+.service-title{
+  font-size: clamp(34px, 5vw, 58px); /* About page-title 수준 */
+  line-height: 1.08;
+}
+
+.service-sub{
+  font-size: 16px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.85;
+}
