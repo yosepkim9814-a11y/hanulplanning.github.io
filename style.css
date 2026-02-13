@@ -751,3 +751,17 @@ body.sp-map #spLbCap{
   .t-item{ grid-template-columns: 100px 48px 1fr; }
   .t-dot{ margin-left: 38px; }
 }
+/* index video make it subtle */
+.hero2-media{ position: relative; }
+.hero2-media video{
+  filter: grayscale(20%) contrast(108%) brightness(78%);
+  transform: scale(1.02);
+}
+.media-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(11,16,32,.55), rgba(11,16,32,.10));
+}
+.media-overlay2{
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.10), rgba(0,0,0,.55));
+}
