@@ -941,3 +941,36 @@ body.light-ui .brand-ko:hover .brand-ko-text{
 /* 영문 숨기고 한글 보이기 */
 .brand:hover .brand-text{ opacity: 0; }
 .brand:hover .brand-text-ko{ opacity: 1; transform: translateY(0); }
+/* HERO 가독성 업그레이드 */
+.hero-overlay{
+  /* 기존보다 살짝 더 진하고 고급스럽게 */
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(0,0,0,.25), rgba(0,0,0,.78)),
+    linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.20) 55%, rgba(0,0,0,.55) 100%);
+}
+
+.hero-content{
+  /* 텍스트 영역이 배경에 덜 흔들리게 */
+  text-shadow: 0 2px 18px rgba(0,0,0,.45);
+}
+
+.kicker{
+  color: rgba(255,255,255,.82);
+}
+
+.title{
+  color: rgba(255,255,255,.98);
+  /* 큰 제목 가독성/고급감 */
+  text-shadow: 0 6px 26px rgba(0,0,0,.55);
+}
+
+.sub{
+  color: rgba(255,255,255,.86);
+  text-shadow: 0 3px 18px rgba(0,0,0,.40);
+  max-width: 720px;
+}
+
+/* 버튼도 텍스트가 선명하게 */
+.cta .btn{
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+}
