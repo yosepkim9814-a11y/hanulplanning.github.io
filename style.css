@@ -797,3 +797,17 @@ body.sp-map #spLbCap{
 @media (max-width: 520px){
   .cap-grid{ grid-template-columns: 1fr; }
 }
+.brand-ko{ position: relative; }
+.brand-ko-text{
+  margin-left: 8px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: rgba(11,16,32,.78);
+  opacity: 0;
+  transform: translateY(1px);
+  transition: .18s ease;
+}
+body.light-ui .brand-ko:hover .brand-ko-text{
+  opacity: 1;
+  transform: translateY(0);
+}
