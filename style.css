@@ -341,3 +341,9 @@ details p{ margin: 10px 0 0; color: rgba(255,255,255,.72); line-height:1.7; }
   .timeline{ padding-left: 0; }
   .timeline::before{ left: 118px; }
 }
+
+.logo{
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
