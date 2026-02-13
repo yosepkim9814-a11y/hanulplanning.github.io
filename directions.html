@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Locations | HANUL PLANNING</title>
-  <meta name="description" content="한울플래닝 본사 및 베트남 공장 위치 안내 (오시는 길)" />
+  <meta name="description" content="한울플래닝 본사 및 베트남 공장 위치 안내" />
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
@@ -12,10 +12,9 @@
 </head>
 
 <body>
-  <!-- NAV (index.html과 동일) -->
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="index.html#top" aria-label="홈으로">
+      <a class="brand" href="index.html#top">
         <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING 로고" />
         <span class="brand-text">HANUL PLANNING</span>
       </a>
@@ -40,7 +39,6 @@
     </div>
   </header>
 
-  <!-- PAGE HERO -->
   <main class="page-hero">
     <div class="container">
       <div class="kicker reveal">VISIT & CONTACT</div>
@@ -49,7 +47,6 @@
     </div>
   </main>
 
-  <!-- LOCATIONS -->
   <section class="section alt">
     <div class="container">
       <div class="locations-grid">
@@ -64,25 +61,28 @@
             <div class="loc-tag">SEOUL</div>
           </div>
 
-          <!-- 지도: 이미지로 쓰려면 assets/map-korea.jpg 업로드 후 아래 img 사용 -->
-          <!-- <img class="loc-map" src="assets/map-korea.jpg" alt="한국 본사 지도" /> -->
-
-          <!-- 지도: 바로 보이게 하려면 iframe(간단) -->
-          <iframe class="loc-map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+          <iframe class="loc-map" loading="lazy"
             src="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul&output=embed">
           </iframe>
 
           <div class="loc-body">
             <div class="loc-row">
-              <div class="loc-k">주소</div>
+              <div class="loc-k">Address</div>
               <div class="loc-v">#808, G-Plus Tower, 123, Digital-ro 26-gil, Guro-gu, Seoul, Korea</div>
             </div>
             <div class="loc-row">
-              <div class="loc-k">이메일</div>
+              <div class="loc-k">Email</div>
               <div class="loc-v"><a href="mailto:hanul@hanulplanning.com">hanul@hanulplanning.com</a></div>
             </div>
+          </div>
+
+          <!-- HQ gallery -->
+          <div class="hq-gallery">
+            <figure class="hq-item"><img src="assets/locations/hq-entrance.jpg" alt="입구" loading="lazy"><figcaption>입구</figcaption></figure>
+            <figure class="hq-item"><img src="assets/locations/hq-office.jpg" alt="사무실" loading="lazy"><figcaption>사무실</figcaption></figure>
+            <figure class="hq-item"><img src="assets/locations/hq-sample-denim.jpg" alt="샘플실(데님)" loading="lazy"><figcaption>샘플실(데님)</figcaption></figure>
+            <figure class="hq-item"><img src="assets/locations/hq-sample-woven.jpg" alt="샘플실(우븐)" loading="lazy"><figcaption>샘플실(우븐)</figcaption></figure>
+            <figure class="hq-item"><img src="assets/locations/hq-finishing.jpg" alt="완성반" loading="lazy"><figcaption>완성반</figcaption></figure>
           </div>
         </article>
 
@@ -96,68 +96,69 @@
             <div class="loc-tag">PRODUCTION</div>
           </div>
 
-          <!-- 지도(1): 데님 - 호치민 -->
-          <div class="loc-split">
-            <div class="loc-mini">
-              <div class="loc-mini-title">Denim Factory (Ho Chi Minh City)</div>
+          <!-- Denim -->
+          <div class="loc-mini">
+            <div class="loc-mini-title">Denim Factory (Ho Chi Minh City)</div>
 
-              <!-- 이미지 지도 사용 시: assets/map-vn-hcm.jpg -->
-              <!-- <img class="loc-map-mini" src="assets/map-vn-hcm.jpg" alt="호치민 데님 공장 지도" /> -->
+            <iframe class="loc-map-mini" loading="lazy"
+              src="https://www.google.com/maps?q=No%2024/9%20Do%20Van%20Day%20Street%20Hoc%20Mon%20District%20Ho%20Chi%20Minh%20City%20Vietnam&output=embed">
+            </iframe>
 
-              <iframe class="loc-map-mini"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Ho%20Chi%20Minh%20City,%20Vietnam&output=embed">
-              </iframe>
-
-              <div class="loc-mini-body">
-                <div class="loc-row">
-                  <div class="loc-k">주소</div>
-                  <div class="loc-v">Ho Chi Minh City, Vietnam (상세주소 추후 입력)</div>
-                </div>
-                <div class="loc-row">
-                  <div class="loc-k">이메일</div>
-                  <div class="loc-v"><span class="hint">베트남 공장 이메일 입력</span></div>
-                </div>
-              </div>
+            <!-- photos: denim 2 -->
+            <div class="loc-photos two">
+              <img src="assets/locations/denim-01.jpg" alt="Denim factory photo 1" loading="lazy">
+              <img src="assets/locations/denim-02.jpg" alt="Denim factory photo 2" loading="lazy">
             </div>
 
-            <!-- 지도(2): 우븐 - 헝옌 -->
-            <div class="loc-mini">
-              <div class="loc-mini-title">Woven Factory (Hung Yen Province)</div>
-
-              <!-- 이미지 지도 사용 시: assets/map-vn-hungyen.jpg -->
-              <!-- <img class="loc-map-mini" src="assets/map-vn-hungyen.jpg" alt="헝옌 우븐 공장 지도" /> -->
-
-              <iframe class="loc-map-mini"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Hung%20Yen%20Province,%20Vietnam&output=embed">
-              </iframe>
-
-              <div class="loc-mini-body">
-                <div class="loc-row">
-                  <div class="loc-k">주소</div>
-                  <div class="loc-v">Hung Yen Province, Vietnam (상세주소 추후 입력)</div>
+            <div class="loc-mini-body">
+              <div class="loc-row">
+                <div class="loc-k">Address</div>
+                <div class="loc-v">
+                  No 24/9 Do Van Day Street, Tan Hoa Hamlet, Tan Hiep Village,<br/>
+                  Hoc Mon District, Ho Chi Minh City, Vietnam
                 </div>
-                <div class="loc-row">
-                  <div class="loc-k">이메일</div>
-                  <div class="loc-v"><span class="hint">베트남 공장 이메일 입력</span></div>
-                </div>
+              </div>
+              <div class="loc-row">
+                <div class="loc-k">Tel</div>
+                <div class="loc-v">(84)8-6659-9639</div>
               </div>
             </div>
           </div>
 
+          <!-- Woven -->
+          <div class="loc-mini" style="margin-top:14px;">
+            <div class="loc-mini-title">Woven Factory (Hung Yen Province)</div>
+
+            <iframe class="loc-map-mini" loading="lazy"
+              src="https://www.google.com/maps?q=Cong%20Hoa%20Village,%20Kien%20Xuong%20Commune,%20Hung%20Yen%20Province,%20Vietnam&output=embed">
+            </iframe>
+
+            <!-- photo: woven 1 -->
+            <div class="loc-photos one">
+              <img src="assets/locations/woven-01.jpg" alt="Woven factory photo" loading="lazy">
+            </div>
+
+            <div class="loc-mini-body">
+              <div class="loc-row">
+                <div class="loc-k">Address</div>
+                <div class="loc-v">
+                  Cong Hoa Village, Kien Xuong Commune,<br/>
+                  Hung Yen Province, Vietnam
+                </div>
+              </div>
+              <div class="loc-row">
+                <div class="loc-k">Tel</div>
+                <div class="loc-v">070-7123-1079</div>
+              </div>
+            </div>
+          </div>
         </article>
 
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">© HANUL PLANNING CO., LTD</div>
-  </footer>
-
+  <footer class="footer"><div class="container">© HANUL PLANNING CO., LTD</div></footer>
   <script src="script.js"></script>
 </body>
 </html>
