@@ -1273,7 +1273,7 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
 /* Services top hero */
 .service-hero{
   padding-top: 110px;
-  padding-bottom: 60px;
+  padding-bottom: 54px;
   background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
 }
 .service-head{ max-width: 820px; }
@@ -1285,7 +1285,7 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
   margin-bottom: 12px;
 }
 .service-title{
-  font-size: clamp(30px,4vw,48px);
+  font-size: clamp(34px, 5vw, 58px);
   font-weight: 950;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -1294,7 +1294,7 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
 .service-sub{
   color: rgba(255,255,255,.75);
   line-height: 1.8;
-  max-width: 700px;
+  max-width: 780px;
 }
 
 /* Visual image cards */
