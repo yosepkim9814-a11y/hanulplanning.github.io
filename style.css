@@ -926,3 +926,18 @@ body.light-ui .brand-ko:hover .brand-ko-text{
   opacity: 1;
   transform: translate(-50%, 0);
 }
+/* 로고 텍스트: hover 시 영문 -> 한글 교체 */
+.brand{ position: relative; }
+.brand-text-ko{
+  position:absolute;
+  left: calc(18px + 10px + 8px); /* logo(height만큼 대략) + gap */
+  opacity: 0;
+  transform: translateY(1px);
+  transition: .18s ease;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* 영문 숨기고 한글 보이기 */
+.brand:hover .brand-text{ opacity: 0; }
+.brand:hover .brand-text-ko{ opacity: 1; transform: translateY(0); }
