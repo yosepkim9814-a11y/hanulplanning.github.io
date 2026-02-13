@@ -416,3 +416,32 @@ details p{ margin: 10px 0 0; color: rgba(255,255,255,.72); line-height:1.7; }
   .t-item{ grid-template-columns: 100px 48px 1fr; }
   .t-dot{ margin-left: 38px; }
 }
+/* 메뉴: 기본(영어) → Hover(한글) */
+.menu a,
+.mobile-menu a{
+  position: relative;
+  display: inline-block;
+}
+
+.menu a::after,
+.mobile-menu a::after{
+  content: attr(data-ko);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity .18s ease, transform .18s ease;
+  color: var(--text);
+}
+
+.menu a:hover,
+.mobile-menu a:hover{
+  color: transparent; /* 영어 글자 숨김 */
+}
+
+.menu a:hover::after,
+.mobile-menu a:hover::after{
+  opacity: 1;
+  transform: translateY(0);
+}
