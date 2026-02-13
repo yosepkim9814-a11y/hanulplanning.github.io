@@ -721,3 +721,142 @@ details p{ margin: 10px 0 0; color: rgba(255,255,255,.72); line-height:1.7; }
   .loc-photos.two{ grid-template-columns: 1fr; }
   .loc-photos img{ height: 200px; }
 }
+/* Map wrap + open button */
+.map-wrap{
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+.map-wrap .loc-map,
+.map-wrap .loc-map-mini{
+  width: 100%;
+  border: 0;
+  display:block;
+}
+.map-open{
+  position:absolute;
+  right: 12px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: rgba(255,255,255,.92);
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(8px);
+}
+.map-open:hover{
+  background: rgba(0,0,0,.58);
+  border-color: rgba(255,255,255,.25);
+}
+
+/* Slider (uniform size + snap) */
+.slider-block{ margin-top: 16px; }
+.slider-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 0 10px;
+}
+.slider-title{ font-weight: 900; }
+.slider-hint{ color: rgba(255,255,255,.62); font-size: 12px; }
+
+.slider{
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 12px 46px; /* space for buttons */
+}
+.slider.slim{ margin-top: 12px; }
+
+.slider-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(230px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.slider-track::-webkit-scrollbar{ display:none; }
+
+.slide{
+  border: 0;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+  scroll-snap-align: start;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+
+/* ✅ 이미지 크기 균일 핵심 */
+.slide img{
+  width: 100%;
+  aspect-ratio: 16/10;     /* 균일 비율 */
+  height: auto;
+  object-fit: cover;
+  display:block;
+  filter: saturate(95%) contrast(105%) brightness(92%);
+  transform: scale(1.01);
+}
+
+.slide .cap{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255,255,255,.92);
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(8px);
+}
+
+.slide:hover img{
+  filter: saturate(105%) contrast(108%) brightness(98%);
+  transform: scale(1.03);
+  transition: .25s ease;
+}
+
+.slider-btn{
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.92);
+  cursor: pointer;
+  display:grid;
+  place-items:center;
+  font-size: 18px;
+  backdrop-filter: blur(8px);
+}
+.slider-btn:hover{ background: rgba(0,0,0,.55); }
+.slider-btn.prev{ left: 10px; }
+.slider-btn.next{ right: 10px; }
+
+/* Lightbox (dialog) */
+.lightbox{
+  width: min(980px, calc(100% - 24px));
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  background: rgba(10,16,32,.94);
+  padding: 0;
+  overflow:
