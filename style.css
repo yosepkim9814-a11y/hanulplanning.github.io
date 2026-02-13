@@ -1328,3 +1328,80 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
 @media (max-width: 980px){
   .visual-grid{ grid-template-columns: 1fr; }
 }
+/* ===== Services page tone unify ===== */
+.service-hero .service-title{ color: rgba(255,255,255,.96); }
+.service-hero .service-sub{ color: rgba(255,255,255,.78); }
+.service-hero .service-eyebrow{ color: rgba(255,255,255,.62); }
+
+/* ===== Full-width drag rail (no buttons) ===== */
+.process-rail{
+  margin-top: 18px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 6px;
+}
+.process-rail::-webkit-scrollbar{ display:none; }
+
+.process-slide{
+  scroll-snap-align: start;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+/* 상단 설명 바 */
+.process-meta{
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.process-kicker{
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 900;
+  color: rgba(255,255,255,.60);
+}
+.process-title{
+  margin: 10px 0 6px;
+  font-size: 22px;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+}
+.process-sub{
+  margin: 0;
+  color: rgba(255,255,255,.72);
+  line-height: 1.7;
+}
+
+/* ✅ 화면 꽉 차게 보이도록: 프레임 높이를 뷰포트 기반으로 */
+.process-frame{
+  height: min(78vh, 820px);
+  background: rgba(0,0,0,.18);
+  display: grid;
+  place-items: center;
+}
+.process-frame img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 인포그래픽이 잘리지 않게 */
+  display:block;
+}
+
+/* 드래그 힌트 */
+.process-hint{
+  margin: 10px 0 0;
+  color: rgba(255,255,255,.62);
+  font-size: 12px;
+}
+
+/* 모바일에서 더 보기 좋게 */
+@media (max-width: 860px){
+  .process-frame{ height: min(66vh, 680px); }
+  .process-title{ font-size: 20px; }
+}
