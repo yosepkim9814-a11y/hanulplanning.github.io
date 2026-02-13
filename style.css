@@ -36,7 +36,8 @@ body{ background:#0a0f1d; color:#fff; line-height:1.6; }
   justify-content:space-between;
   padding:12px 0;
 }
-.logo{ width:140px; }
+.logo{ height:18px; width:auto; object-fit:contain; opacity:.95; }
+.brand-text{ font-size:12px; letter-spacing:.12em; }
 
 /* NAV LINKS */
 .nav-menu a{
