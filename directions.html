@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="loc-page">
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="index.html#top">
@@ -61,14 +61,16 @@
             <div class="loc-tag">SEOUL</div>
           </div>
 
-          <!-- Map + button -->
           <div class="map-wrap">
             <iframe class="loc-map" loading="lazy"
               src="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul&output=embed">
             </iframe>
+
             <a class="map-open"
-               href="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul"
-               target="_blank" rel="noopener">Google Maps 열기</a>
+              href="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul"
+              target="_blank" rel="noopener">
+              Google Maps
+            </a>
           </div>
 
           <div class="loc-body">
@@ -82,48 +84,50 @@
             </div>
           </div>
 
-          <!-- HQ Slider -->
-          <div class="slider-block">
-            <div class="slider-head">
-              <div class="slider-title">Office Gallery</div>
-              <div class="slider-hint">Drag / scroll</div>
+          <!-- HQ Gallery Slider -->
+          <div class="gallery">
+            <div class="gallery-top">
+              <div class="gallery-title">Office Gallery</div>
+              <div class="gallery-sub">Swipe / Drag</div>
             </div>
 
-            <div class="slider" data-slider>
-              <button class="slider-btn prev" type="button" aria-label="이전">‹</button>
-              <div class="slider-track">
-                <button class="slide" type="button" data-lightbox="assets/hq/entrance.png" data-caption="입구">
+            <div class="gallery-rail" data-rail>
+              <button class="rail-btn prev" type="button" aria-label="이전">‹</button>
+
+              <div class="rail">
+                <button class="thumb" type="button" data-lightbox="assets/hq/entrance.png" data-caption="입구">
                   <img src="assets/hq/entrance.png" alt="입구" loading="lazy">
-                  <span class="cap">입구</span>
+                  <span>입구</span>
                 </button>
 
-                <button class="slide" type="button" data-lightbox="assets/hq/office.png" data-caption="사무실">
+                <button class="thumb" type="button" data-lightbox="assets/hq/office.png" data-caption="사무실">
                   <img src="assets/hq/office.png" alt="사무실" loading="lazy">
-                  <span class="cap">사무실</span>
+                  <span>사무실</span>
                 </button>
 
-                <button class="slide" type="button" data-lightbox="assets/hq/sample-denim.png" data-caption="샘플실(데님)">
+                <button class="thumb" type="button" data-lightbox="assets/hq/sample-denim.png" data-caption="샘플실(데님)">
                   <img src="assets/hq/sample-denim.png" alt="샘플실(데님)" loading="lazy">
-                  <span class="cap">샘플실(데님)</span>
+                  <span>샘플실(데님)</span>
                 </button>
 
-                <button class="slide" type="button" data-lightbox="assets/hq/sample-woven.png" data-caption="샘플실(우븐)">
+                <button class="thumb" type="button" data-lightbox="assets/hq/sample-woven.png" data-caption="샘플실(우븐)">
                   <img src="assets/hq/sample-woven.png" alt="샘플실(우븐)" loading="lazy">
-                  <span class="cap">샘플실(우븐)</span>
+                  <span>샘플실(우븐)</span>
                 </button>
 
-                <button class="slide" type="button" data-lightbox="assets/hq/finishing.png" data-caption="완성반">
+                <button class="thumb" type="button" data-lightbox="assets/hq/finishing.png" data-caption="완성반">
                   <img src="assets/hq/finishing.png" alt="완성반" loading="lazy">
-                  <span class="cap">완성반</span>
+                  <span>완성반</span>
                 </button>
               </div>
-              <button class="slider-btn next" type="button" aria-label="다음">›</button>
+
+              <button class="rail-btn next" type="button" aria-label="다음">›</button>
             </div>
           </div>
         </article>
 
 
-        <!-- VIETNAM FACTORIES -->
+        <!-- VIETNAM -->
         <article class="loc card reveal delay-1">
           <div class="loc-head">
             <div>
@@ -142,24 +146,27 @@
                 src="https://www.google.com/maps?q=No%2024/9%20Do%20Van%20Day%20Street%20Hoc%20Mon%20District%20Ho%20Chi%20Minh%20City%20Vietnam&output=embed">
               </iframe>
               <a class="map-open"
-                 href="https://www.google.com/maps?q=No%2024/9%20Do%20Van%20Day%20Street,%20Hoc%20Mon%20District,%20Ho%20Chi%20Minh%20City,%20Vietnam"
-                 target="_blank" rel="noopener">Google Maps 열기</a>
+                href="https://www.google.com/maps?q=No%2024/9%20Do%20Van%20Day%20Street,%20Hoc%20Mon%20District,%20Ho%20Chi%20Minh%20City,%20Vietnam"
+                target="_blank" rel="noopener">Google Maps</a>
             </div>
 
-            <!-- Denim Slider (2 photos) -->
-            <div class="slider slim" data-slider>
-              <button class="slider-btn prev" type="button" aria-label="이전">‹</button>
-              <div class="slider-track">
-                <button class="slide" type="button" data-lightbox="assets/locations/denim-01.png" data-caption="Denim factory photo 1">
-                  <img src="assets/locations/denim-01.png" alt="Denim factory photo 1" loading="lazy">
-                  <span class="cap">Photo 1</span>
-                </button>
-                <button class="slide" type="button" data-lightbox="assets/locations/denim-02.png" data-caption="Denim factory photo 2">
-                  <img src="assets/locations/denim-02.png" alt="Denim factory photo 2" loading="lazy">
-                  <span class="cap">Photo 2</span>
-                </button>
+            <div class="gallery compact">
+              <div class="gallery-rail" data-rail>
+                <button class="rail-btn prev" type="button" aria-label="이전">‹</button>
+
+                <div class="rail">
+                  <button class="thumb" type="button" data-lightbox="assets/locations/denim-01.png" data-caption="Denim factory photo 1">
+                    <img src="assets/locations/denim-01.png" alt="Denim factory photo 1" loading="lazy">
+                    <span>Photo 1</span>
+                  </button>
+                  <button class="thumb" type="button" data-lightbox="assets/locations/denim-02.png" data-caption="Denim factory photo 2">
+                    <img src="assets/locations/denim-02.png" alt="Denim factory photo 2" loading="lazy">
+                    <span>Photo 2</span>
+                  </button>
+                </div>
+
+                <button class="rail-btn next" type="button" aria-label="다음">›</button>
               </div>
-              <button class="slider-btn next" type="button" aria-label="다음">›</button>
             </div>
 
             <div class="loc-mini-body">
@@ -186,20 +193,23 @@
                 src="https://www.google.com/maps?q=Cong%20Hoa%20Village,%20Kien%20Xuong%20Commune,%20Hung%20Yen%20Province,%20Vietnam&output=embed">
               </iframe>
               <a class="map-open"
-                 href="https://www.google.com/maps?q=Cong%20Hoa%20Village,%20Kien%20Xuong%20Commune,%20Hung%20Yen%20Province,%20Vietnam"
-                 target="_blank" rel="noopener">Google Maps 열기</a>
+                href="https://www.google.com/maps?q=Cong%20Hoa%20Village,%20Kien%20Xuong%20Commune,%20Hung%20Yen%20Province,%20Vietnam"
+                target="_blank" rel="noopener">Google Maps</a>
             </div>
 
-            <!-- Woven Slider (1 photo) -->
-            <div class="slider slim" data-slider>
-              <button class="slider-btn prev" type="button" aria-label="이전">‹</button>
-              <div class="slider-track">
-                <button class="slide" type="button" data-lightbox="assets/locations/woven-01.png" data-caption="Woven factory photo">
-                  <img src="assets/locations/woven-01.png" alt="Woven factory photo" loading="lazy">
-                  <span class="cap">Photo</span>
-                </button>
+            <div class="gallery compact">
+              <div class="gallery-rail" data-rail>
+                <button class="rail-btn prev" type="button" aria-label="이전">‹</button>
+
+                <div class="rail">
+                  <button class="thumb" type="button" data-lightbox="assets/locations/woven-01.png" data-caption="Woven factory photo">
+                    <img src="assets/locations/woven-01.png" alt="Woven factory photo" loading="lazy">
+                    <span>Photo</span>
+                  </button>
+                </div>
+
+                <button class="rail-btn next" type="button" aria-label="다음">›</button>
               </div>
-              <button class="slider-btn next" type="button" aria-label="다음">›</button>
             </div>
 
             <div class="loc-mini-body">
@@ -222,9 +232,9 @@
     </div>
   </section>
 
-  <!-- Lightbox (no external libs) -->
-  <dialog class="lightbox" id="lightbox">
-    <button class="lb-close" type="button" aria-label="닫기">×</button>
+  <!-- Lightbox -->
+  <dialog class="lb" id="lb">
+    <button class="lb-x" type="button" aria-label="닫기">×</button>
     <figure class="lb-fig">
       <img id="lbImg" alt="">
       <figcaption id="lbCap"></figcaption>
@@ -235,55 +245,49 @@
 
   <script src="script.js"></script>
 
-  <!-- page-specific JS (kept inline for simple copy/paste) -->
   <script>
-    // Slider controls
-    document.querySelectorAll('[data-slider]').forEach(slider => {
-      const track = slider.querySelector('.slider-track');
-      const prev = slider.querySelector('.prev');
-      const next = slider.querySelector('.next');
+    // Rail buttons + smooth scroll
+    document.querySelectorAll('[data-rail]').forEach(wrap => {
+      const rail = wrap.querySelector('.rail');
+      const prev = wrap.querySelector('.prev');
+      const next = wrap.querySelector('.next');
 
-      const scrollByCard = (dir) => {
-        const card = track.querySelector('.slide');
-        const gap = parseInt(getComputedStyle(track).gap || '12', 10);
-        const w = (card?.getBoundingClientRect().width || 260) + gap;
-        track.scrollBy({ left: dir * w, behavior: 'smooth' });
+      const step = (dir) => {
+        const card = rail.querySelector('.thumb');
+        const gap = parseInt(getComputedStyle(rail).gap || '12', 10);
+        const w = (card?.getBoundingClientRect().width || 240) + gap;
+        rail.scrollBy({ left: dir * w, behavior: 'smooth' });
       };
 
-      prev?.addEventListener('click', () => scrollByCard(-1));
-      next?.addEventListener('click', () => scrollByCard(1));
+      prev?.addEventListener('click', () => step(-1));
+      next?.addEventListener('click', () => step(1));
     });
 
-    // Lightbox (dialog)
-    const dlg = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const lbCap = document.getElementById('lbCap');
-    const closeBtn = dlg?.querySelector('.lb-close');
+    // Lightbox
+    const dlg = document.getElementById('lb');
+    const img = document.getElementById('lbImg');
+    const cap = document.getElementById('lbCap');
+    const x = dlg?.querySelector('.lb-x');
 
-    const openLightbox = (src, cap) => {
-      if (!dlg || !lbImg || !lbCap) return;
-      lbImg.src = src;
-      lbImg.alt = cap || '';
-      lbCap.textContent = cap || '';
+    const openLB = (src, text) => {
+      img.src = src;
+      img.alt = text || '';
+      cap.textContent = text || '';
       dlg.showModal();
     };
 
     document.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-lightbox]');
-      if (!btn) return;
-      openLightbox(btn.getAttribute('data-lightbox'), btn.getAttribute('data-caption'));
+      const t = e.target.closest('[data-lightbox]');
+      if (!t) return;
+      openLB(t.getAttribute('data-lightbox'), t.getAttribute('data-caption'));
     });
 
-    closeBtn?.addEventListener('click', () => dlg.close());
+    x?.addEventListener('click', () => dlg.close());
     dlg?.addEventListener('click', (e) => {
-      // click outside image closes
-      const rect = dlg.querySelector('.lb-fig')?.getBoundingClientRect();
-      if (!rect) return;
-      const inFig = (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom);
-      if (!inFig) dlg.close();
-    });
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && dlg?.open) dlg.close();
+      const fig = dlg.querySelector('.lb-fig');
+      const r = fig.getBoundingClientRect();
+      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) dlg.close();
     });
   </script>
 </body>
