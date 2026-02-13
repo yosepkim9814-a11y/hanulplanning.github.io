@@ -213,31 +213,26 @@ body{
   padding: 8px 0 8px 48px;
 }
 .timeline::before{
-  content:"";
-  position:absolute;
-  left: 96px;
-  top: 0; bottom: 0;
-  width: 2px;
-  background: rgba(0,0,0,.16);
+  left: 70px;
 }
+
 .t-item{
-  display: grid;
-  grid-template-columns: 90px 48px 1fr;
-  gap: 8px 16px;
-  align-items: center;
-  padding: 18px 0;
+  grid-template-columns: 70px 1fr;
+  padding-left: 40px;
+  position: relative;
 }
-.t-year{ font-weight: 800; opacity: .95; }
+
 .t-dot{
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  background: rgba(0,0,0,.06);
-  border: 1px solid rgba(0,0,0,.12);
-  margin-left: 40px;
+  position: absolute;
+  left: 58px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0b1020;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
 }
+
 .t-desc{ line-height:1.7; opacity:.95; }
 
 /* Cards / grids */
