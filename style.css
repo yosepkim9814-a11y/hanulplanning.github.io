@@ -1549,3 +1549,79 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
     object-fit: contain;
   }
 }
+/* Services process title */
+.proc-title{
+  margin: 0 0 12px;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(255,255,255,.92);
+}
+
+/* Tabs (only two) */
+.proc-tabs{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+
+.proc-tab{
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,.78);
+  font-weight: 950;
+  cursor: pointer;
+  transition: .28s ease;
+}
+
+.proc-tab.is-active{
+  background: rgba(255,255,255,.94);
+  color: #0b1020;
+}
+
+/* Panel show/hide fix (2nd tab not visible issue) */
+.proc-panels{ margin-top: 14px; }
+.proc-panel{ display: none; }
+.proc-panel.is-show{ display: block; }
+
+/* Big image area */
+.proc-img{
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 18px 50px rgba(0,0,0,.12);
+}
+
+/* ✅ 이미지 공간 확 키우기 (짤림/안보임 방지) */
+.proc-img img{
+  width: 100%;
+  height: min(82vh, 980px); /* 화면 꽉 차게 */
+  object-fit: contain;       /* 인포그래픽 안 잘리게 */
+  display: block;
+  background: #fff;
+}
+
+/* service-visual section -> light background only for image area */
+.service-visual{
+  background: #f3f5f7;
+}
+.service-visual .proc-title{
+  color: rgba(11,16,32,.92);
+}
+.service-visual .proc-tab{
+  color: rgba(11,16,32,.72);
+}
+.service-visual .proc-tabs{
+  border-color: rgba(0,0,0,.08);
+  background: rgba(0,0,0,.02);
+}
+.service-visual .proc-tab.is-active{
+  background: #0b1020;
+  color: #fff;
+}
