@@ -57,21 +57,11 @@
   </main>
 
   <!-- 2개 이미지 삽입 섹션 -->
-  <section class="section alt service-visual">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>제작 프로세스 · 생산공정</h2>
-      </div>
-
- <section class="section alt service-visual">
+<section class="section alt service-visual">
   <div class="container">
 
-    <div class="section-head reveal">
-      <h2>제작 프로세스</h2>
-      <p>버튼을 선택하면 해당 내용만 표시됩니다.</p>
-    </div>
+    <h2 class="proc-title">제작 프로세스 · 생산공정</h2>
 
-    <!-- Tabs -->
     <div class="proc-tabs" role="tablist" aria-label="제작 정보 탭">
       <button class="proc-tab is-active" role="tab" aria-selected="true" data-target="tab-process">
         제작 프로세스
@@ -80,6 +70,24 @@
         생산공정
       </button>
     </div>
+
+    <div class="proc-panels">
+      <div id="tab-process" class="proc-panel is-show" role="tabpanel">
+        <div class="proc-img">
+          <img src="assets/process/process.png" alt="제작 프로세스" loading="lazy" />
+        </div>
+      </div>
+
+      <div id="tab-manufacturing" class="proc-panel" role="tabpanel">
+        <div class="proc-img">
+          <img src="assets/process/manufacturing.png" alt="생산공정" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Contents -->
     <div class="proc-panels">
