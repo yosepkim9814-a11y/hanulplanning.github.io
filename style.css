@@ -974,3 +974,47 @@ body.light-ui .brand-ko:hover .brand-ko-text{
 .cta .btn{
   box-shadow: 0 10px 28px rgba(0,0,0,.18);
 }
+/* 메뉴 hover: 사라락(느리게) */
+.menu a::after,
+.mobile-menu a::after{
+  transition: opacity .32s ease, transform .32s ease; /* 기존 0.18 -> 0.32 */
+  transform: translate(-50%, 6px);  /* 시작 위치를 더 아래로 */
+}
+
+.menu a:hover::after,
+.mobile-menu a:hover::after{
+  transform: translate(-50%, 0);
+}
+
+/* 영문은 서서히 사라지게 */
+.menu a .en,
+.mobile-menu a .en{
+  transition: opacity .32s ease, transform .32s ease;
+  transform: translateY(0);
+}
+
+.menu a:hover .en,
+.mobile-menu a:hover .en{
+  opacity: 0;
+  transform: translateY(-2px);
+}
+
+/* 로고 텍스트도 사라락 */
+.brand-text,
+.brand-text-ko{
+  transition: opacity .32s ease, transform .32s ease;
+}
+
+.brand-text-ko{
+  transform: translateY(6px); /* 처음 살짝 아래 */
+}
+
+.brand:hover .brand-text{
+  opacity: 0;
+  transform: translateY(-2px);
+}
+
+.brand:hover .brand-text-ko{
+  opacity: 1;
+  transform: translateY(0);
+}
