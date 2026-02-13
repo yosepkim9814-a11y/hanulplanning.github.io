@@ -765,3 +765,35 @@ body.sp-map #spLbCap{
   position:absolute; inset:0;
   background: radial-gradient(ellipse at center, rgba(0,0,0,.10), rgba(0,0,0,.55));
 }
+.cap{ margin-top: 18px; }
+.cap-title{
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  color: rgba(11,16,32,.88);
+  margin-bottom: 10px;
+}
+.cap-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+}
+.cap-item{
+  background: rgba(11,16,32,.03);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 16px;
+  padding: 12px;
+}
+.cap-k{
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 950;
+  color: rgba(11,16,32,.55);
+}
+.cap-v{
+  margin-top: 6px;
+  font-weight: 900;
+  color: rgba(11,16,32,.85);
+}
+@media (max-width: 520px){
+  .cap-grid{ grid-template-columns: 1fr; }
+}
