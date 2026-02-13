@@ -353,3 +353,9 @@ details p{ margin: 10px 0 0; color: rgba(255,255,255,.72); line-height:1.7; }
   width: auto;
   object-fit: contain;
 }
+
+.highlight{
+  display:block;
+  font-size: 1.2em;
+  letter-spacing:-0.03em;
+}
