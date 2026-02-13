@@ -416,32 +416,39 @@ details p{ margin: 10px 0 0; color: rgba(255,255,255,.72); line-height:1.7; }
   .t-item{ grid-template-columns: 100px 48px 1fr; }
   .t-dot{ margin-left: 38px; }
 }
-/* 메뉴: 기본(영어) → Hover(한글) */
+/* 메뉴: 기본(영어) → Hover(한글) (줄바꿈 방지, 폭 안정화) */
 .menu a,
 .mobile-menu a{
   position: relative;
   display: inline-block;
+  white-space: nowrap;          /* ✅ 줄바꿈 금지 */
+  min-width: 64px;              /* ✅ 최소 폭 확보 (ABOUT 기준) */
+  text-align: center;
 }
 
 .menu a::after,
 .mobile-menu a::after{
   content: attr(data-ko);
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
+  transform: translate(-50%, 2px);  /* 가운데 정렬 */
   opacity: 0;
-  transform: translateY(2px);
   transition: opacity .18s ease, transform .18s ease;
+  white-space: nowrap;             /* ✅ 한글도 줄바꿈 금지 */
+  pointer-events: none;
   color: var(--text);
+  font-size: 13px;                 /* 살짝 작게 (튀지 않게) */
+  letter-spacing: -0.02em;
 }
 
 .menu a:hover,
 .mobile-menu a:hover{
-  color: transparent; /* 영어 글자 숨김 */
+  color: transparent; /* 영어 숨김 */
 }
 
 .menu a:hover::after,
 .mobile-menu a:hover::after{
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
