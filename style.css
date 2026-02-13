@@ -899,3 +899,30 @@ body.light-ui .brand-ko:hover .brand-ko-text{
 @media (max-width: 860px){
   .hero-metrics{ grid-template-columns: 1fr; }
 }
+/* 메뉴 hover 안정판: span.en 숨기고 data-ko 표시 */
+.menu a, .mobile-menu a{ position: relative; white-space: nowrap; }
+.menu a .en, .mobile-menu a .en{ display:inline-block; }
+
+.menu a::after,
+.mobile-menu a::after{
+  content: attr(data-ko);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 2px);
+  opacity: 0;
+  transition: opacity .18s ease, transform .18s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.menu a:hover .en,
+.mobile-menu a:hover .en{
+  opacity: 0;
+}
+
+.menu a:hover::after,
+.mobile-menu a:hover::after{
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
