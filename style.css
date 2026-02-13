@@ -233,7 +233,11 @@ body{
   box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
 }
 
-.t-desc{ line-height:1.7; opacity:.95; }
+.t-desc{
+  background: rgba(0,0,0,0.04);
+  padding: 14px 18px;
+  border-radius: 12px;
+}
 
 /* Cards / grids */
 .grid-3{
