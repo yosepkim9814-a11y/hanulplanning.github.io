@@ -860,3 +860,111 @@ details p{ margin: 10px 0 0; color: rgba(255,255,255,.72); line-height:1.7; }
   background: rgba(10,16,32,.94);
   padding: 0;
   overflow:
+/* ===== Locations polish (override) ===== */
+.loc-page .card{ border-radius: 20px; }
+.loc-page .loc-title{ font-weight: 900; letter-spacing: -0.02em; }
+
+.loc-page .map-wrap{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+.loc-page .map-open{
+  position:absolute;
+  right: 12px;
+  top: 12px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  color: rgba(255,255,255,.92);
+  background: rgba(10,16,32,.55);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+}
+.loc-page .map-open:hover{
+  background: rgba(10,16,32,.70);
+  border-color: rgba(255,255,255,.28);
+}
+
+/* Gallery */
+.loc-page .gallery{ margin-top: 14px; }
+.loc-page .gallery-top{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 12px 0 10px;
+}
+.loc-page .gallery-title{ font-weight: 900; }
+.loc-page .gallery-sub{ font-size: 12px; color: rgba(255,255,255,.62); }
+
+.loc-page .gallery-rail{
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 12px 44px;
+}
+.loc-page .gallery.compact .gallery-rail{ padding: 10px 44px; }
+
+.loc-page .rail{
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.loc-page .rail::-webkit-scrollbar{ display:none; }
+
+.loc-page .thumb{
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor:pointer;
+  scroll-snap-align: start;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.20);
+}
+.loc-page .thumb img{
+  width: 100%;
+  aspect-ratio: 16/10;   /* ✅ 균일 크기 핵심 */
+  object-fit: cover;
+  display:block;
+  filter: saturate(95%) contrast(105%) brightness(92%);
+  transform: scale(1.01);
+}
+.loc-page .thumb span{
+  position:absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255,255,255,.92);
+  background: rgba(10,16,32,.55);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+}
+
+.loc-page .thumb:hover img{
+  filter: saturate(105%) contrast(108%) brightness(98%);
+  transform: scale(1.03);
+  transition: .25s ease;
+}
+
+/* Buttons: subtle, show on hover */
+.loc-page .rail-btn{
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px; height: 34px;
+  border-radius: 999px
