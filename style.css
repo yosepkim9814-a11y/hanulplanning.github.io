@@ -474,3 +474,127 @@ details p{ margin: 10px 0 0; color: rgba(255,255,255,.72); line-height:1.7; }
 .tile-body{
   padding: 26px 22px;
 }
+/* Locations Page */
+.page-hero{
+  padding-top: 110px;
+  padding-bottom: 54px;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+}
+.page-title{
+  margin: 10px 0 8px;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+.page-sub{
+  margin: 0;
+  color: rgba(255,255,255,.70);
+  line-height: 1.8;
+  max-width: 780px;
+}
+
+.locations-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.loc{
+  padding: 18px;
+}
+
+.loc-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.loc-eyebrow{
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 900;
+  color: rgba(255,255,255,.62);
+}
+
+.loc-title{
+  margin: 6px 0 0;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.loc-tag{
+  font-size: 11px;
+  letter-spacing: .18em;
+  font-weight: 900;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.80);
+  white-space: nowrap;
+}
+
+.loc-map{
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,.18);
+}
+
+.loc-body{
+  margin-top: 14px;
+}
+
+.loc-row{
+  display:grid;
+  grid-template-columns: 78px 1fr;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.loc-row:first-child{
+  border-top: none;
+}
+
+.loc-k{
+  color: rgba(255,255,255,.62);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.loc-v{
+  color: rgba(255,255,255,.88);
+  line-height: 1.6;
+}
+
+.loc-v a{
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.24);
+}
+
+.loc-v a:hover{
+  border-bottom-color: rgba(255,255,255,.6);
+}
+
+.loc-split{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.loc-mini{
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.loc-mini-title{
+  font-wei
