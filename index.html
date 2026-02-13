@@ -3,138 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HANUL PLANNING CO., LTD | Denim & Woven Production</title>
-  <meta name="description" content="한울플래닝은 데님/우븐 OEM 생산 전문 글로벌 프로덕션 파트너입니다. 샘플 개발부터 벌크 생산, QC, 납기까지 안정적으로 운영합니다." />
+  <title>HANUL PLANNING | Denim & Woven OEM</title>
+  <meta name="description" content="한울플래닝은 데님·우븐 OEM 생산 전문 글로벌 프로덕션 파트너입니다." />
 
-  <!-- Pretendard font -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="light-ui">
+  <header class="nav nav-light">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING 로고" />
+        <span class="brand-text">HANUL PLANNING</span>
+      </a>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="#top"><img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING"></a>
-      <nav class="nav-menu">
-        <a href="#about">ABOUT</a>
-        <a href="#services">SERVICES</a>
-        <a href="#products">PRODUCTS</a>
-        <a href="directions.html">LOCATIONS</a>
-        <a href="#contact">CONTACT</a>
+      <nav class="menu">
+        <a href="about.html" data-ko="회사소개">ABOUT</a>
+        <a href="services.html" data-ko="서비스">SERVICES</a>
+        <a href="products.html" data-ko="제품">PRODUCTS</a>
+        <a href="directions.html" data-ko="오시는 길">LOCATIONS</a>
+        <a href="contact.html" data-ko="문의">CONTACT</a>
       </nav>
+
+      <button class="hamburger" aria-label="메뉴 열기">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="about.html" data-ko="회사소개">ABOUT</a>
+      <a href="services.html" data-ko="서비스">SERVICES</a>
+      <a href="products.html" data-ko="제품">PRODUCTS</a>
+      <a href="directions.html" data-ko="오시는 길">LOCATIONS</a>
+      <a href="contact.html" data-ko="문의">CONTACT</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-bg"></div>
-    <div class="hero-content container">
-      <h1 class="hero-title">DENIM & WOVEN GARMENT PRODUCTION</h1>
-      <p class="hero-sub">글로벌 생산 네트워크로 품질·납기를 책임지는 파트너</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn primary">의류제작 문의</a>
-        <a href="#about" class="btn secondary">회사소개 보기</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section about">
+  <main class="landing">
     <div class="container">
-      <h2 class="section-title">Company Overview</h2>
-      <p class="section-text">한울플래닝은 2001년 설립 이래 20년 이상의 글로벌 OEM 생산 경험으로 데님 & 우븐 제품의 기획부터 생산, QC, 출고까지 총괄 운영합니다.</p>
-      <div class="grid cards-4">
-        <div class="card">
-          <h3>Est. 2001</h3>
-          <p>20년 이상의 안정적인 운영</p>
-        </div>
-        <div class="card">
-          <h3>Denim & Woven</h3>
-          <p>데님 및 우븐 제품 전문 생산</p>
-        </div>
-        <div class="card">
-          <h3>Global OEM</h3>
-          <p>베트남 현지 생산 네트워크</p>
-        </div>
-        <div class="card">
-          <h3>QC Management</h3>
-          <p>엄격한 품질관리 & 납기 운영</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="hero2">
+        <div class="hero2-left">
+          <div class="tag">DENIM & WOVEN GARMENT PRODUCTION PARTNER</div>
+          <h1>글로벌 OEM 생산 운영 파트너</h1>
+          <p>
+            데님 · 우븐 제품을 중심으로 샘플 개발부터 벌크 생산, QC, 납기까지<br/>
+            안정적인 생산 운영을 지원합니다.
+          </p>
+          <div class="hero2-cta">
+            <a class="btn2 primary" href="contact.html">문의하기</a>
+            <a class="btn2 ghost" href="about.html">회사소개 보기</a>
+          </div>
 
-  <!-- SERVICES -->
-  <section id="services" class="section services alt">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="grid cards-3">
-        <div class="card">
-          <h3>Sample Development</h3>
-          <p>소재/부자재 소싱, PP/QC/TOP 진행 및 샘플 개발</p>
+          <div class="hero2-stats">
+            <div class="stat">
+              <div class="n">20+</div>
+              <div class="k">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="n">Denim</div>
+              <div class="k">Ho Chi Minh</div>
+            </div>
+            <div class="stat">
+              <div class="n">Woven</div>
+              <div class="k">Hung Yen</div>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Production Management</h3>
-          <p>라인 계획, 공정/공장 운영, 납기 스케줄 관리</p>
-        </div>
-        <div class="card">
-          <h3>QC & Shipping</h3>
-          <p>측정/패킹/CTN 가이드 기반 품질 검수 및 출고 준비</p>
+
+        <div class="hero2-right">
+          <div class="hero2-card">
+            <div class="hc-title">Quick Links</div>
+            <a class="hc-link" href="about.html">Company Overview & History</a>
+            <a class="hc-link" href="services.html">Services</a>
+            <a class="hc-link" href="products.html">Products</a>
+            <a class="hc-link" href="directions.html">Locations</a>
+            <a class="hc-link" href="contact.html">Contact</a>
+          </div>
+          <div class="hero2-media">
+            <video autoplay muted loop playsinline>
+              <source src="assets/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- PRODUCTS -->
-  <section id="products" class="section products">
-    <div class="container">
-      <h2 class="section-title">Featured Products</h2>
-      <div class="grid cards-4">
-        <div class="product-card"><img src="assets/p1.png" alt="제품"><p>상의</p></div>
-        <div class="product-card"><img src="assets/p2.png" alt="제품"><p>데님 팬츠</p></div>
-        <div class="product-card"><img src="assets/p3.png" alt="제품"><p>우븐 팬츠</p></div>
-        <div class="product-card"><img src="assets/p4.png" alt="제품"><p>아우터</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact alt">
-    <div class="container">
-      <h2 class="section-title">문의하기</h2>
-      <p class="section-text">기획 / 샘플 / 생산 / OEM 관련 문의를 남겨주세요.</p>
-
-      <form class="contact-form" action="https://formspree.io/f/mkordgjo" method="POST">
-        <div class="grid form-grid">
-          <label>업체명<input name="company" required></label>
-          <label>카테고리
-            <select name="category" required>
-              <option value="">선택</option><option>데님</option><option>우븐</option><option>니트</option><option>아우터</option>
-            </select>
-          </label>
-          <label>제작 품목<input name="item" required></label>
-          <label>참고사항<textarea name="detail" rows="5" required></textarea></label>
-          <label>납기/수량<input name="qty"></label>
-          <label>연락처<input name="phone" required></label>
-          <label>이메일<input name="email" type="email" required></label>
-        </div>
-        <button class="btn primary full">문의 보내기</button>
-      </form>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      © 2001–2026 HANUL PLANNING CO., LTD
-    </div>
+  <footer class="footer footer-light">
+    <div class="container">© HANUL PLANNING CO., LTD</div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
-
