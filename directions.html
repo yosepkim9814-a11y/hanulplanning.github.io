@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Locations | HANUL PLANNING</title>
+  <meta name="description" content="한울플래닝 본사 및 베트남 공장 위치 안내 (오시는 길)" />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV (index.html과 동일) -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#top" aria-label="홈으로">
+        <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING 로고" />
+        <span class="brand-text">HANUL PLANNING</span>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html#about" data-ko="회사소개">ABOUT</a>
+        <a href="index.html#services" data-ko="서비스">SERVICES</a>
+        <a href="index.html#products" data-ko="제품">PRODUCTS</a>
+        <a class="is-active" href="directions.html" data-ko="오시는 길">LOCATIONS</a>
+        <a href="index.html#contact" data-ko="문의">CONTACT</a>
+      </nav>
+
+      <button class="hamburger" aria-label="메뉴 열기">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#about" data-ko="회사소개">ABOUT</a>
+      <a href="index.html#services" data-ko="서비스">SERVICES</a>
+      <a href="index.html#products" data-ko="제품">PRODUCTS</a>
+      <a class="is-active" href="directions.html" data-ko="오시는 길">LOCATIONS</a>
+      <a href="index.html#contact" data-ko="문의">CONTACT</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <main class="page-hero">
+    <div class="container">
+      <div class="kicker reveal">VISIT & CONTACT</div>
+      <h1 class="page-title reveal delay-1">Locations</h1>
+      <p class="page-sub reveal delay-2">본사 및 베트남 생산 거점 위치 안내입니다.</p>
+    </div>
+  </main>
+
+  <!-- LOCATIONS -->
+  <section class="section alt">
+    <div class="container">
+      <div class="locations-grid">
+
+        <!-- KOREA HQ -->
+        <article class="loc card reveal">
+          <div class="loc-head">
+            <div>
+              <div class="loc-eyebrow">KOREA</div>
+              <h2 class="loc-title">Headquarters</h2>
+            </div>
+            <div class="loc-tag">SEOUL</div>
+          </div>
+
+          <!-- 지도: 이미지로 쓰려면 assets/map-korea.jpg 업로드 후 아래 img 사용 -->
+          <!-- <img class="loc-map" src="assets/map-korea.jpg" alt="한국 본사 지도" /> -->
+
+          <!-- 지도: 바로 보이게 하려면 iframe(간단) -->
+          <iframe class="loc-map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=G-Plus%20Tower,%20123%20Digital-ro%2026-gil,%20Guro-gu,%20Seoul&output=embed">
+          </iframe>
+
+          <div class="loc-body">
+            <div class="loc-row">
+              <div class="loc-k">주소</div>
+              <div class="loc-v">#808, G-Plus Tower, 123, Digital-ro 26-gil, Guro-gu, Seoul, Korea</div>
+            </div>
+            <div class="loc-row">
+              <div class="loc-k">이메일</div>
+              <div class="loc-v"><a href="mailto:hanul@hanulplanning.com">hanul@hanulplanning.com</a></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- VIETNAM FACTORIES -->
+        <article class="loc card reveal delay-1">
+          <div class="loc-head">
+            <div>
+              <div class="loc-eyebrow">VIETNAM</div>
+              <h2 class="loc-title">Factories</h2>
+            </div>
+            <div class="loc-tag">PRODUCTION</div>
+          </div>
+
+          <!-- 지도(1): 데님 - 호치민 -->
+          <div class="loc-split">
+            <div class="loc-mini">
+              <div class="loc-mini-title">Denim Factory (Ho Chi Minh City)</div>
+
+              <!-- 이미지 지도 사용 시: assets/map-vn-hcm.jpg -->
+              <!-- <img class="loc-map-mini" src="assets/map-vn-hcm.jpg" alt="호치민 데님 공장 지도" /> -->
+
+              <iframe class="loc-map-mini"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Ho%20Chi%20Minh%20City,%20Vietnam&output=embed">
+              </iframe>
+
+              <div class="loc-mini-body">
+                <div class="loc-row">
+                  <div class="loc-k">주소</div>
+                  <div class="loc-v">Ho Chi Minh City, Vietnam (상세주소 추후 입력)</div>
+                </div>
+                <div class="loc-row">
+                  <div class="loc-k">이메일</div>
+                  <div class="loc-v"><span class="hint">베트남 공장 이메일 입력</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 지도(2): 우븐 - 헝옌 -->
+            <div class="loc-mini">
+              <div class="loc-mini-title">Woven Factory (Hung Yen Province)</div>
+
+              <!-- 이미지 지도 사용 시: assets/map-vn-hungyen.jpg -->
+              <!-- <img class="loc-map-mini" src="assets/map-vn-hungyen.jpg" alt="헝옌 우븐 공장 지도" /> -->
+
+              <iframe class="loc-map-mini"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Hung%20Yen%20Province,%20Vietnam&output=embed">
+              </iframe>
+
+              <div class="loc-mini-body">
+                <div class="loc-row">
+                  <div class="loc-k">주소</div>
+                  <div class="loc-v">Hung Yen Province, Vietnam (상세주소 추후 입력)</div>
+                </div>
+                <div class="loc-row">
+                  <div class="loc-k">이메일</div>
+                  <div class="loc-v"><span class="hint">베트남 공장 이메일 입력</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© HANUL PLANNING CO., LTD</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
