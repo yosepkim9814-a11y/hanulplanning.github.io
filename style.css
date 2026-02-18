@@ -1705,3 +1705,7 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
   background: #0b1020;
   color: #fff;
 }
+/* Fix: service tiles text visibility */
+.tile-body h3{ color: rgba(255,255,255,.92); }
+.tile-body p{ color: rgba(255,255,255,.72) !important; }
+.tile{ background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.08); }
