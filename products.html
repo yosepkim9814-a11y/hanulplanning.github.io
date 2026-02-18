@@ -4,104 +4,204 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Products | HANUL PLANNING</title>
+  <meta name="description" content="한울플래닝 제품 카테고리" />
 
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="products-page">
-
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html#top">
       <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING" />
       <span class="brand-text">HANUL PLANNING</span>
+      <span class="brand-text-ko">한울플래닝</span>
     </a>
 
     <nav class="menu">
-      <a href="about.html"><span class="en">ABOUT</span></a>
-      <a href="services.html"><span class="en">SERVICES</span></a>
-      <a class="is-active" href="products.html"><span class="en">PRODUCTS</span></a>
-      <a href="directions.html"><span class="en">LOCATIONS</span></a>
-      <a href="contact.html"><span class="en">CONTACT</span></a>
+      <a href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
+      <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
+      <a class="is-active" href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
+      <a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
+      <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
     </nav>
+
+    <button class="hamburger" aria-label="메뉴 열기">☰</button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
+    <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
+    <a class="is-active" href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
+    <a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
+    <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="products-hero">
   <div class="container">
     <div class="products-eyebrow">HANUL PLANNING</div>
     <h1>Products</h1>
-    <p>데님 및 우븐 기반의 OEM 생산 아이템</p>
+    <p>데님 · 우븐 기반 OEM 생산 아이템 (카테고리별 샘플)</p>
   </div>
 </section>
 
-<!-- PRODUCT CATEGORIES -->
 <section class="products-section">
   <div class="container">
 
-    <!-- Denim Pants -->
+    <!-- 1) Denim Pants -->
     <div class="product-category">
-      <h2>Denim Pants</h2>
+      <div class="cat-head">
+        <h2>Denim Pants</h2>
+        <div class="cat-sub">데님 팬츠</div>
+      </div>
+
       <div class="product-grid">
-        <div class="product-card">
-          <img src="assets/products/denim-pants-01.png" alt="Denim Pants">
-        </div>
-        <div class="product-card">
-          <img src="assets/products/denim-pants-02.png" alt="Denim Pants">
-        </div>
+        <!-- 10 items (example filenames) -->
+        <button class="p-card" data-full="assets/products/denim-pants-01.png" data-cap="Denim Pants 01"><img src="assets/products/denim-pants-01.png" alt="Denim Pants 01"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-02.png" data-cap="Denim Pants 02"><img src="assets/products/denim-pants-02.png" alt="Denim Pants 02"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-03.png" data-cap="Denim Pants 03"><img src="assets/products/denim-pants-03.png" alt="Denim Pants 03"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-04.png" data-cap="Denim Pants 04"><img src="assets/products/denim-pants-04.png" alt="Denim Pants 04"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-05.png" data-cap="Denim Pants 05"><img src="assets/products/denim-pants-05.png" alt="Denim Pants 05"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-06.png" data-cap="Denim Pants 06"><img src="assets/products/denim-pants-06.png" alt="Denim Pants 06"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-07.png" data-cap="Denim Pants 07"><img src="assets/products/denim-pants-07.png" alt="Denim Pants 07"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-08.png" data-cap="Denim Pants 08"><img src="assets/products/denim-pants-08.png" alt="Denim Pants 08"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-09.png" data-cap="Denim Pants 09"><img src="assets/products/denim-pants-09.png" alt="Denim Pants 09"></button>
+        <button class="p-card" data-full="assets/products/denim-pants-10.png" data-cap="Denim Pants 10"><img src="assets/products/denim-pants-10.png" alt="Denim Pants 10"></button>
       </div>
     </div>
 
-    <!-- Denim Jackets & Shirts -->
+    <!-- 2) Denim Jackets & Shirts -->
     <div class="product-category">
-      <h2>Denim Jackets & Shirts</h2>
+      <div class="cat-head">
+        <h2>Denim Jackets & Shirts</h2>
+        <div class="cat-sub">데님 자켓 · 셔츠</div>
+      </div>
+
       <div class="product-grid">
-        <div class="product-card">
-          <img src="assets/products/denim-jacket-01.png" alt="Denim Jacket">
-        </div>
-        <div class="product-card">
-          <img src="assets/products/denim-shirt-01.png" alt="Denim Shirt">
-        </div>
+        <button class="p-card" data-full="assets/products/denim-top-01.png" data-cap="Denim Jacket/Shirt 01"><img src="assets/products/denim-top-01.png" alt="Denim Top 01"></button>
+        <button class="p-card" data-full="assets/products/denim-top-02.png" data-cap="Denim Jacket/Shirt 02"><img src="assets/products/denim-top-02.png" alt="Denim Top 02"></button>
+        <button class="p-card" data-full="assets/products/denim-top-03.png" data-cap="Denim Jacket/Shirt 03"><img src="assets/products/denim-top-03.png" alt="Denim Top 03"></button>
+        <button class="p-card" data-full="assets/products/denim-top-04.png" data-cap="Denim Jacket/Shirt 04"><img src="assets/products/denim-top-04.png" alt="Denim Top 04"></button>
+        <button class="p-card" data-full="assets/products/denim-top-05.png" data-cap="Denim Jacket/Shirt 05"><img src="assets/products/denim-top-05.png" alt="Denim Top 05"></button>
+        <button class="p-card" data-full="assets/products/denim-top-06.png" data-cap="Denim Jacket/Shirt 06"><img src="assets/products/denim-top-06.png" alt="Denim Top 06"></button>
+        <button class="p-card" data-full="assets/products/denim-top-07.png" data-cap="Denim Jacket/Shirt 07"><img src="assets/products/denim-top-07.png" alt="Denim Top 07"></button>
+        <button class="p-card" data-full="assets/products/denim-top-08.png" data-cap="Denim Jacket/Shirt 08"><img src="assets/products/denim-top-08.png" alt="Denim Top 08"></button>
+        <button class="p-card" data-full="assets/products/denim-top-09.png" data-cap="Denim Jacket/Shirt 09"><img src="assets/products/denim-top-09.png" alt="Denim Top 09"></button>
+        <button class="p-card" data-full="assets/products/denim-top-10.png" data-cap="Denim Jacket/Shirt 10"><img src="assets/products/denim-top-10.png" alt="Denim Top 10"></button>
       </div>
     </div>
 
-    <!-- Woven Shirts -->
+    <!-- 3) Woven Shirts -->
     <div class="product-category">
-      <h2>Woven Shirts</h2>
+      <div class="cat-head">
+        <h2>Woven Shirts</h2>
+        <div class="cat-sub">우븐 셔츠</div>
+      </div>
+
       <div class="product-grid">
-        <div class="product-card">
-          <img src="assets/products/woven-shirt-01.png" alt="Woven Shirt">
-        </div>
+        <button class="p-card" data-full="assets/products/woven-shirt-01.png" data-cap="Woven Shirt 01"><img src="assets/products/woven-shirt-01.png" alt="Woven Shirt 01"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-02.png" data-cap="Woven Shirt 02"><img src="assets/products/woven-shirt-02.png" alt="Woven Shirt 02"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-03.png" data-cap="Woven Shirt 03"><img src="assets/products/woven-shirt-03.png" alt="Woven Shirt 03"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-04.png" data-cap="Woven Shirt 04"><img src="assets/products/woven-shirt-04.png" alt="Woven Shirt 04"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-05.png" data-cap="Woven Shirt 05"><img src="assets/products/woven-shirt-05.png" alt="Woven Shirt 05"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-06.png" data-cap="Woven Shirt 06"><img src="assets/products/woven-shirt-06.png" alt="Woven Shirt 06"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-07.png" data-cap="Woven Shirt 07"><img src="assets/products/woven-shirt-07.png" alt="Woven Shirt 07"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-08.png" data-cap="Woven Shirt 08"><img src="assets/products/woven-shirt-08.png" alt="Woven Shirt 08"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-09.png" data-cap="Woven Shirt 09"><img src="assets/products/woven-shirt-09.png" alt="Woven Shirt 09"></button>
+        <button class="p-card" data-full="assets/products/woven-shirt-10.png" data-cap="Woven Shirt 10"><img src="assets/products/woven-shirt-10.png" alt="Woven Shirt 10"></button>
       </div>
     </div>
 
-    <!-- Jackets & Blazers -->
+    <!-- 4) Tailored Jackets & Blazers -->
     <div class="product-category">
-      <h2>Tailored Jackets & Blazers</h2>
+      <div class="cat-head">
+        <h2>Tailored Jackets & Blazers</h2>
+        <div class="cat-sub">자켓 · 블레이져</div>
+      </div>
+
       <div class="product-grid">
-        <div class="product-card">
-          <img src="assets/products/blazer-01.png" alt="Blazer">
-        </div>
+        <button class="p-card" data-full="assets/products/blazer-01.png" data-cap="Blazer 01"><img src="assets/products/blazer-01.png" alt="Blazer 01"></button>
+        <button class="p-card" data-full="assets/products/blazer-02.png" data-cap="Blazer 02"><img src="assets/products/blazer-02.png" alt="Blazer 02"></button>
+        <button class="p-card" data-full="assets/products/blazer-03.png" data-cap="Blazer 03"><img src="assets/products/blazer-03.png" alt="Blazer 03"></button>
+        <button class="p-card" data-full="assets/products/blazer-04.png" data-cap="Blazer 04"><img src="assets/products/blazer-04.png" alt="Blazer 04"></button>
+        <button class="p-card" data-full="assets/products/blazer-05.png" data-cap="Blazer 05"><img src="assets/products/blazer-05.png" alt="Blazer 05"></button>
+        <button class="p-card" data-full="assets/products/blazer-06.png" data-cap="Blazer 06"><img src="assets/products/blazer-06.png" alt="Blazer 06"></button>
+        <button class="p-card" data-full="assets/products/blazer-07.png" data-cap="Blazer 07"><img src="assets/products/blazer-07.png" alt="Blazer 07"></button>
+        <button class="p-card" data-full="assets/products/blazer-08.png" data-cap="Blazer 08"><img src="assets/products/blazer-08.png" alt="Blazer 08"></button>
+        <button class="p-card" data-full="assets/products/blazer-09.png" data-cap="Blazer 09"><img src="assets/products/blazer-09.png" alt="Blazer 09"></button>
+        <button class="p-card" data-full="assets/products/blazer-10.png" data-cap="Blazer 10"><img src="assets/products/blazer-10.png" alt="Blazer 10"></button>
       </div>
     </div>
 
-    <!-- Coats -->
+    <!-- 5) Coats & Outerwear -->
     <div class="product-category">
-      <h2>Coats & Outerwear</h2>
+      <div class="cat-head">
+        <h2>Coats & Outerwear</h2>
+        <div class="cat-sub">코트</div>
+      </div>
+
       <div class="product-grid">
-        <div class="product-card">
-          <img src="assets/products/coat-01.png" alt="Coat">
-        </div>
+        <button class="p-card" data-full="assets/products/coat-01.png" data-cap="Coat 01"><img src="assets/products/coat-01.png" alt="Coat 01"></button>
+        <button class="p-card" data-full="assets/products/coat-02.png" data-cap="Coat 02"><img src="assets/products/coat-02.png" alt="Coat 02"></button>
+        <button class="p-card" data-full="assets/products/coat-03.png" data-cap="Coat 03"><img src="assets/products/coat-03.png" alt="Coat 03"></button>
+        <button class="p-card" data-full="assets/products/coat-04.png" data-cap="Coat 04"><img src="assets/products/coat-04.png" alt="Coat 04"></button>
+        <button class="p-card" data-full="assets/products/coat-05.png" data-cap="Coat 05"><img src="assets/products/coat-05.png" alt="Coat 05"></button>
+        <button class="p-card" data-full="assets/products/coat-06.png" data-cap="Coat 06"><img src="assets/products/coat-06.png" alt="Coat 06"></button>
+        <button class="p-card" data-full="assets/products/coat-07.png" data-cap="Coat 07"><img src="assets/products/coat-07.png" alt="Coat 07"></button>
+        <button class="p-card" data-full="assets/products/coat-08.png" data-cap="Coat 08"><img src="assets/products/coat-08.png" alt="Coat 08"></button>
+        <button class="p-card" data-full="assets/products/coat-09.png" data-cap="Coat 09"><img src="assets/products/coat-09.png" alt="Coat 09"></button>
+        <button class="p-card" data-full="assets/products/coat-10.png" data-cap="Coat 10"><img src="assets/products/coat-10.png" alt="Coat 10"></button>
       </div>
     </div>
 
   </div>
 </section>
+
+<!-- Lightbox -->
+<dialog class="plb" id="plb">
+  <button class="plb-x" type="button" aria-label="닫기">×</button>
+  <figure class="plb-fig">
+    <img id="plbImg" alt="">
+    <figcaption id="plbCap"></figcaption>
+  </figure>
+</dialog>
 
 <footer class="footer">
   <div class="container">© HANUL PLANNING CO., LTD</div>
 </footer>
+
+<script src="script.js"></script>
+
+<script>
+  (function(){
+    const dlg = document.getElementById('plb');
+    const img = document.getElementById('plbImg');
+    const cap = document.getElementById('plbCap');
+    const closeBtn = dlg?.querySelector('.plb-x');
+
+    document.querySelectorAll('.p-card').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-full');
+        const text = btn.getAttribute('data-cap') || '';
+        img.src = src;
+        img.alt = text;
+        cap.textContent = text;
+        dlg.showModal();
+      });
+    });
+
+    closeBtn?.addEventListener('click', () => dlg.close());
+    dlg?.addEventListener('click', (e) => {
+      const fig = dlg.querySelector('.plb-fig');
+      const r = fig.getBoundingClientRect();
+      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) dlg.close();
+    });
+  })();
+</script>
 
 </body>
 </html>
