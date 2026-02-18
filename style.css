@@ -1998,3 +1998,95 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
 .products-section .p-card:hover img{
   filter: drop-shadow(0 34px 40px rgba(0,0,0,.30)) brightness(1.10) contrast(1.07);
 }
+/* ===== Contact page: light & fresh ===== */
+body.contact-light{
+  background: #f6f7fb;
+  color: #0b1020;
+}
+
+/* nav도 밝게 */
+body.contact-light .nav{
+  background: rgba(255,255,255,.86);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+body.contact-light .brand{ color:#0b1020; }
+body.contact-light .menu a{ color: rgba(11,16,32,.70); }
+body.contact-light .menu a::after{ color:#0b1020; }
+body.contact-light .hamburger{
+  color:#0b1020;
+  border-color: rgba(0,0,0,.12);
+}
+body.contact-light .mobile-menu a{
+  color:#0b1020;
+  border-bottom-color: rgba(0,0,0,.08);
+}
+
+/* hero */
+body.contact-light .page-hero{
+  background: linear-gradient(180deg, rgba(11,16,32,.03), rgba(255,255,255,0));
+}
+body.contact-light .kicker{ color: rgba(11,16,32,.55); }
+body.contact-light .page-sub{ color: rgba(11,16,32,.70); }
+
+/* ✅ 화이트 영역을 넓게: 섹션 alt를 라이트로 */
+body.contact-light .section.alt{
+  background: transparent; /* 전체 배경은 밝게 */
+}
+body.contact-light .contact-grid{
+  margin-top: 18px;
+  background: #ffffff;                 /* ✅ 큰 화이트 패널 */
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.06);
+}
+
+/* 카드들도 더 산뜻하게 */
+body.contact-light .card{
+  background: rgba(11,16,32,.02);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* FAQ */
+body.contact-light summary{ color: rgba(11,16,32,.92); }
+body.contact-light details{
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+body.contact-light details p{
+  color: rgba(11,16,32,.70);
+}
+
+/* 폼 */
+body.contact-light .form label{ color: rgba(11,16,32,.85); }
+body.contact-light .form input,
+body.contact-light .form select,
+body.contact-light .form textarea{
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.10);
+  color: #0b1020;
+}
+body.contact-light .form input::placeholder,
+body.contact-light .form textarea::placeholder{
+  color: rgba(11,16,32,.45);
+}
+
+/* 버튼 */
+body.contact-light .btn.primary{
+  background: #0b1020;
+  color: #ffffff;
+  border-color: #0b1020;
+}
+body.contact-light .btn.primary:hover{ opacity: .92; }
+
+body.contact-light .form-hint{
+  color: rgba(11,16,32,.55);
+}
+
+/* footer */
+body.contact-light .footer{
+  border-top: 1px solid rgba(0,0,0,.06);
+  color: rgba(11,16,32,.62);
+}
+body.contact-light .foot{
+  color: rgba(11,16,32,.65);
+}
