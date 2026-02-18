@@ -2346,3 +2346,145 @@ body.dir-clean .factory-photos img{
   border: 1px solid rgba(0,0,0,.10) !important;
   filter: saturate(98%) contrast(105%) brightness(98%) !important;
 }
+/* ===== Home auto-collapse hero ===== */
+.hero{
+  transition: height .75s ease, padding-top .75s ease;
+}
+
+.hero.hero-collapse{
+  height: 52vh;           /* 반절 정도로 축소 */
+  padding-top: 64px;
+}
+
+/* 아래 reveal 섹션: 처음엔 숨김 */
+.home-reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+  padding: 56px 0 76px;
+  background: #f3f5f7;     /* About 느낌 화이트 영역 */
+  color: #0b1020;
+}
+
+.home-reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* layout */
+.reveal-grid{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.reveal-eyebrow{
+  font-size: 12px;
+  letter-spacing: .28em;
+  font-weight: 900;
+  color: rgba(11,16,32,.55);
+}
+
+.reveal-title{
+  margin: 10px 0 10px;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+}
+
+.reveal-sub{
+  margin: 0;
+  color: rgba(11,16,32,.72);
+  line-height: 1.85;
+}
+
+/* points */
+.reveal-points{
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+.pt{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+.pt-k{
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 950;
+  color: rgba(11,16,32,.55);
+}
+.pt-v{
+  margin-top: 6px;
+  font-weight: 900;
+  color: rgba(11,16,32,.90);
+}
+
+/* diagram */
+.reveal-diagram{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.06);
+}
+
+.diag{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items:center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(11,16,32,.03);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.node{
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #0b1020;
+  color: #fff;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.arrow{
+  color: rgba(11,16,32,.45);
+  font-weight: 900;
+}
+
+.diag-cards{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.dcard{
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: rgba(11,16,32,.04);
+  border: 1px solid rgba(0,0,0,.06);
+}
+.dtag{
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 950;
+  color: rgba(11,16,32,.55);
+}
+.dval{
+  margin-top: 6px;
+  font-weight: 950;
+  color: rgba(11,16,32,.90);
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .hero.hero-collapse{ height: 58vh; }
+  .reveal-grid{ grid-template-columns: 1fr; }
+}
