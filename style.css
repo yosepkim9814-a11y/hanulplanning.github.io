@@ -2165,3 +2165,109 @@ body.contact-light .footer{
   border-top: 1px solid rgba(0,0,0,.06);
   color: rgba(11,16,32,.62);
 }
+/* =========================
+   CONTACT - About Tone Match
+========================= */
+body.contact-light{
+  background: #f3f5f7;   /* About와 동일 */
+  color: #0b1020;
+}
+
+/* nav */
+body.contact-light .nav{
+  background: rgba(255,255,255,.78);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+/* hero */
+body.contact-light .page-hero{
+  background: transparent;
+}
+body.contact-light .kicker{
+  color: rgba(11,16,32,.55);
+}
+body.contact-light .page-sub{
+  color: rgba(11,16,32,.72);
+}
+
+/* 컨텐츠 영역 */
+body.contact-light .section.alt{
+  background: transparent;
+}
+
+body.contact-light .contact-grid{
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* 카드 */
+body.contact-light .card{
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+}
+
+/* FAQ */
+body.contact-light summary{
+  color: #0b1020;
+  font-weight: 800;
+}
+body.contact-light details{
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+body.contact-light details p{
+  color: rgba(11,16,32,.72);
+}
+
+/* 입력폼 */
+body.contact-light .form label{
+  color: rgba(11,16,32,.85);
+  font-weight: 700;
+}
+body.contact-light .form input,
+body.contact-light .form select,
+body.contact-light .form textarea{
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.12);
+  color: #0b1020;
+  border-radius: 12px;
+}
+body.contact-light .form input:focus,
+body.contact-light .form textarea:focus,
+body.contact-light .form select:focus{
+  outline: none;
+  border-color: #0b1020;
+  box-shadow: 0 0 0 3px rgba(11,16,32,.08);
+}
+
+/* 버튼 - 네이비 포인트 유지 */
+body.contact-light .btn.primary{
+  background: #0b1020;
+  color: #ffffff;
+  border-color: #0b1020;
+  border-radius: 12px;
+  font-weight: 900;
+}
+body.contact-light .btn.primary:hover{
+  background: #142544;
+}
+
+/* 하단 정보 */
+body.contact-light .foot{
+  color: rgba(11,16,32,.70);
+}
+
+body.contact-light .footer{
+  border-top: 1px solid rgba(0,0,0,.06);
+  color: rgba(11,16,32,.60);
+}
+body.contact-light .btn.primary{
+  transition: all .25s ease;
+  box-shadow: 0 8px 24px rgba(11,16,32,.15);
+}
+body.contact-light .btn.primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(11,16,32,.20);
+}
