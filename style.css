@@ -2090,3 +2090,78 @@ body.contact-light .footer{
 body.contact-light .foot{
   color: rgba(11,16,32,.65);
 }
+/* ===== Contact page: balanced like ABOUT(light) ===== */
+body.contact-light{
+  background: #f3f5f7;           /* About light 톤 */
+  color: #0b1020;
+}
+
+/* nav: 과하게 하얗지 않게 */
+body.contact-light .nav{
+  background: rgba(255,255,255,.78);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+/* hero는 About light 느낌으로 */
+body.contact-light .page-hero{
+  background: transparent;
+}
+body.contact-light .kicker{ color: rgba(11,16,32,.52); }
+body.contact-light .page-sub{ color: rgba(11,16,32,.72); }
+
+/* ✅ contact-grid를 “큰 흰 박스”가 아니라, 2개의 카드가 균형 있게 보이게 */
+body.contact-light .contact-grid{
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  margin-top: 18px;
+}
+
+/* 카드 = About의 overview-card 같은 질감 */
+body.contact-light .card{
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+/* FAQ */
+body.contact-light summary{ color: rgba(11,16,32,.92); }
+body.contact-light details{
+  border-top: 1px solid rgba(0,0,0,.10);
+}
+body.contact-light details p{
+  color: rgba(11,16,32,.72);
+}
+
+/* 폼 인풋도 너무 새하얗지 않게 (About 카드 안에 자연스럽게) */
+body.contact-light .form input,
+body.contact-light .form select,
+body.contact-light .form textarea{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.12);
+  color: #0b1020;
+}
+body.contact-light .form input::placeholder,
+body.contact-light .form textarea::placeholder{
+  color: rgba(11,16,32,.48);
+}
+
+/* 버튼: About 톤 유지(너무 강하지 않게) */
+body.contact-light .btn.primary{
+  background: #0b1020;
+  color: #ffffff;
+  border-color: rgba(11,16,32,.22);
+}
+body.contact-light .btn.primary:hover{ opacity: .93; }
+
+body.contact-light .form-hint{ color: rgba(11,16,32,.60); }
+
+/* footer/foot 텍스트 */
+body.contact-light .foot{ color: rgba(11,16,32,.70); }
+body.contact-light .footer{
+  border-top: 1px solid rgba(0,0,0,.06);
+  color: rgba(11,16,32,.62);
+}
