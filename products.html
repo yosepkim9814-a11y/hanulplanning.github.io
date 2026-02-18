@@ -4,86 +4,104 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Products | HANUL PLANNING</title>
-  <meta name="description" content="한울플래닝 생산 제품" />
 
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html#top">
-        <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING 로고" />
-        <span class="brand-text">HANUL PLANNING</span>
-      </a>
+<body class="products-page">
 
-      <nav class="menu">
-        <a href="about.html" data-ko="회사소개">ABOUT</a>
-        <a href="services.html" data-ko="서비스">SERVICES</a>
-        <a class="is-active" href="products.html" data-ko="제품">PRODUCTS</a>
-        <a href="directions.html" data-ko="오시는 길">LOCATIONS</a>
-        <a href="contact.html" data-ko="문의">CONTACT</a>
-      </nav>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING" />
+      <span class="brand-text">HANUL PLANNING</span>
+    </a>
 
-      <button class="hamburger">☰</button>
-    </div>
+    <nav class="menu">
+      <a href="about.html"><span class="en">ABOUT</span></a>
+      <a href="services.html"><span class="en">SERVICES</span></a>
+      <a class="is-active" href="products.html"><span class="en">PRODUCTS</span></a>
+      <a href="directions.html"><span class="en">LOCATIONS</span></a>
+      <a href="contact.html"><span class="en">CONTACT</span></a>
+    </nav>
+  </div>
+</header>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="about.html" data-ko="회사소개">ABOUT</a>
-      <a href="services.html" data-ko="서비스">SERVICES</a>
-      <a class="is-active" href="products.html" data-ko="제품">PRODUCTS</a>
-      <a href="directions.html" data-ko="오시는 길">LOCATIONS</a>
-      <a href="contact.html" data-ko="문의">CONTACT</a>
-    </div>
-  </header>
+<!-- HERO -->
+<section class="products-hero">
+  <div class="container">
+    <div class="products-eyebrow">HANUL PLANNING</div>
+    <h1>Products</h1>
+    <p>데님 및 우븐 기반의 OEM 생산 아이템</p>
+  </div>
+</section>
 
-  <main class="page-hero">
-    <div class="container">
-      <div class="kicker">CAPABILITIES</div>
-      <h1 class="page-title">Products</h1>
-      <p class="page-sub">데님·우븐 기반의 다양한 아이템을 안정적으로 생산합니다.</p>
-    </div>
-  </main>
+<!-- PRODUCT CATEGORIES -->
+<section class="products-section">
+  <div class="container">
 
-  <section class="section" id="products">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>PRODUCTS</h2>
-        <p>대표 생산 아이템 예시입니다.</p>
-      </div>
-
-      <div class="products">
-        <div class="p-item reveal">
-          <img src="assets/p1.png" alt="상의" />
-          <div class="p-name">상의</div>
+    <!-- Denim Pants -->
+    <div class="product-category">
+      <h2>Denim Pants</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="assets/products/denim-pants-01.png" alt="Denim Pants">
         </div>
-        <div class="p-item reveal delay-1">
-          <img src="assets/p2.png" alt="데님 팬츠" />
-          <div class="p-name">데님 팬츠</div>
-        </div>
-        <div class="p-item reveal delay-2">
-          <img src="assets/p3.png" alt="우븐 팬츠" />
-          <div class="p-name">우븐 팬츠</div>
-        </div>
-        <div class="p-item reveal delay-3">
-          <img src="assets/p4.png" alt="아우터" />
-          <div class="p-name">아우터</div>
+        <div class="product-card">
+          <img src="assets/products/denim-pants-02.png" alt="Denim Pants">
         </div>
       </div>
+    </div>
 
-      <div class="foot reveal" style="margin-top:26px;">
-        <div>※ 생산 가능 아이템/수량/MOQ는 문의 시 안내드립니다.</div>
+    <!-- Denim Jackets & Shirts -->
+    <div class="product-category">
+      <h2>Denim Jackets & Shirts</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="assets/products/denim-jacket-01.png" alt="Denim Jacket">
+        </div>
+        <div class="product-card">
+          <img src="assets/products/denim-shirt-01.png" alt="Denim Shirt">
+        </div>
       </div>
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container">© HANUL PLANNING CO., LTD</div>
-  </footer>
+    <!-- Woven Shirts -->
+    <div class="product-category">
+      <h2>Woven Shirts</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="assets/products/woven-shirt-01.png" alt="Woven Shirt">
+        </div>
+      </div>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- Jackets & Blazers -->
+    <div class="product-category">
+      <h2>Tailored Jackets & Blazers</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="assets/products/blazer-01.png" alt="Blazer">
+        </div>
+      </div>
+    </div>
+
+    <!-- Coats -->
+    <div class="product-category">
+      <h2>Coats & Outerwear</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="assets/products/coat-01.png" alt="Coat">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© HANUL PLANNING CO., LTD</div>
+</footer>
+
 </body>
 </html>
-
