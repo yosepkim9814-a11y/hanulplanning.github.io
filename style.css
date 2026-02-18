@@ -1709,3 +1709,34 @@ body.dir-clean .page-sub{ color: rgba(255,255,255,.78); }
 .tile-body h3{ color: rgba(255,255,255,.92); }
 .tile-body p{ color: rgba(255,255,255,.72) !important; }
 .tile{ background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.08); }
+/* ===== service-visual (white section) text visibility fix ===== */
+.service-visual{
+  background: #f3f5f7 !important;
+}
+
+/* 제목/코멘트(설명) 색상 고정 */
+.service-visual .proc-title{
+  color: #0b1020 !important;
+}
+
+.service-visual .proc-comment{
+  margin: 6px 0 0;
+  color: rgba(11,16,32,.70) !important;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 탭 글자색/테두리도 라이트용으로 */
+.service-visual .proc-tabs{
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+}
+
+.service-visual .proc-tab{
+  color: rgba(11,16,32,.78) !important;
+}
+
+.service-visual .proc-tab.is-active{
+  background: #0b1020 !important;
+  color: #ffffff !important;
+}
