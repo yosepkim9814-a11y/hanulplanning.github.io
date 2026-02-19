@@ -2534,3 +2534,36 @@ body.dir-clean .factory-photos img{
     max-height: 72vh;
   }
 }
+/* ===== SERVICES PROCESS FULL WIDTH FIX ===== */
+
+.service-visual .container{
+  max-width: 1400px !important;   /* 기존 1100 → 1400 */
+}
+
+.proc-img{
+  width: 100%;
+  padding: 0;                     /* 패딩 제거 */
+  background: #fff;
+}
+
+.proc-img img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 이미지가 더 크게 보이도록 */
+.proc-img img{
+  max-height: none;               /* 제한 해제 */
+}
+
+/* 제목 영역 정리 */
+.proc-title{
+  margin-bottom: 16px;
+}
+
+/* 탭 간격 정리 */
+.proc-tabs{
+  margin-bottom: 18px;
+}
