@@ -2567,3 +2567,13 @@ body.dir-clean .factory-photos img{
 .proc-tabs{
   margin-bottom: 18px;
 }
+/* Services process 이미지 크게(글씨 선명) */
+.service-visual .container{
+  max-width: 1400px !important;
+}
+
+.proc-img img{
+  height: min(82vh, 980px);
+  width: 100%;
+  object-fit: contain;
+}
