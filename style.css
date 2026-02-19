@@ -2634,3 +2634,113 @@ body.dir-clean .factory-photos img{
   font-size:20px;
   cursor:pointer;
 }
+html{ scroll-behavior: smooth; }
+/* ===== Home diagram (Korean friendly) ===== */
+.home-diagram{
+  background: #f3f5f7;
+  color: #0b1020;
+  padding: 70px 0 80px;
+}
+
+.diag-head{ max-width: 820px; }
+.diag-eyebrow{
+  font-size: 12px;
+  letter-spacing: .28em;
+  font-weight: 900;
+  color: rgba(11,16,32,.55);
+}
+.diag-title{
+  margin: 10px 0 10px;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+}
+.diag-sub{
+  margin: 0;
+  color: rgba(11,16,32,.72);
+  line-height: 1.8;
+}
+
+/* flow */
+.flow{
+  margin-top: 22px;
+  display:flex;
+  align-items: stretch;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.flow-step{
+  flex: 1 1 160px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  padding: 14px;
+}
+.flow-no{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  font-weight: 950;
+  background: rgba(11,16,32,.06);
+  border: 1px solid rgba(0,0,0,.06);
+  color: rgba(11,16,32,.80);
+}
+.flow-t{
+  margin-top: 10px;
+  font-weight: 950;
+  font-size: 16px;
+}
+.flow-d{
+  margin-top: 6px;
+  color: rgba(11,16,32,.70);
+  font-weight: 700;
+  line-height: 1.6;
+  font-size: 13px;
+}
+.flow-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: rgba(11,16,32,.35);
+  font-weight: 950;
+  padding: 0 2px;
+}
+
+/* sites */
+.site-cards{
+  margin-top: 16px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.site-card{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  padding: 14px;
+}
+.site-tag{
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 950;
+  color: rgba(11,16,32,.55);
+}
+.site-name{
+  margin-top: 8px;
+  font-weight: 950;
+  font-size: 16px;
+}
+.site-desc{
+  margin-top: 6px;
+  color: rgba(11,16,32,.70);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .site-cards{ grid-template-columns: 1fr; }
+  .flow-arrow{ display:none; }
+}
