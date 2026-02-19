@@ -72,19 +72,64 @@
 
       <div class="proc-panels">
         <div id="tab-process" class="proc-panel is-show" role="tabpanel">
-          <div class="proc-img">
-            <img src="assets/process/process.png" alt="제작 프로세스" loading="lazy" />
+<div class="proc-img">
+  <button class="proc-zoom"
+          data-full="assets/process/process.png"
+          data-cap="제작 프로세스">
+    <img src="assets/process/process.png" alt="제작 프로세스">
+  </button>
           </div>
         </div>
 
         <div id="tab-manufacturing" class="proc-panel" role="tabpanel">
-          <div class="proc-img">
-            <img src="assets/process/manufacturing.png" alt="생산공정" loading="lazy" />
+<div class="proc-img">
+  <button class="proc-zoom"
+          data-full="assets/process/manufacturing.png"
+          data-cap="생산공정">
+    <img src="assets/process/manufacturing.png" alt="생산공정">
+  </button>
           </div>
         </div>
       </div>
     </div>
   </section>
+<!-- PROCESS LIGHTBOX -->
+<dialog class="proc-lb" id="procLb">
+  <button class="proc-lb-x" type="button">×</button>
+  <figure class="proc-lb-fig">
+    <img id="procLbImg" alt="">
+    <figcaption id="procLbCap"></figcaption>
+  </figure>
+</dialog>
+
+<script>
+  (function(){
+    const dlg = document.getElementById('procLb');
+    const img = document.getElementById('procLbImg');
+    const cap = document.getElementById('procLbCap');
+    const closeBtn = dlg.querySelector('.proc-lb-x');
+
+    document.querySelectorAll('.proc-zoom').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        img.src = btn.dataset.full;
+        cap.textContent = btn.dataset.cap || '';
+        dlg.showModal();
+      });
+    });
+
+    closeBtn.addEventListener('click', ()=> dlg.close());
+
+    dlg.addEventListener('click', (e)=>{
+      const rect = dlg.querySelector('.proc-lb-fig').getBoundingClientRect();
+      const inside =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+      if(!inside) dlg.close();
+    });
+  })();
+</script>
 
   <script>
     // Simple tabs (no dependencies)
