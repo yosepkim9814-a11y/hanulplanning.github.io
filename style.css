@@ -2577,3 +2577,60 @@ body.dir-clean .factory-photos img{
   width: 100%;
   object-fit: contain;
 }
+/* 이미지 클릭 가능하게 */
+.proc-zoom{
+  border:0;
+  padding:0;
+  background:transparent;
+  cursor: zoom-in;
+  width:100%;
+}
+.proc-zoom img{
+  width:100%;
+  display:block;
+}
+
+/* 라이트박스 */
+.proc-lb{
+  width: min(1100px, calc(100% - 40px));
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(10,16,32,.96);
+  padding:0;
+  overflow:hidden;
+}
+.proc-lb::backdrop{
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(4px);
+}
+
+.proc-lb-fig{ margin:0; }
+
+#procLbImg{
+  width:100%;
+  max-height:80vh;
+  object-fit:contain;
+  display:block;
+  background:#fff;   /* 흰 배경 (누끼 검은배경 방지) */
+}
+
+#procLbCap{
+  padding:14px 18px;
+  color:#fff;
+  font-weight:900;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.proc-lb-x{
+  position:absolute;
+  right:12px;
+  top:10px;
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(0,0,0,.4);
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+}
