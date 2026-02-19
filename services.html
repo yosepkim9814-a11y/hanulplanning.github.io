@@ -41,7 +41,7 @@
     </div>
   </header>
 
-  <!-- HERO COPY (좌측 상단 문구) -->
+  <!-- HERO -->
   <main class="service-hero">
     <div class="container">
       <div class="service-head">
@@ -56,87 +56,62 @@
     </div>
   </main>
 
-  <!-- 2개 이미지 삽입 섹션 -->
-<section class="section alt service-visual">
-  <div class="container">
+  <!-- PROCESS / MANUFACTURING (tabs + single content) -->
+  <section class="section alt service-visual">
+    <div class="container">
+      <h2 class="proc-title">제작 프로세스 · 생산공정</h2>
 
-    <h2 class="proc-title">제작 프로세스 · 생산공정</h2>
-
-    <div class="proc-tabs" role="tablist" aria-label="제작 정보 탭">
-      <button class="proc-tab is-active" role="tab" aria-selected="true" data-target="tab-process">
-        제작 프로세스
-      </button>
-      <button class="proc-tab" role="tab" aria-selected="false" data-target="tab-manufacturing">
-        생산공정
-      </button>
-    </div>
-
-    <div class="proc-panels">
-      <div id="tab-process" class="proc-panel is-show" role="tabpanel">
-        <div class="proc-img">
-          <img src="assets/process/process.png" alt="제작 프로세스" loading="lazy" />
-        </div>
+      <div class="proc-tabs" role="tablist" aria-label="제작 정보 탭">
+        <button class="proc-tab is-active" role="tab" aria-selected="true" data-target="tab-process">
+          제작 프로세스
+        </button>
+        <button class="proc-tab" role="tab" aria-selected="false" data-target="tab-manufacturing">
+          생산공정
+        </button>
       </div>
 
-      <div id="tab-manufacturing" class="proc-panel" role="tabpanel">
-        <div class="proc-img">
-          <img src="assets/process/manufacturing.png" alt="생산공정" loading="lazy" />
+      <div class="proc-panels">
+        <div id="tab-process" class="proc-panel is-show" role="tabpanel">
+          <div class="proc-img">
+            <img src="assets/process/process.png" alt="제작 프로세스" loading="lazy" />
+          </div>
         </div>
-      </div>
-    </div>
 
-  </div>
-</section>
-
-
-
-    <!-- Contents -->
-    <div class="proc-panels">
-      <!-- 제작 프로세스 -->
-      <div id="tab-process" class="proc-panel is-show" role="tabpanel">
-        <div class="proc-img">
-          <img src="assets/process/process.png" alt="제작 프로세스" loading="lazy" />
-        </div>
-      </div>
-
-      <!-- 생산공정 -->
-      <div id="tab-manufacturing" class="proc-panel" role="tabpanel">
-        <div class="proc-img">
-          <img src="assets/process/manufacturing.png" alt="생산공정" loading="lazy" />
+        <div id="tab-manufacturing" class="proc-panel" role="tabpanel">
+          <div class="proc-img">
+            <img src="assets/process/manufacturing.png" alt="생산공정" loading="lazy" />
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <script>
+    // Simple tabs (no dependencies)
+    (function () {
+      const tabs = document.querySelectorAll(".proc-tab");
+      const panels = document.querySelectorAll(".proc-panel");
 
-<script>
-  // Simple tabs (no dependencies)
-  (function () {
-    const tabs = document.querySelectorAll(".proc-tab");
-    const panels = document.querySelectorAll(".proc-panel");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const targetId = tab.getAttribute("data-target");
 
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const targetId = tab.getAttribute("data-target");
+          tabs.forEach(t => {
+            t.classList.remove("is-active");
+            t.setAttribute("aria-selected", "false");
+          });
+          tab.classList.add("is-active");
+          tab.setAttribute("aria-selected", "true");
 
-        tabs.forEach(t => {
-          t.classList.remove("is-active");
-          t.setAttribute("aria-selected", "false");
+          panels.forEach(p => p.classList.remove("is-show"));
+          const target = document.getElementById(targetId);
+          if (target) target.classList.add("is-show");
         });
-        tab.classList.add("is-active");
-        tab.setAttribute("aria-selected", "true");
-
-        panels.forEach(p => p.classList.remove("is-show"));
-        const target = document.getElementById(targetId);
-        if (target) target.classList.add("is-show");
       });
-    });
-  })();
-</script>
+    })();
+  </script>
 
-
-  <!-- 기존 서비스 3카드 (심볼) -->
+  <!-- SERVICES CARDS -->
   <section class="section" id="services">
     <div class="container">
       <div class="section-head reveal">
