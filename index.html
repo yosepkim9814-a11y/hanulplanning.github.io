@@ -3,8 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>한울플래닝(HANUL PLANNING) | 데님·우븐 OEM 생산</title>
-<meta name="description" content="한울플래닝(HANUL PLANNING)은 베트남(호치민/하노이) 기반 데님·우븐 OEM 생산 파트너입니다. 샘플 개발부터 벌크 생산, QC, 납기까지 운영합니다.">
+
+  <!-- ✅ 검색 제목: 최대한 깔끔하게 브랜드 중심 -->
+  <title>한울플래닝</title>
+
+  <!-- ✅ 검색 설명: 브랜드 + 핵심 서비스 1문장 -->
+  <meta name="description" content="한울플래닝은 베트남(호치민·하노이) 기반 데님·우븐 OEM 생산 운영 및 소싱 파트너입니다. 샘플 개발부터 벌크 생산, QC, 납기까지 안정적으로 관리합니다.">
+
+  <!-- ✅ 정규 URL (중복 색인 방지) -->
+  <link rel="canonical" href="https://www.hanulplanning.com/" />
+
+  <!-- ✅ Open Graph (네이버/카톡/공유 미리보기 영향 큼) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="한울플래닝" />
+  <meta property="og:title" content="한울플래닝" />
+  <meta property="og:description" content="베트남(호치민·하노이) 기반 데님·우븐 OEM 생산 운영 및 소싱 파트너. 샘플부터 벌크, QC, 납기까지 한 번에 관리합니다." />
+  <meta property="og:url" content="https://www.hanulplanning.com/" />
+  <!-- 아래 이미지는 실제 존재하는 대표 이미지로 교체 추천 (없으면 주석 유지) -->
+  <!-- <meta property="og:image" content="https://www.hanulplanning.com/assets/og-image.jpg" /> -->
+
+  <!-- ✅ Twitter Card (일부 플랫폼) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="한울플래닝" />
+  <meta name="twitter:description" content="베트남(호치민·하노이) 기반 데님·우븐 OEM 생산 운영 및 소싱 파트너." />
+  <!-- <meta name="twitter:image" content="https://www.hanulplanning.com/assets/og-image.jpg" /> -->
+
+  <!-- ✅ 구조화 데이터 (브랜드 신호 강화) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "한울플래닝",
+    "alternateName": "HANUL PLANNING",
+    "url": "https://www.hanulplanning.com/",
+    "logo": "https://www.hanulplanning.com/assets/logo-black.png"
+  }
+  </script>
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
@@ -15,17 +49,17 @@
   <header class="nav nav-light">
     <div class="nav-inner">
       <a class="brand brand-ko" href="index.html">
-  <img src="assets/logo-black.png" class="logo" alt="HANUL PLANNING 로고" />
-<span class="brand-text">HANUL PLANNING</span>
-<span class="brand-text-ko">한울플래닝</span>
-</a>
+        <img src="assets/logo-black.png" class="logo" alt="한울플래닝 로고" />
+        <span class="brand-text">HANUL PLANNING</span>
+        <span class="brand-text-ko">한울플래닝</span>
+      </a>
 
       <nav class="menu">
-<a href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
-<a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
-<a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
-<a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
-<a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
+        <a href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
+        <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
+        <a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
+        <a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
+        <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
       </nav>
 
       <button class="hamburger" aria-label="메뉴 열기">☰</button>
@@ -40,189 +74,187 @@
     </div>
   </header>
 
-<!-- HERO (예전 방향: 영상 배경 + 오버레이 + 텍스트) -->
-<main id="top" class="hero" data-hero>
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-    <source src="assets/hero.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-overlay"></div>
+  <!-- HERO -->
+  <main id="top" class="hero" data-hero>
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
 
-  <section class="hero-content">
-    <div class="kicker reveal">DENIM & WOVEN GARMENT PRODUCTION PARTNER</div>
+    <section class="hero-content">
+      <div class="kicker reveal">DENIM & WOVEN GARMENT PRODUCTION PARTNER</div>
 
-    <h1 class="title reveal delay-1">
-      글로벌 생산 운영 · 소싱<br/>
-      <span class="title-strong">한울플래닝</span>
-    </h1>
+      <!-- ✅ H1은 "브랜드만" (구글이 이걸 제목으로 가져가기도 함) -->
+      <h1 class="title reveal delay-1">
+        <span class="title-strong">한울플래닝</span>
+      </h1>
 
-    <p class="sub reveal delay-2">
-      데님 · 우븐 OEM 생산을 안정적으로 운영합니다.<br/>
-      샘플부터 벌크, QC, 납기까지 한 번에 관리합니다.
-    </p>
+      <!-- ✅ 기존 문구는 서브카피로 이동 -->
+      <p class="sub reveal delay-2">
+        글로벌 생산 운영 · 소싱<br/>
+        데님 · 우븐 OEM 생산을 안정적으로 운영합니다.<br/>
+        샘플부터 벌크, QC, 납기까지 한 번에 관리합니다.
+      </p>
 
-    <div class="cta reveal delay-3">
-      <a class="btn primary" href="contact.html">의류제작 문의</a>
-      <a class="btn ghost" href="about.html">회사소개 보기</a>
-    </div>
-
-    <div class="hero-metrics reveal delay-3">
-      <div class="m">
-        <div class="m-n">20+</div>
-        <div class="m-k">Years Experience</div>
+      <div class="cta reveal delay-3">
+        <a class="btn primary" href="contact.html">의류제작 문의</a>
+        <a class="btn ghost" href="about.html">회사소개 보기</a>
       </div>
-      <div class="m">
-        <div class="m-n">Denim</div>
-        <div class="m-k">Ho Chi Minh</div>
+
+      <div class="hero-metrics reveal delay-3">
+        <div class="m">
+          <div class="m-n">20+</div>
+          <div class="m-k">Years Experience</div>
+        </div>
+        <div class="m">
+          <div class="m-n">Denim</div>
+          <div class="m-k">Ho Chi Minh</div>
+        </div>
+        <div class="m">
+          <div class="m-n">Woven</div>
+          <div class="m-k">Hung Yen</div>
+        </div>
       </div>
-      <div class="m">
-        <div class="m-n">Woven</div>
-        <div class="m-k">Hung Yen</div>
+    </section>
+
+    <div class="scroll-hint">SCROLL</div>
+  </main>
+
+  <section id="homeDiagram" class="home-diagram">
+    <div class="container">
+      <div class="diag-head">
+        <div class="diag-eyebrow">HANUL PLANNING</div>
+        <h2 class="diag-title">한울플래닝 운영 흐름</h2>
+        <p class="diag-sub">샘플부터 출고까지, 한 번에 관리합니다.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-no">01</div>
+          <div class="flow-t">상담·기획</div>
+          <div class="flow-d">요구사항/스펙/참고 샘플 정리</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-no">02</div>
+          <div class="flow-t">샘플 개발</div>
+          <div class="flow-d">원단·부자재 소싱 / PP 샘플</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-no">03</div>
+          <div class="flow-t">수정·승인</div>
+          <div class="flow-d">피드백 반영 / TOP 승인</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-no">04</div>
+          <div class="flow-t">벌크 생산</div>
+          <div class="flow-d">라인 운영 / 공정·납기 관리</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-no">05</div>
+          <div class="flow-t">QC·출고</div>
+          <div class="flow-d">측정/검사/패킹/CTN 가이드</div>
+        </div>
+      </div>
+
+      <div class="site-cards">
+        <div class="site-card">
+          <div class="site-tag">DENIM</div>
+          <div class="site-name">베트남 호치민</div>
+          <div class="site-desc">데님 생산 운영</div>
+        </div>
+        <div class="site-card">
+          <div class="site-tag">WOVEN</div>
+          <div class="site-name">베트남 하노이</div>
+          <div class="site-desc">우븐 생산 운영</div>
+        </div>
+        <div class="site-card">
+          <div class="site-tag">QC</div>
+          <div class="site-name">품질 표준</div>
+          <div class="site-desc">스펙/측정/패킹 기준 관리</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="scroll-hint">SCROLL</div>
-</main>
-<section id="homeDiagram" class="home-diagram">
-  <div class="container">
-    <div class="diag-head">
-      <div class="diag-eyebrow">HANUL PLANNING</div>
-      <h2 class="diag-title">한울플래닝 운영 흐름</h2>
-      <p class="diag-sub">샘플부터 출고까지, 한 번에 관리합니다.</p>
-    </div>
+  <section class="home-reveal" data-reveal>
+    <div class="container">
+      <div class="reveal-grid">
+        <div class="reveal-copy">
+          <div class="reveal-eyebrow">HANUL PLANNING</div>
+          <h2 class="reveal-title">신뢰 기반의 글로벌 OEM 생산 운영 파트너</h2>
+          <p class="reveal-sub">
+            데님(호치민) · 우븐(하노이) 생산 거점 운영을 기반으로<br/>
+            샘플 개발부터 벌크 생산, QC, 납기까지 표준화된 흐름으로 관리합니다.
+          </p>
 
-    <!-- 흐름 다이어그램 -->
-    <div class="flow">
-      <div class="flow-step">
-        <div class="flow-no">01</div>
-        <div class="flow-t">상담·기획</div>
-        <div class="flow-d">요구사항/스펙/참고 샘플 정리</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="flow-no">02</div>
-        <div class="flow-t">샘플 개발</div>
-        <div class="flow-d">원단·부자재 소싱 / PP 샘플</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="flow-no">03</div>
-        <div class="flow-t">수정·승인</div>
-        <div class="flow-d">피드백 반영 / TOP 승인</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="flow-no">04</div>
-        <div class="flow-t">벌크 생산</div>
-        <div class="flow-d">라인 운영 / 공정·납기 관리</div>
-      </div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-step">
-        <div class="flow-no">05</div>
-        <div class="flow-t">QC·출고</div>
-        <div class="flow-d">측정/검사/패킹/CTN 가이드</div>
-      </div>
-    </div>
-
-    <!-- 거점 카드 -->
-    <div class="site-cards">
-      <div class="site-card">
-        <div class="site-tag">DENIM</div>
-        <div class="site-name">베트남 호치민</div>
-        <div class="site-desc">데님 생산 운영</div>
-      </div>
-      <div class="site-card">
-        <div class="site-tag">WOVEN</div>
-        <div class="site-name">베트남 하노이</div>
-        <div class="site-desc">우븐 생산 운영</div>
-      </div>
-      <div class="site-card">
-        <div class="site-tag">QC</div>
-        <div class="site-name">품질 표준</div>
-        <div class="site-desc">스펙/측정/패킹 기준 관리</div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="home-reveal" data-reveal>
-  <div class="container">
-    <div class="reveal-grid">
-      <div class="reveal-copy">
-        <div class="reveal-eyebrow">HANUL PLANNING</div>
-        <h2 class="reveal-title">신뢰 기반의 글로벌 OEM 생산 운영 파트너</h2>
-        <p class="reveal-sub">
-          데님(호치민) · 우븐(하노이) 생산 거점 운영을 기반으로<br/>
-          샘플 개발부터 벌크 생산, QC, 납기까지 표준화된 흐름으로 관리합니다.
-        </p>
-
-        <div class="reveal-points">
-          <div class="pt">
-            <div class="pt-k">End-to-end</div>
-            <div class="pt-v">Sample → Bulk → QC → Shipping</div>
-          </div>
-          <div class="pt">
-            <div class="pt-k">Quality</div>
-            <div class="pt-v">Spec / Measurement / Packing Standard</div>
-          </div>
-          <div class="pt">
-            <div class="pt-k">On-time</div>
-            <div class="pt-v">Schedule Control & Vendor Management</div>
+          <div class="reveal-points">
+            <div class="pt">
+              <div class="pt-k">End-to-end</div>
+              <div class="pt-v">Sample → Bulk → QC → Shipping</div>
+            </div>
+            <div class="pt">
+              <div class="pt-k">Quality</div>
+              <div class="pt-v">Spec / Measurement / Packing Standard</div>
+            </div>
+            <div class="pt">
+              <div class="pt-k">On-time</div>
+              <div class="pt-v">Schedule Control & Vendor Management</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- simple diagram -->
-      <div class="reveal-diagram" aria-label="production flow diagram">
-        <div class="diag">
-          <div class="node">Brief</div>
-          <div class="arrow">→</div>
-          <div class="node">Sample</div>
-          <div class="arrow">→</div>
-          <div class="node">Approval</div>
-          <div class="arrow">→</div>
-          <div class="node">Bulk</div>
-          <div class="arrow">→</div>
-          <div class="node">QC</div>
-          <div class="arrow">→</div>
-          <div class="node">Shipping</div>
-        </div>
-
-        <div class="diag-cards">
-          <div class="dcard">
-            <div class="dtag">DENIM</div>
-            <div class="dval">Ho Chi Minh</div>
+        <div class="reveal-diagram" aria-label="production flow diagram">
+          <div class="diag">
+            <div class="node">Brief</div>
+            <div class="arrow">→</div>
+            <div class="node">Sample</div>
+            <div class="arrow">→</div>
+            <div class="node">Approval</div>
+            <div class="arrow">→</div>
+            <div class="node">Bulk</div>
+            <div class="arrow">→</div>
+            <div class="node">QC</div>
+            <div class="arrow">→</div>
+            <div class="node">Shipping</div>
           </div>
-          <div class="dcard">
-            <div class="dtag">WOVEN</div>
-            <div class="dval">Hanoi</div>
+
+          <div class="diag-cards">
+            <div class="dcard">
+              <div class="dtag">DENIM</div>
+              <div class="dval">Ho Chi Minh</div>
+            </div>
+            <div class="dcard">
+              <div class="dtag">WOVEN</div>
+              <div class="dval">Hanoi</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <footer class="footer footer-light">
     <div class="container">© HANUL PLANNING CO., LTD</div>
   </footer>
 
   <script src="script.js"></script>
-<script>
-  // 3초 뒤: hero를 접고(reduce), 아래 섹션 보여주기
-  window.addEventListener("load", () => {
-    const hero = document.querySelector("[data-hero]");
-    const reveal = document.querySelector("[data-reveal]");
-    if (!hero || !reveal) return;
+  <script>
+    // 3초 뒤: hero를 접고(reduce), 아래 섹션 보여주기
+    window.addEventListener("load", () => {
+      const hero = document.querySelector("[data-hero]");
+      const reveal = document.querySelector("[data-reveal]");
+      if (!hero || !reveal) return;
 
-    setTimeout(() => {
-      hero.classList.add("hero-collapse");
-      reveal.classList.add("show");
-      // 접히면서 아래 내용이 보이도록 살짝 스크롤(선택)
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 3000);
-  });
-</script>
-
+      setTimeout(() => {
+        hero.classList.add("hero-collapse");
+        reveal.classList.add("show");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
