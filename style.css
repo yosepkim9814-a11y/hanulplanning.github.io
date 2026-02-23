@@ -3399,3 +3399,69 @@ html{ scroll-behavior: smooth; }
   top: 26px;
   height: 18px;
 }
+/* =========================
+   CLEAN NAV RESET
+========================= */
+
+/* 기존 data-ko 방식 완전 제거 */
+.nav a::after,
+.nav a::before {
+    content: none !important;
+}
+
+/* 영어/한글 전환 기본 구조 */
+.nav .menu > li > a {
+    position: relative;
+    display: inline-block;
+}
+
+.nav .menu > li > a .en,
+.nav .menu > li > a .ko {
+    display: block;
+    transition: opacity .25s ease;
+}
+
+/* 기본은 영어만 */
+.nav .menu > li > a .ko {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/* hover 시 영어 숨기고 한글 표시 */
+.nav .menu > li:hover > a .en {
+    opacity: 0;
+}
+
+.nav .menu > li:hover > a .ko {
+    opacity: 1;
+}
+
+/* =========================
+   SUB NAV (보조 네비 줄)
+========================= */
+
+.sub-nav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    top: 100%;
+    padding: 12px 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.sub-nav span {
+    margin: 0 18px;
+    opacity: .35;
+}
+
+/* 해당 메뉴 hover 시만 표시 */
+.nav .menu > li:hover .sub-nav {
+    opacity: 1;
+}
