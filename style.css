@@ -108,7 +108,7 @@ body{
 }
 
 /* hover: EN -> KO */
-.menu:not(.mega) a::after,
+.menu a::after,
 .mobile-menu a::after{
   content: attr(data-ko);
   position: absolute;
@@ -123,11 +123,11 @@ body{
   font-size: 13px;
   letter-spacing: -0.02em;
 }
-.menu:not(.mega) a:hover,
+.menu a:hover,
 .mobile-menu a:hover{
   color: transparent;
 }
-.menu:not(.mega) a:hover::after,
+.menu a:hover::after,
 .mobile-menu a:hover::after{
   opacity: 1;
   transform: translate(-50%, 0);
@@ -903,7 +903,7 @@ body.light-ui .brand-ko:hover .brand-ko-text{
 .menu a, .mobile-menu a{ position: relative; white-space: nowrap; }
 .menu a .en, .mobile-menu a .en{ display:inline-block; }
 
-.menu:not(.mega) a::after,
+.menu a::after,
 .mobile-menu a::after{
   content: attr(data-ko);
   position: absolute;
@@ -921,7 +921,7 @@ body.light-ui .brand-ko:hover .brand-ko-text{
   opacity: 0;
 }
 
-.menu:not(.mega) a:hover::after,
+.menu a:hover::after,
 .mobile-menu a:hover::after{
   opacity: 1;
   transform: translate(-50%, 0);
@@ -975,13 +975,13 @@ body.light-ui .brand-ko:hover .brand-ko-text{
   box-shadow: 0 10px 28px rgba(0,0,0,.18);
 }
 /* 메뉴 hover: 사라락(느리게) */
-.menu:not(.mega) a::after,
+.menu a::after,
 .mobile-menu a::after{
   transition: opacity .32s ease, transform .32s ease; /* 기존 0.18 -> 0.32 */
   transform: translate(-50%, 6px);  /* 시작 위치를 더 아래로 */
 }
 
-.menu:not(.mega) a:hover::after,
+.menu a:hover::after,
 .mobile-menu a:hover::after{
   transform: translate(-50%, 0);
 }
@@ -2872,7 +2872,7 @@ html{ scroll-behavior: smooth; }
 }
 
 /* 2) 메뉴 한글(hover) 폰트 키우기 */
-.menu:not(.mega) a::after,
+.menu a::after,
 .mobile-menu a::after{
   font-size: 14px !important;   /* 기존보다 키움 */
   font-weight: 800 !important;
@@ -3351,46 +3351,39 @@ html{ scroll-behavior: smooth; }
   letter-spacing: -0.02em;
 }
 
-/* submenu (aux 2nd row) */
+/* submenu */
 .mega-drop{
-  position: fixed;
+  display: none;
+  position:absolute;
   left: 0;
-  right: 0;
-  top: 64px; /* below the top nav row */
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap: 22px;
-  padding: 10px 16px;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity .18s ease, transform .18s ease;
-  pointer-events: none; /* not clickable */
-  z-index: 55;
-  background: rgba(0,0,0,.14);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  backdrop-filter: blur(12px);
+  top: 34px;
+  padding-top: 10px;
+  min-width: 170px;
+  z-index: 80;
 }
 
 .mega-item:hover .mega-drop{
-  opacity: 1;
-  transform: translateY(0);
+  display: block;
 }
 
-/* Subtitle text */
-.mega-drop .mega-sub{
-  font-size: 12px;
+/* submenu box */
+.mega-drop a{
+  display:block;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 12px;
+  text-decoration:none;
+  color: rgba(255,255,255,.86);
   font-weight: 800;
-  letter-spacing: .10em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.38);
-  white-space: nowrap;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(8px);
+}
+.mega-drop a:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
 }
 
-/* On smaller screens, keep it hidden (mobile menu uses its own UI) */
-@media (max-width: 860px){
-  .mega-drop{ display:none !important; }
-}
 /* “마우스 이동하면 끊김” 방지용 hover padding */
 .mega-item::after{
   content:"";
@@ -3399,69 +3392,109 @@ html{ scroll-behavior: smooth; }
   top: 26px;
   height: 18px;
 }
-/* =========================
-   CLEAN NAV RESET
-========================= */
-
-/* 기존 data-ko 방식 완전 제거 */
-.nav a::after,
-.nav a::before {
-    content: none !important;
-}
-
-/* 영어/한글 전환 기본 구조 */
-.nav .menu > li > a {
-    position: relative;
-    display: inline-block;
-}
-
-.nav .menu > li > a .en,
-.nav .menu > li > a .ko {
-    display: block;
-    transition: opacity .25s ease;
-}
-
-/* 기본은 영어만 */
-.nav .menu > li > a .ko {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-/* hover 시 영어 숨기고 한글 표시 */
-.nav .menu > li:hover > a .en {
-    opacity: 0;
-}
-
-.nav .menu > li:hover > a .ko {
-    opacity: 1;
-}
 
 /* =========================
-   SUB NAV (보조 네비 줄)
+   MEGA MENU FINAL (CLEAN)
+   - second-row auxiliary bar
+   - hidden by default
+   - subtitles small + subtle
+   - non-clickable
 ========================= */
 
-.sub-nav {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    top: 100%;
-    padding: 12px 0;
-    font-size: 14px;
-    letter-spacing: 2px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .3s ease;
+/* ensure mega menu wins over old reset rules */
+.menu.mega{ display:flex !important; gap: 26px !important; align-items: center !important; }
+
+.mega-item{ position: relative !important; padding: 6px 0 !important; }
+
+.mega-top{
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 110px !important;
+  text-decoration: none !important;
+  font-weight: 850 !important;
+  font-size: 14px !important;
+  color: rgba(255,255,255,.78) !important;
 }
 
-.sub-nav span {
-    margin: 0 18px;
-    opacity: .35;
+/* base: EN only */
+.mega-top .en{ display:inline-block !important; }
+.mega-top .ko{ display:none !important; }
+
+/* hover: switch to KO (원래 원하던 형태) */
+.mega-item:hover .mega-top,
+.mega-top.is-active{ color: rgba(255,255,255,.96) !important; }
+.mega-item:hover .mega-top .en{ display:none !important; }
+.mega-item:hover .mega-top .ko{ display:inline-block !important; }
+
+/* second row bar */
+.nav{ --navH: 64px; }
+.nav-inner{ min-height: var(--navH); }
+
+.mega-drop{
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: var(--navH) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 18px !important;
+  padding: 10px 16px !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-6px) !important;
+  transition: opacity .22s ease, transform .22s ease, visibility .22s ease !important;
+
+  pointer-events: none !important; /* ✅ 클릭 불가 */
+  z-index: 55 !important;
+
+  background: rgba(0,0,0,.18) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  backdrop-filter: blur(12px) !important;
 }
 
-/* 해당 메뉴 hover 시만 표시 */
-.nav .menu > li:hover .sub-nav {
-    opacity: 1;
+/* show only for hovered item */
+.mega-item:hover .mega-drop{
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
 }
+
+.mega-drop .mega-sub{
+  font-size: 11px !important;         /* ✅ 작게 */
+  font-weight: 800 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.34) !important; /* ✅ 은은하게 */
+  white-space: nowrap !important;
+}
+
+/* only show this system on desktop */
+@media (max-width: 860px){
+  .menu.mega{ display:none !important; }
+  .mega-drop{ display:none !important; }
+}
+
+/* =========================
+   BRAND HOVER (EN -> KO)
+   - ensure it works on all pages
+========================= */
+.brand{ position: relative !important; }
+.brand-text{ display:inline-block !important; }
+.brand-text-ko{
+  position:absolute !important;
+  left: calc(26px + 10px) !important; /* logo(26) + gap */
+  top: 50% !important;
+  transform: translateY(-50%) translateY(6px) !important;
+  opacity: 0 !important;
+  transition: opacity .32s ease, transform .32s ease !important;
+  font-weight: 900 !important;
+  letter-spacing: .28em !important; /* '한 울 플 래 닝' 느낌 */
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+.brand:hover .brand-text{ opacity: 0 !important; transform: translateY(-2px) !important; }
+.brand:hover .brand-text-ko{ opacity: 1 !important; transform: translateY(-50%) translateY(0) !important; }
