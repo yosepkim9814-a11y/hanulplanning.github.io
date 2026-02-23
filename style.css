@@ -3392,3 +3392,39 @@ html{ scroll-behavior: smooth; }
   top: 26px;
   height: 18px;
 }
+
+
+/* =========================================================
+   FIX (2026-02-23)
+   Legacy "EN -> KO on hover" styles were written for links
+   that use data-ko + ::after.
+   The new mega menu uses <span class="en"> / <span class="ko">,
+   so the legacy hover rules were making mega menu text
+   turn transparent and causing weird overlapping artifacts.
+   -> Scope legacy hover effect to ONLY anchors that have [data-ko].
+   ========================================================= */
+
+/* 1) Disable legacy ::after for links without data-ko (including mega menu) */
+.menu a:not([data-ko])::after,
+.mobile-menu a:not([data-ko])::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* 2) Prevent "color: transparent" hover from applying to non data-ko links */
+.menu a:not([data-ko]):hover,
+.mobile-menu a:not([data-ko]):hover{
+  color: inherit !important;
+}
+
+/* 3) If a link has inner .en span, don't fade it out unless data-ko exists */
+.menu a:not([data-ko]):hover .en,
+.mobile-menu a:not([data-ko]):hover .en{
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 4) Keep submenu items readable on hover (they never have data-ko) */
+.menu.mega .mega-drop a:hover{
+  color: rgba(255,255,255,.96) !important;
+}
