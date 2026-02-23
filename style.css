@@ -3078,3 +3078,54 @@ html{ scroll-behavior: smooth; }
 .about-carousel{
   min-height: 560px;  /* 640 -> 560 (필요시 600) */
 }
+/* About slider title (Korean) */
+.about-main-title{
+  margin: 6px 0 0;
+  font-size: 22px;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  color: rgba(11,16,32,.90);
+}
+
+/* Remove repeated eyebrow spacing inside slider */
+#aboutSlider .section-top{
+  margin-bottom: 14px;
+}
+
+/* Minimal slider controls */
+.about-switch-controls .as-btn{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.88);
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: none;
+}
+.about-switch-controls .as-btn:hover{
+  background: rgba(255,255,255,1);
+}
+
+/* Left quick jump buttons */
+.about-sidejump{
+  margin: 10px 0 14px;
+  display: flex;
+  gap: 10px;
+}
+.jump-btn{
+  display: inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(11,16,32,.88);
+  background: rgba(11,16,32,.04);
+  border: 1px solid rgba(0,0,0,.08);
+}
+.jump-btn:hover{
+  background: rgba(11,16,32,.07);
+}
