@@ -9,9 +9,15 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="style.css" />
-</head>
-
 <body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html#top" aria-label="홈으로">
+      <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING 로고" />
+      <span class="brand-text">HANUL PLANNING</span>
+      <span class="brand-text-ko">한울플래닝</span>
+    </a>
+
 <nav class="menu mega">
   <!-- ABOUT -->
   <div class="mega-item">
@@ -20,7 +26,7 @@
       <span class="ko">회사소개</span>
     </a>
     <div class="mega-drop">
-      <a href="about.html#aboutTabs">회사개요 · 연혁</a>
+      <a href="about.html#aboutSlider">회사개요 · 연혁</a>
       <a href="about.html#office">본사시설</a>
     </div>
   </div>
@@ -78,17 +84,18 @@
   </div>
 </nav>
 
-      <button class="hamburger" aria-label="메뉴 열기">☰</button>
-    </div>
+    <button class="hamburger" aria-label="메뉴 열기">☰</button>
+  </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a class="is-active" href="about.html" data-ko="회사소개">ABOUT</a>
-      <a href="services.html" data-ko="서비스">SERVICES</a>
-      <a href="products.html" data-ko="제품">PRODUCTS</a>
-      <a href="directions.html" data-ko="오시는 길">LOCATIONS</a>
-      <a href="contact.html" data-ko="문의">CONTACT</a>
-    </div>
-  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="is-active" href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
+    <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
+    <a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
+    <a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
+    <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
+  </div>
+</header>
+
 
   <!-- PAGE HERO -->
   <main class="page-hero" id="top">
@@ -99,6 +106,8 @@
     </div>
   </main>
 
+
+<div id="aboutTabs"></div>
 <!-- OVERVIEW + HISTORY (Swipe Slider) -->
 <section class="section light" id="aboutSlider">
   <div class="container">
