@@ -3303,3 +3303,13 @@ html{ scroll-behavior: smooth; }
   padding-left: 0 !important;
   text-align: left;
 }
+/* Services process lightbox bigger */
+.proc-lb{
+  width: min(1400px, calc(100% - 24px)) !important;
+}
+#procLbImg{
+  max-height: 88vh !important;
+}
+#procLbImg{
+  width: 100% !important;
+}
