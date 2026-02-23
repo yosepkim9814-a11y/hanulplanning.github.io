@@ -9,15 +9,9 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="style.css" />
-<body>
-<header class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="index.html#top" aria-label="홈으로">
-      <img src="assets/logo-white.png" class="logo" alt="HANUL PLANNING 로고" />
-      <span class="brand-text">HANUL PLANNING</span>
-      <span class="brand-text-ko">한울플래닝</span>
-    </a>
+</head>
 
+<body>
 <nav class="menu mega">
   <!-- ABOUT -->
   <div class="mega-item">
@@ -26,10 +20,10 @@
       <span class="ko">회사소개</span>
     </a>
     <div class="mega-drop">
-      <a href="about.html#aboutSlider">OVERVIEW</a>
-      <a href="about.html#office">TIMELINE</a>
-      <a href="#">OFFICE</a>
-      <a href="#">GALLERY</a>
+      <span class="mega-sub">OVERVIEW</span>
+      <span class="mega-sub">TIMELINE</span>
+      <span class="mega-sub">OFFICE</span>
+      <span class="mega-sub">GALLERY</span>
     </div>
   </div>
 
@@ -40,8 +34,8 @@
       <span class="ko">서비스</span>
     </a>
     <div class="mega-drop">
-      <a href="services.html#process">PROCESS</a>
-      <a href="services.html#process">PRODUCTION</a>
+      <span class="mega-sub">PROCESS</span>
+      <span class="mega-sub">PRODUCTION</span>
     </div>
   </div>
 
@@ -52,11 +46,11 @@
       <span class="ko">제품</span>
     </a>
     <div class="mega-drop">
-      <a href="products.html#denim-pants">DENIM PANTS</a>
-      <a href="products.html#denim-top">DENIM TOP</a>
-      <a href="products.html#woven">WOVEN</a>
-      <a href="products.html#blazer">BLAZER</a>
-      <a href="products.html#coat">COAT</a>
+      <span class="mega-sub">DENIM PANTS</span>
+      <span class="mega-sub">DENIM JACKET & SHIRTS</span>
+      <span class="mega-sub">WOVEN SHIRTS & PANTS</span>
+      <span class="mega-sub">JACKETS & BLAZERS</span>
+      <span class="mega-sub">COATS & OUTER</span>
     </div>
   </div>
 
@@ -67,9 +61,10 @@
       <span class="ko">오시는 길</span>
     </a>
     <div class="mega-drop">
-      <a href="directions.html#hq">HQ</a>
-      <a href="directions.html#denim">DENIM</a>
-      <a href="directions.html#woven">WOVEN</a>
+      <span class="mega-sub">DIRECTIONS</span>
+      <span class="mega-sub">HQ</span>
+      <span class="mega-sub">DENIM FACTORY</span>
+      <span class="mega-sub">WOVEN FACTORY</span>
     </div>
   </div>
 
@@ -80,24 +75,23 @@
       <span class="ko">문의</span>
     </a>
     <div class="mega-drop">
-      <a href="contact.html#contact">INQUIRY</a>
-      <a href="contact.html#faq">FAQ</a>
+      <span class="mega-sub">INQUIRY</span>
+      <span class="mega-sub">FAQ</span>
     </div>
   </div>
 </nav>
 
-    <button class="hamburger" aria-label="메뉴 열기">☰</button>
-  </div>
+      <button class="hamburger" aria-label="메뉴 열기">☰</button>
+    </div>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a class="is-active" href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
-    <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
-    <a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
-    <a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
-    <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
-  </div>
-</header>
-
+    <div class="mobile-menu" id="mobileMenu">
+      <a class="is-active" href="about.html" data-ko="회사소개">ABOUT</a>
+      <a href="services.html" data-ko="서비스">SERVICES</a>
+      <a href="products.html" data-ko="제품">PRODUCTS</a>
+      <a href="directions.html" data-ko="오시는 길">LOCATIONS</a>
+      <a href="contact.html" data-ko="문의">CONTACT</a>
+    </div>
+  </header>
 
   <!-- PAGE HERO -->
   <main class="page-hero" id="top">
@@ -108,8 +102,6 @@
     </div>
   </main>
 
-
-<div id="aboutTabs"></div>
 <!-- OVERVIEW + HISTORY (Swipe Slider) -->
 <section class="section light" id="aboutSlider">
   <div class="container">
