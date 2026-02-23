@@ -50,103 +50,190 @@
     </div>
   </main>
 
-  <!-- OVERVIEW -->
-  <section class="section light">
-    <div class="container">
-      <div class="section-top reveal">
-        <div class="eyebrow">COMPANY OVERVIEW</div>
-        <h2 class="section-title">신뢰 기반의 글로벌 OEM 파트너</h2>
-        <p class="section-lead">
-          (주)한울플래닝은 2001년 설립 이후 20년 이상 글로벌 의류 생산 시장에서
-          데님·우븐 중심의 OEM 제조/프로덕션을 안정적으로 운영해왔습니다.
-          품질·기술·네트워크를 기반으로 고객사의 제품 출시를 지원합니다.
-        </p>
+<!-- OVERVIEW + HISTORY (Slider) -->
+<section class="section light" id="aboutSlider">
+  <div class="container">
+
+    <div class="about-switch">
+      <div class="about-switch-left">
+        <div class="eyebrow">COMPANY</div>
+        <h2 class="section-title">Company Overview · History</h2>
+        <p class="section-lead">회사 소개와 성장 연혁을 번갈아 확인할 수 있습니다.</p>
       </div>
 
-      <div class="overview-grid">
-        <div class="overview-card reveal">
-          <div class="badge">EST.</div>
-          <div class="meta">
-            <div class="k">설립</div>
-            <div class="v">2001.10.29</div>
-          </div>
-        </div>
-
-        <div class="overview-card reveal delay-1">
-          <div class="badge">FOCUS</div>
-          <div class="meta">
-            <div class="k">전문 분야</div>
-            <div class="v">프리미엄 데님 · 우븐 OEM 생산</div>
-          </div>
-        </div>
-
-        <div class="overview-card reveal delay-1">
-          <div class="badge">HQ</div>
-          <div class="meta">
-            <div class="k">본사</div>
-            <div class="v">서울특별시 구로구 디지털로 26길 123 지플러스타워 808호</div>
-          </div>
-        </div>
-
-        <div class="overview-card reveal delay-2">
-          <div class="badge">QC</div>
-          <div class="meta">
-            <div class="k">핵심 역량</div>
-            <div class="v">글로벌 네트워크 · 엄격한 품질관리 · 생산 일정 운영</div>
-          </div>
-        </div>
+      <div class="about-switch-controls" aria-label="슬라이드 컨트롤">
+        <button type="button" class="as-btn" id="asPrev" aria-label="이전">‹</button>
+        <button type="button" class="as-btn" id="asPlay" aria-label="일시정지/재생">❚❚</button>
+        <button type="button" class="as-btn" id="asNext" aria-label="다음">›</button>
       </div>
     </div>
-  </section>
 
-  <!-- HISTORY -->
-  <section class="section light">
-    <div class="container">
-      <div class="section-top reveal">
-        <div class="eyebrow">COMPANY HISTORY</div>
-        <h2 class="section-title">성장 연혁</h2>
-        <p class="section-lead">2001년부터 이어온 한울플래닝의 주요 이정표입니다.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="t-item reveal">
-          <div class="t-year">2001</div>
-          <div class="t-dot" aria-hidden="true"></div>
-          <div class="t-desc">법인 전환, 상호 변경 (주)한울플래닝</div>
+    <div class="about-carousel" id="aboutCarousel">
+      <!-- Slide 1: OVERVIEW -->
+      <article class="about-slide is-active" data-slide="0">
+        <div class="section-top">
+          <div class="eyebrow">COMPANY OVERVIEW</div>
+          <h3 class="section-title">신뢰 기반의 글로벌 OEM 파트너</h3>
+          <p class="section-lead">
+            (주)한울플래닝은 2001년 설립 이후 20년 이상 글로벌 의류 생산 시장에서
+            데님·우븐 중심의 OEM 제조/프로덕션을 안정적으로 운영해왔습니다.
+            품질·기술·네트워크를 기반으로 고객사의 제품 출시를 지원합니다.
+          </p>
         </div>
 
-        <div class="t-item reveal delay-1">
-          <div class="t-year">2004</div>
-          <div class="t-dot" aria-hidden="true"></div>
-          <div class="t-desc">구로 사옥 확장 이전</div>
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="badge">EST.</div>
+            <div class="meta">
+              <div class="k">설립</div>
+              <div class="v">2001.10.29</div>
+            </div>
+          </div>
+
+          <div class="overview-card">
+            <div class="badge">FOCUS</div>
+            <div class="meta">
+              <div class="k">전문 분야</div>
+              <div class="v">프리미엄 데님 · 우븐 OEM 생산</div>
+            </div>
+          </div>
+
+          <div class="overview-card">
+            <div class="badge">HQ</div>
+            <div class="meta">
+              <div class="k">본사</div>
+              <div class="v">서울특별시 구로구 디지털로 26길 123 지플러스타워 808호</div>
+            </div>
+          </div>
+
+          <div class="overview-card">
+            <div class="badge">QC</div>
+            <div class="meta">
+              <div class="k">핵심 역량</div>
+              <div class="v">글로벌 네트워크 · 엄격한 품질관리 · 생산 일정 운영</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Slide 2: HISTORY -->
+      <article class="about-slide" data-slide="1">
+        <div class="section-top">
+          <div class="eyebrow">COMPANY HISTORY</div>
+          <h3 class="section-title">성장 연혁</h3>
+          <p class="section-lead">2001년부터 이어온 한울플래닝의 주요 이정표입니다.</p>
         </div>
 
-        <div class="t-item reveal delay-1">
-          <div class="t-year">2006</div>
-          <div class="t-dot" aria-hidden="true"></div>
-          <div class="t-desc">베트남 타이빈 HANUL 우븐 공장 설립 (10라인, 월 70,000pcs)</div>
-        </div>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-year">2001</div>
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-desc">법인 전환, 상호 변경 (주)한울플래닝</div>
+          </div>
 
-        <div class="t-item reveal delay-2">
-          <div class="t-year">2008–2009</div>
-          <div class="t-dot" aria-hidden="true"></div>
-          <div class="t-desc">중국 조보 HUAJIANG 데님 계약 및 베트남 호치민 DONG NAM 데님 계약</div>
-        </div>
+          <div class="t-item">
+            <div class="t-year">2004</div>
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-desc">구로 사옥 확장 이전</div>
+          </div>
 
-        <div class="t-item reveal delay-2">
-          <div class="t-year">2013–2015</div>
-          <div class="t-dot" aria-hidden="true"></div>
-          <div class="t-desc">R&D 전담부서 구축 / 베트남 호치민 KIM SUN 데님 계약</div>
-        </div>
+          <div class="t-item">
+            <div class="t-year">2006</div>
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-desc">베트남 타이빈 HANUL 우븐 공장 설립 (10라인, 월 70,000pcs)</div>
+          </div>
 
-        <div class="t-item reveal delay-3">
-          <div class="t-year">2023</div>
-          <div class="t-dot" aria-hidden="true"></div>
-          <div class="t-desc">베트남 DN DNC 신공장 설립</div>
+          <div class="t-item">
+            <div class="t-year">2008–2009</div>
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-desc">중국 조보 HUAJIANG 데님 계약 및 베트남 호치민 DONG NAM 데님 계약</div>
+          </div>
+
+          <div class="t-item">
+            <div class="t-year">2013–2015</div>
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-desc">R&D 전담부서 구축 / 베트남 호치민 KIM SUN 데님 계약</div>
+          </div>
+
+          <div class="t-item">
+            <div class="t-year">2023</div>
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-desc">베트남 DN DNC 신공장 설립</div>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
-  </section>
+
+    <!-- Office gallery teaser (아래에 있다는 걸 "눈치채게") -->
+    <div class="office-teaser">
+      <div class="office-teaser-text">
+        <div class="eyebrow">OFFICE GALLERY</div>
+        <div class="office-teaser-title">본사 시설 사진이 아래에 있습니다</div>
+        <div class="office-teaser-sub">입구 · 사무실 · 샘플실(데님/우븐) · 완성반</div>
+      </div>
+      <a class="office-teaser-btn" href="#office">바로 보기 ↓</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  const carousel = document.getElementById('aboutCarousel');
+  if(!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll('.about-slide'));
+  const prevBtn = document.getElementById('asPrev');
+  const nextBtn = document.getElementById('asNext');
+  const playBtn = document.getElementById('asPlay');
+
+  let idx = 0;
+  let playing = true;
+  let timer = null;
+
+  const intervalMs = 2500; // 2~3초
+
+  const render = () => {
+    slides.forEach((s,i)=> s.classList.toggle('is-active', i===idx));
+  };
+
+  const next = () => { idx = (idx + 1) % slides.length; render(); };
+  const prev = () => { idx = (idx - 1 + slides.length) % slides.length; render(); };
+
+  const start = () => {
+    stop();
+    playing = true;
+    playBtn.textContent = '❚❚';
+    timer = setInterval(next, intervalMs);
+  };
+
+  const stop = () => {
+    if(timer) clearInterval(timer);
+    timer = null;
+  };
+
+  const togglePlay = () => {
+    if(playing){
+      playing = false;
+      playBtn.textContent = '▶';
+      stop();
+    }else{
+      start();
+    }
+  };
+
+  prevBtn?.addEventListener('click', ()=>{ prev(); if(playing) start(); });
+  nextBtn?.addEventListener('click', ()=>{ next(); if(playing) start(); });
+  playBtn?.addEventListener('click', togglePlay);
+
+  // 마우스 올리면 자동 전환 잠시 멈춤(원하면 제거 가능)
+  carousel.addEventListener('mouseenter', ()=>{ if(playing) stop(); });
+  carousel.addEventListener('mouseleave', ()=>{ if(playing) start(); });
+
+  render();
+  start();
+})();
+</script>
 <!-- OFFICE GALLERY -->
 <section class="section light" id="office">
   <div class="container">
