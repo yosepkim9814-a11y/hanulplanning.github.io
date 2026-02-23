@@ -3129,3 +3129,108 @@ html{ scroll-behavior: smooth; }
 .jump-btn:hover{
   background: rgba(11,16,32,.07);
 }
+/* ===== About layout: left nav + centered content ===== */
+#aboutSlider .about-layout{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+/* left nav */
+.about-sidenav{
+  position: sticky;
+  top: 92px; /* nav 아래로 */
+  display: grid;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+/* modern minimal buttons */
+.about-sidenav .jump-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(11,16,32,.82);
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(0,0,0,.08);
+  transition: .2s ease;
+}
+
+.about-sidenav .jump-btn:hover{
+  background: rgba(11,16,32,.06);
+}
+
+.about-sidenav .jump-btn.is-active{
+  background: #0b1020;
+  color: #fff;
+  border-color: #0b1020;
+}
+
+/* main topbar: title left, controls right */
+.about-topbar{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.about-main-title{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  color: rgba(11,16,32,.90);
+}
+
+/* controls on top-right, minimal */
+.about-switch-controls{
+  display:flex;
+  gap: 8px;
+}
+
+.about-switch-controls .as-btn{
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.92);
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.about-switch-controls .as-btn:hover{
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+/* carousel centered */
+.about-main .about-carousel{
+  border-radius: 18px;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  #aboutSlider .about-layout{
+    grid-template-columns: 1fr;
+  }
+  .about-sidenav{
+    position: relative;
+    top: 0;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 0;
+  }
+  .about-topbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
