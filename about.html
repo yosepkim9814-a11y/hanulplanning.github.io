@@ -1,240 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About | HANUL PLANNING</title>
-  <meta name="description" content="한울플래닝 회사소개 및 연혁" />
-
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>About | HANUL PLANNING</title>
+<meta content="한울플래닝 회사소개 및 연혁" name="description"/>
+<link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html#top" aria-label="홈으로">
-        <img src="assets/logo-white.png" class="logo" alt="한울플래닝 로고" />
-        <span class="brand-text">HANUL PLANNING</span>
-        <span class="brand-text-ko">한울플래닝</span>
-      </a>
+<nav class="menu mega">
+<!-- ABOUT -->
+<div class="mega-item">
+<a class="mega-top" href="about.html">
+<span class="en">ABOUT</span>
+<span class="ko">회사소개</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">OVERVIEW</span><span class="mega-sub">TIMELINE</span><span class="mega-sub">OFFICE</span><span class="mega-sub">GALLERY</span></div>
+</div>
+<!-- SERVICES -->
+<div class="mega-item">
+<a class="mega-top" href="services.html">
+<span class="en">SERVICES</span>
+<span class="ko">서비스</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">PROCESS</span><span class="mega-sub">PRODUCTION</span></div>
+</div>
+<!-- PRODUCTS -->
+<div class="mega-item">
+<a class="mega-top" href="products.html">
+<span class="en">PRODUCTS</span>
+<span class="ko">제품</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">DENIM PANTS</span><span class="mega-sub">DENIM JACKET &amp; SHIRTS</span><span class="mega-sub">WOVEN SHIRTS &amp; PANTS</span><span class="mega-sub">JACKETS &amp; BLAZERS</span><span class="mega-sub">COATS &amp; OUTER</span></div>
+</div>
+<!-- LOCATIONS -->
+<div class="mega-item">
+<a class="mega-top" href="directions.html">
+<span class="en">LOCATIONS</span>
+<span class="ko">오시는 길</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">DIRECTIONS</span><span class="mega-sub">HQ</span><span class="mega-sub">DENIM FACTORY</span><span class="mega-sub">WOVEN FACTORY</span></div>
+</div>
+<!-- CONTACT -->
+<div class="mega-item">
+<a class="mega-top" href="contact.html">
+<span class="en">CONTACT</span>
+<span class="ko">문의</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">INQUIRY</span><span class="mega-sub">FAQ</span></div>
+</div>
+</nav>
+<button aria-label="메뉴 열기" class="hamburger">☰</button>
 
-      <nav class="menu mega" aria-label="주요 메뉴">
-        <!-- ABOUT -->
-        <div class="mega-item">
-          <a class="mega-top is-active" href="about.html">
-            <span class="en">ABOUT</span>
-            <span class="ko">회사소개</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">OVERVIEW</span>
-            <span class="mega-sub">TIMELINE</span>
-            <span class="mega-sub">OFFICE</span>
-            <span class="mega-sub">GALLERY</span>
-          </div>
-        </div>
+<div class="mobile-menu" id="mobileMenu">
+<a class="is-active" data-ko="회사소개" href="about.html">ABOUT</a>
+<a data-ko="서비스" href="services.html">SERVICES</a>
+<a data-ko="제품" href="products.html">PRODUCTS</a>
+<a data-ko="오시는 길" href="directions.html">LOCATIONS</a>
+<a data-ko="문의" href="contact.html">CONTACT</a>
+</div>
 
-        <!-- SERVICES -->
-        <div class="mega-item">
-          <a class="mega-top" href="services.html">
-            <span class="en">SERVICES</span>
-            <span class="ko">서비스</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">PROCESS</span>
-            <span class="mega-sub">PRODUCTION</span>
-          </div>
-        </div>
-
-        <!-- PRODUCTS -->
-        <div class="mega-item">
-          <a class="mega-top" href="products.html">
-            <span class="en">PRODUCTS</span>
-            <span class="ko">제품</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">DENIM PANTS</span>
-            <span class="mega-sub">DENIM JACKET &amp; SHIRTS</span>
-            <span class="mega-sub">WOVEN SHIRTS &amp; PANTS</span>
-            <span class="mega-sub">JACKETS &amp; BLAZERS</span>
-            <span class="mega-sub">COATS &amp; OUTER</span>
-          </div>
-        </div>
-
-        <!-- LOCATIONS -->
-        <div class="mega-item">
-          <a class="mega-top" href="directions.html">
-            <span class="en">LOCATIONS</span>
-            <span class="ko">오시는 길</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">DIRECTIONS</span>
-            <span class="mega-sub">HQ</span>
-            <span class="mega-sub">DENIM FACTORY</span>
-            <span class="mega-sub">WOVEN FACTORY</span>
-          </div>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="mega-item">
-          <a class="mega-top" href="contact.html">
-            <span class="en">CONTACT</span>
-            <span class="ko">문의</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">INQUIRY</span>
-            <span class="mega-sub">FAQ</span>
-          </div>
-        </div>
-      </nav>
-
-      <button class="hamburger" aria-label="메뉴 열기">☰</button>
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a class="is-active" href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
-      <a href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
-      <a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
-      <a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
-      <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
-    </div>
-  </header>
-
-  <main class="page-hero" id="top">
-    <div class="container">
-      <div class="kicker">COMPANY</div>
-      <h1 class="page-title">About</h1>
-      <p class="page-sub">한울플래닝의 회사 소개 및 주요 연혁입니다.</p>
-    </div>
-  </main>
-
+<!-- PAGE HERO -->
+<main class="page-hero" id="top">
+<div class="container">
+<div class="kicker">COMPANY</div>
+<h1 class="page-title">About</h1>
+<p class="page-sub">한울플래닝의 회사 소개 및 주요 연혁입니다.</p>
+</div>
+</main>
 <!-- OVERVIEW + HISTORY (Swipe Slider) -->
 <section class="section light" id="aboutSlider">
-  <div class="container">
-
-    <div class="about-layout">
-      <!-- LEFT NAV -->
-      <aside class="about-sidenav">
-        <a class="jump-btn is-active" href="#aboutSlider">개요 / 연혁</a>
-        <a class="jump-btn" href="#office">본사 시설</a>
-      </aside>
-
-      <!-- MAIN -->
-      <div class="about-main">
-        <div class="about-topbar">
-          <h2 class="about-main-title">회사 개요 / 연혁</h2>
-
-          <div class="about-switch-controls" aria-label="슬라이드 컨트롤">
-            <button type="button" class="as-btn" id="asPrev" aria-label="이전">‹</button>
-            <button type="button" class="as-btn" id="asPlay" aria-label="일시정지/재생">❚❚</button>
-            <button type="button" class="as-btn" id="asNext" aria-label="다음">›</button>
-          </div>
-        </div>
-
-        <div class="about-carousel" id="aboutCarousel">
-          <div class="about-track" id="aboutTrack">
-
-            <!-- Slide 1: OVERVIEW -->
-            <article class="about-slide">
-              <div class="section-top">
-                <h3 class="section-title">신뢰 기반의 글로벌 OEM 파트너</h3>
-                <p class="section-lead">
+<div class="container">
+<div class="about-layout">
+<!-- LEFT NAV -->
+<aside class="about-sidenav">
+<a class="jump-btn is-active" href="#aboutSlider">개요 / 연혁</a>
+<a class="jump-btn" href="#office">본사 시설</a>
+</aside>
+<!-- MAIN -->
+<div class="about-main">
+<div class="about-topbar">
+<h2 class="about-main-title">회사 개요 / 연혁</h2>
+<div aria-label="슬라이드 컨트롤" class="about-switch-controls">
+<button aria-label="이전" class="as-btn" id="asPrev" type="button">‹</button>
+<button aria-label="일시정지/재생" class="as-btn" id="asPlay" type="button">❚❚</button>
+<button aria-label="다음" class="as-btn" id="asNext" type="button">›</button>
+</div>
+</div>
+<div class="about-carousel" id="aboutCarousel">
+<div class="about-track" id="aboutTrack">
+<!-- Slide 1: OVERVIEW -->
+<article class="about-slide">
+<div class="section-top">
+<h3 class="section-title">신뢰 기반의 글로벌 OEM 파트너</h3>
+<p class="section-lead">
                   (주)한울플래닝은 2001년 설립 이후 20년 이상 글로벌 의류 생산 시장에서
                   데님·우븐 중심의 OEM 제조/프로덕션을 안정적으로 운영해왔습니다.
                   품질·기술·네트워크를 기반으로 고객사의 제품 출시를 지원합니다.
                 </p>
-              </div>
-
-              <div class="overview-grid">
-                <div class="overview-card">
-                  <div class="badge">EST.</div>
-                  <div class="meta">
-                    <div class="k">설립</div>
-                    <div class="v">2001.10.29</div>
-                  </div>
-                </div>
-
-                <div class="overview-card">
-                  <div class="badge">FOCUS</div>
-                  <div class="meta">
-                    <div class="k">전문 분야</div>
-                    <div class="v">프리미엄 데님 · 우븐 OEM 생산</div>
-                  </div>
-                </div>
-
-                <div class="overview-card">
-                  <div class="badge">HQ</div>
-                  <div class="meta">
-                    <div class="k">본사</div>
-                    <div class="v">서울특별시 구로구 디지털로 26길 123 지플러스타워 808호</div>
-                  </div>
-                </div>
-
-                <div class="overview-card">
-                  <div class="badge">QC</div>
-                  <div class="meta">
-                    <div class="k">핵심 역량</div>
-                    <div class="v">글로벌 네트워크 · 엄격한 품질관리 · 생산 일정 운영</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Slide 2: HISTORY -->
-            <article class="about-slide">
-              <div class="section-top">
-                <h3 class="section-title">성장 연혁</h3>
-                <p class="section-lead">2001년부터 이어온 한울플래닝의 주요 이정표입니다.</p>
-              </div>
-
-              <div class="timeline">
-                <div class="t-item">
-                  <div class="t-year">2001</div>
-                  <div class="t-dot" aria-hidden="true"></div>
-                  <div class="t-desc">법인 전환, 상호 변경 (주)한울플래닝</div>
-                </div>
-
-                <div class="t-item">
-                  <div class="t-year">2004</div>
-                  <div class="t-dot" aria-hidden="true"></div>
-                  <div class="t-desc">구로 사옥 확장 이전</div>
-                </div>
-
-                <div class="t-item">
-                  <div class="t-year">2006</div>
-                  <div class="t-dot" aria-hidden="true"></div>
-                  <div class="t-desc">베트남 타이빈 HANUL 우븐 공장 설립 (10라인, 월 70,000pcs)</div>
-                </div>
-
-                <div class="t-item">
-                  <div class="t-year">2008–2009</div>
-                  <div class="t-dot" aria-hidden="true"></div>
-                  <div class="t-desc">중국 조보 HUAJIANG 데님 계약 및 베트남 호치민 DONG NAM 데님 계약</div>
-                </div>
-
-                <div class="t-item">
-                  <div class="t-year">2013–2015</div>
-                  <div class="t-dot" aria-hidden="true"></div>
-                  <div class="t-desc">R&D 전담부서 구축 / 베트남 호치민 KIM SUN 데님 계약</div>
-                </div>
-
-                <div class="t-item">
-                  <div class="t-year">2023</div>
-                  <div class="t-dot" aria-hidden="true"></div>
-                  <div class="t-desc">베트남 DN DNC 신공장 설립</div>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+</div>
+<div class="overview-grid">
+<div class="overview-card">
+<div class="badge">EST.</div>
+<div class="meta">
+<div class="k">설립</div>
+<div class="v">2001.10.29</div>
+</div>
+</div>
+<div class="overview-card">
+<div class="badge">FOCUS</div>
+<div class="meta">
+<div class="k">전문 분야</div>
+<div class="v">프리미엄 데님 · 우븐 OEM 생산</div>
+</div>
+</div>
+<div class="overview-card">
+<div class="badge">HQ</div>
+<div class="meta">
+<div class="k">본사</div>
+<div class="v">서울특별시 구로구 디지털로 26길 123 지플러스타워 808호</div>
+</div>
+</div>
+<div class="overview-card">
+<div class="badge">QC</div>
+<div class="meta">
+<div class="k">핵심 역량</div>
+<div class="v">글로벌 네트워크 · 엄격한 품질관리 · 생산 일정 운영</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Slide 2: HISTORY -->
+<article class="about-slide">
+<div class="section-top">
+<h3 class="section-title">성장 연혁</h3>
+<p class="section-lead">2001년부터 이어온 한울플래닝의 주요 이정표입니다.</p>
+</div>
+<div class="timeline">
+<div class="t-item">
+<div class="t-year">2001</div>
+<div aria-hidden="true" class="t-dot"></div>
+<div class="t-desc">법인 전환, 상호 변경 (주)한울플래닝</div>
+</div>
+<div class="t-item">
+<div class="t-year">2004</div>
+<div aria-hidden="true" class="t-dot"></div>
+<div class="t-desc">구로 사옥 확장 이전</div>
+</div>
+<div class="t-item">
+<div class="t-year">2006</div>
+<div aria-hidden="true" class="t-dot"></div>
+<div class="t-desc">베트남 타이빈 HANUL 우븐 공장 설립 (10라인, 월 70,000pcs)</div>
+</div>
+<div class="t-item">
+<div class="t-year">2008–2009</div>
+<div aria-hidden="true" class="t-dot"></div>
+<div class="t-desc">중국 조보 HUAJIANG 데님 계약 및 베트남 호치민 DONG NAM 데님 계약</div>
+</div>
+<div class="t-item">
+<div class="t-year">2013–2015</div>
+<div aria-hidden="true" class="t-dot"></div>
+<div class="t-desc">R&amp;D 전담부서 구축 / 베트남 호치민 KIM SUN 데님 계약</div>
+</div>
+<div class="t-item">
+<div class="t-year">2023</div>
+<div aria-hidden="true" class="t-dot"></div>
+<div class="t-desc">베트남 DN DNC 신공장 설립</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <script>
 (function(){
   const track = document.getElementById('aboutTrack');
@@ -313,54 +256,46 @@
   start();
 })();
 </script>
-  
 <!-- OFFICE GALLERY -->
 <section class="section light" id="office">
-  <div class="container">
-    <div class="section-top reveal">
-      <div class="eyebrow">OFFICE GALLERY</div>
-      <h2 class="section-title">본사 시설</h2>
-      <p class="section-lead">업무 및 샘플 개발이 이루어지는 본사 공간을 소개합니다.</p>
-    </div>
-
-    <div class="office-grid">
-      <button class="office-item" type="button" data-lightbox="assets/hq/entrance.png" data-caption="입구">
-        <img src="assets/hq/entrance.png" alt="입구" loading="lazy" />
-        <div class="office-cap">입구</div>
-      </button>
-
-      <button class="office-item" type="button" data-lightbox="assets/hq/office.png" data-caption="사무실">
-        <img src="assets/hq/office.png" alt="사무실" loading="lazy" />
-        <div class="office-cap">사무실</div>
-      </button>
-
-      <button class="office-item" type="button" data-lightbox="assets/hq/sample-denim.png" data-caption="샘플실(데님)">
-        <img src="assets/hq/sample-denim.png" alt="샘플실(데님)" loading="lazy" />
-        <div class="office-cap">샘플실(데님)</div>
-      </button>
-
-      <button class="office-item" type="button" data-lightbox="assets/hq/sample-woven.png" data-caption="샘플실(우븐)">
-        <img src="assets/hq/sample-woven.png" alt="샘플실(우븐)" loading="lazy" />
-        <div class="office-cap">샘플실(우븐)</div>
-      </button>
-
-      <button class="office-item" type="button" data-lightbox="assets/hq/finishing.png" data-caption="완성반">
-        <img src="assets/hq/finishing.png" alt="완성반" loading="lazy" />
-        <div class="office-cap">완성반</div>
-      </button>
-    </div>
-  </div>
+<div class="container">
+<div class="section-top reveal">
+<div class="eyebrow">OFFICE GALLERY</div>
+<h2 class="section-title">본사 시설</h2>
+<p class="section-lead">업무 및 샘플 개발이 이루어지는 본사 공간을 소개합니다.</p>
+</div>
+<div class="office-grid">
+<button class="office-item" data-caption="입구" data-lightbox="assets/hq/entrance.png" type="button">
+<img alt="입구" loading="lazy" src="assets/hq/entrance.png"/>
+<div class="office-cap">입구</div>
+</button>
+<button class="office-item" data-caption="사무실" data-lightbox="assets/hq/office.png" type="button">
+<img alt="사무실" loading="lazy" src="assets/hq/office.png"/>
+<div class="office-cap">사무실</div>
+</button>
+<button class="office-item" data-caption="샘플실(데님)" data-lightbox="assets/hq/sample-denim.png" type="button">
+<img alt="샘플실(데님)" loading="lazy" src="assets/hq/sample-denim.png"/>
+<div class="office-cap">샘플실(데님)</div>
+</button>
+<button class="office-item" data-caption="샘플실(우븐)" data-lightbox="assets/hq/sample-woven.png" type="button">
+<img alt="샘플실(우븐)" loading="lazy" src="assets/hq/sample-woven.png"/>
+<div class="office-cap">샘플실(우븐)</div>
+</button>
+<button class="office-item" data-caption="완성반" data-lightbox="assets/hq/finishing.png" type="button">
+<img alt="완성반" loading="lazy" src="assets/hq/finishing.png"/>
+<div class="office-cap">완성반</div>
+</button>
+</div>
+</div>
 </section>
-
 <!-- LIGHTBOX -->
 <dialog class="lb" id="lb">
-  <button class="lb-x" type="button" aria-label="닫기">×</button>
-  <figure class="lb-fig">
-    <img id="lbImg" alt="">
-    <figcaption id="lbCap"></figcaption>
-  </figure>
+<button aria-label="닫기" class="lb-x" type="button">×</button>
+<figure class="lb-fig">
+<img alt="" id="lbImg"/>
+<figcaption id="lbCap"></figcaption>
+</figure>
 </dialog>
-
 <script>
   // Office gallery lightbox (no library)
   (function(){
@@ -391,12 +326,10 @@
     });
   })();
 </script>
-
-  <footer class="footer">
-    <div class="container">© HANUL PLANNING CO., LTD</div>
-  </footer>
-
-  <script src="script.js"></script>
+<footer class="footer">
+<div class="container">© HANUL PLANNING CO., LTD</div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
 <script>
