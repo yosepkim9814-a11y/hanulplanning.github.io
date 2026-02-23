@@ -2860,3 +2860,68 @@ html{ scroll-behavior: smooth; }
 .products-section .p-card img{
   filter: drop-shadow(0 22px 28px rgba(0,0,0,.25)) brightness(1.06) contrast(1.05);
 }
+/* ===== NAV balance tune ===== */
+
+/* 1) 로고/브랜드 크기 다운 (밸런스) */
+.logo{
+  height: 26px !important;      /* 너무 크면 24px도 OK */
+}
+.brand-text{
+  font-size: 14px !important;
+  letter-spacing: .10em !important;
+}
+
+/* 2) 메뉴 한글(hover) 폰트 키우기 */
+.menu a::after,
+.mobile-menu a::after{
+  font-size: 14px !important;   /* 기존보다 키움 */
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* 3) 브랜드 hover 한글을 중앙쪽으로 + 자간 넓게 */
+.brand{
+  position: relative !important;
+}
+
+/* brand-text-ko를 “브랜드 영역 중앙”으로 띄우기 */
+.brand-text-ko{
+  position: absolute !important;
+  left: 58% !important;                 /* ✅ 로고에서 떨어져 중앙쪽 */
+  top: 50% !important;
+  transform: translate(-50%, -50%) translateY(4px) !important;
+  opacity: 0 !important;
+  transition: opacity .35s ease, transform .35s ease !important;
+
+  font-size: 16px !important;
+  font-weight: 900 !important;
+
+  /* ✅ '한 울 플 래 닝' 느낌 */
+  letter-spacing: .55em !important;     /* 자간 넓게 */
+  white-space: nowrap !important;
+}
+
+/* hover 시 영문 숨기고 한글 보여주기 */
+.brand:hover .brand-text{
+  opacity: 0 !important;
+  transform: translateY(-2px) !important;
+  transition: opacity .35s ease, transform .35s ease !important;
+}
+
+.brand:hover .brand-text-ko{
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) translateY(0) !important;
+}
+
+/* 4) 로고와 한글이 겹치지 않게 최소 폭 확보 */
+.brand{
+  min-width: 220px;  /* 좁으면 한글이 너무 붙어 보임 */
+}
+
+/* 반응형: 작은 화면에서는 과한 자간 줄이기 */
+@media (max-width: 980px){
+  .brand-text-ko{
+    letter-spacing: .38em !important;
+    left: 62% !important;
+  }
+}
