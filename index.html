@@ -242,19 +242,50 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // 3초 뒤: hero를 접고(reduce), 아래 섹션 보여주기
-    window.addEventListener("load", () => {
-      const hero = document.querySelector("[data-hero]");
-      const reveal = document.querySelector("[data-reveal]");
-      if (!hero || !reveal) return;
+ <script>
+  window.addEventListener("load", () => {
+    const hero = document.querySelector("[data-hero]");
+    const reveal = document.querySelector("[data-reveal]");
+    if (!hero || !reveal) return;
 
-      setTimeout(() => {
-        hero.classList.add("hero-collapse");
-        reveal.classList.add("show");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 3000);
-    });
-  </script>
+    let collapsed = false;
+
+    const collapse = () => {
+      if (collapsed) return;
+      collapsed = true;
+      hero.classList.add("hero-collapse");
+      reveal.classList.add("show");
+    };
+
+    const expand = () => {
+      if (!collapsed) return;
+      collapsed = false;
+      hero.classList.remove("hero-collapse");
+    };
+
+    // 3초 뒤 자동으로 접힘
+    setTimeout(collapse, 3000);
+
+    // ✅ 히어로 위에서 휠/터치 스크롤 하면 다시 펼치기
+    const onWheel = (e) => {
+      // 마우스 포인터가 hero 위에 있을 때만
+      if (!hero.matches(":hover")) return;
+      // 휠을 움직이면 펼치기
+      expand();
+    };
+
+    // wheel(마우스), touchmove(모바일) 둘 다 대응
+    window.addEventListener("wheel", onWheel, { passive: true });
+    window.addEventListener("touchmove", () => {
+      // 터치는 hover가 없으니, 화면 상단 근처(히어로 영역)일 때만 펼치기
+      if (window.scrollY < 120) expand();
+    }, { passive: true });
+
+    // ✅ 사용자가 위로 스크롤해서 맨 위로 오면 자동 펼치기(자연스럽게)
+    window.addEventListener("scroll", () => {
+      if (window.scrollY < 10) expand();
+    }, { passive: true });
+  });
+</script>
 </body>
 </html>
