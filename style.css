@@ -3313,3 +3313,82 @@ html{ scroll-behavior: smooth; }
 #procLbImg{
   width: 100% !important;
 }
+/* ===== Mega menu hover: EN -> KO + submenu ===== */
+.menu.mega{
+  display:flex;
+  gap: 26px;
+  align-items: flex-start;
+}
+
+.mega-item{
+  position: relative;
+  padding: 6px 0;
+}
+
+.mega-top{
+  position: relative;
+  display: inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width: 110px;
+  text-decoration:none;
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(255,255,255,.80);
+}
+
+/* 기본: 영어만 */
+.mega-top .ko{ display:none; }
+
+/* hover 대상만 한글 대제목 표시 */
+.mega-item:hover .mega-top{
+  color: rgba(255,255,255,.96);
+}
+.mega-item:hover .mega-top .en{ display:none; }
+.mega-item:hover .mega-top .ko{
+  display:inline-block;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* submenu */
+.mega-drop{
+  display: none;
+  position:absolute;
+  left: 0;
+  top: 34px;
+  padding-top: 10px;
+  min-width: 170px;
+  z-index: 80;
+}
+
+.mega-item:hover .mega-drop{
+  display: block;
+}
+
+/* submenu box */
+.mega-drop a{
+  display:block;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 12px;
+  text-decoration:none;
+  color: rgba(255,255,255,.86);
+  font-weight: 800;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(8px);
+}
+.mega-drop a:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* “마우스 이동하면 끊김” 방지용 hover padding */
+.mega-item::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top: 26px;
+  height: 18px;
+}
