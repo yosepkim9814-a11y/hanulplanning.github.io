@@ -3026,3 +3026,21 @@ html{ scroll-behavior: smooth; }
 #aboutCarousel.dragging{
   cursor: grabbing;
 }
+/* About: 슬라이더 위쪽 여백 줄이기 */
+#aboutSlider.section.light{
+  padding-top: 48px;
+  padding-bottom: 38px;
+}
+
+/* About: 슬라이더 컨트롤/제목 영역 간격 줄이기 */
+.about-switch{
+  margin-bottom: 10px;
+}
+
+/* Office gallery 섹션을 위로 당기기 */
+#office.section.light{
+  padding-top: 40px;
+}
+#office .section-top{
+  margin-bottom: 14px;
+}
