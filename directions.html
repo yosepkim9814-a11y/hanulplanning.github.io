@@ -166,3 +166,24 @@
   <script src="script.js"></script>
 </body>
 </html>
+<script>
+(function(){
+  document.querySelectorAll('[data-subtabs]').forEach((wrap)=>{
+    const tabs = wrap.querySelectorAll('.subtab');
+    const panels = wrap.querySelectorAll('.subpanel');
+
+    tabs.forEach((btn)=>{
+      btn.addEventListener('click', ()=>{
+        const target = btn.getAttribute('data-target');
+
+        tabs.forEach(b=>b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        panels.forEach(p=>p.classList.remove('is-show'));
+        const el = wrap.querySelector('#'+target);
+        if(el) el.classList.add('is-show');
+      });
+    });
+  });
+})();
+</script>
