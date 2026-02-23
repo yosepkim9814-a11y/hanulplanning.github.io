@@ -2925,3 +2925,35 @@ html{ scroll-behavior: smooth; }
     left: 62% !important;
   }
 }
+/* ===== Fix: Brand text hidden on About/Contact ===== */
+
+/* 기본 상태: 영문은 항상 보이게 */
+.brand .brand-text{
+  opacity: 1 !important;
+  transform: none !important;
+  display: inline-block !important;
+}
+
+/* 기본 상태: 한글은 숨김 */
+.brand .brand-text-ko{
+  opacity: 0 !important;
+}
+
+/* hover 상태: 영문 숨기고 한글 보이게 */
+.brand:hover .brand-text{
+  opacity: 0 !important;
+}
+.brand:hover .brand-text-ko{
+  opacity: 1 !important;
+}
+
+/* About/Contact(다크 헤더)에서는 한글 색도 흰색 유지 */
+.brand-text, .brand-text-ko{
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* Contact-light 같은 라이트 네비게이션 페이지는 글자색 다크 */
+body.contact-light .brand-text,
+body.contact-light .brand-text-ko{
+  color: #0b1020 !important;
+}
