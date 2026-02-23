@@ -68,18 +68,12 @@
       </div>
     </div>
 
-    <div class="about-carousel" id="aboutCarousel">
-      <!-- Slide 1: OVERVIEW -->
-      <article class="about-slide is-active" data-slide="0">
-        <div class="section-top">
-          <div class="eyebrow">COMPANY OVERVIEW</div>
-          <h3 class="section-title">신뢰 기반의 글로벌 OEM 파트너</h3>
-          <p class="section-lead">
-            (주)한울플래닝은 2001년 설립 이후 20년 이상 글로벌 의류 생산 시장에서
-            데님·우븐 중심의 OEM 제조/프로덕션을 안정적으로 운영해왔습니다.
-            품질·기술·네트워크를 기반으로 고객사의 제품 출시를 지원합니다.
-          </p>
-        </div>
+<div class="about-carousel" id="aboutCarousel">
+  <div class="about-track" id="aboutTrack">
+    <article class="about-slide"> ...Overview... </article>
+    <article class="about-slide"> ...History... </article>
+  </div>
+</div>
 
         <div class="overview-grid">
           <div class="overview-card">
@@ -179,26 +173,27 @@
 
 <script>
 (function(){
-  const carousel = document.getElementById('aboutCarousel');
-  if(!carousel) return;
-
-  const slides = Array.from(carousel.querySelectorAll('.about-slide'));
+  const track = document.getElementById('aboutTrack');
   const prevBtn = document.getElementById('asPrev');
   const nextBtn = document.getElementById('asNext');
   const playBtn = document.getElementById('asPlay');
+  const carousel = document.getElementById('aboutCarousel');
 
+  if(!track || !prevBtn || !nextBtn || !playBtn) return;
+
+  const total = 2;            // 슬라이드 2장
   let idx = 0;
   let playing = true;
   let timer = null;
-
-  const intervalMs = 2500; // 2~3초
+  const intervalMs = 2600;    // 2~3초
 
   const render = () => {
-    slides.forEach((s,i)=> s.classList.toggle('is-active', i===idx));
+    // 0 => 0%, 1 => -50%
+    track.style.transform = `translateX(${idx * -50}%)`;
   };
 
-  const next = () => { idx = (idx + 1) % slides.length; render(); };
-  const prev = () => { idx = (idx - 1 + slides.length) % slides.length; render(); };
+  const next = () => { idx = (idx + 1) % total; render(); };
+  const prev = () => { idx = (idx - 1 + total) % total; render(); };
 
   const start = () => {
     stop();
@@ -222,13 +217,13 @@
     }
   };
 
-  prevBtn?.addEventListener('click', ()=>{ prev(); if(playing) start(); });
-  nextBtn?.addEventListener('click', ()=>{ next(); if(playing) start(); });
-  playBtn?.addEventListener('click', togglePlay);
+  prevBtn.addEventListener('click', ()=>{ prev(); if(playing) start(); });
+  nextBtn.addEventListener('click', ()=>{ next(); if(playing) start(); });
+  playBtn.addEventListener('click', togglePlay);
 
-  // 마우스 올리면 자동 전환 잠시 멈춤(원하면 제거 가능)
-  carousel.addEventListener('mouseenter', ()=>{ if(playing) stop(); });
-  carousel.addEventListener('mouseleave', ()=>{ if(playing) start(); });
+  // hover 시 잠시 멈춤(원하면 지워도 됨)
+  carousel?.addEventListener('mouseenter', ()=>{ if(playing) stop(); });
+  carousel?.addEventListener('mouseleave', ()=>{ if(playing) start(); });
 
   render();
   start();
