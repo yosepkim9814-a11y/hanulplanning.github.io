@@ -3498,3 +3498,137 @@ html{ scroll-behavior: smooth; }
 }
 .brand:hover .brand-text{ opacity: 0 !important; transform: translateY(-2px) !important; }
 .brand:hover .brand-text-ko{ opacity: 1 !important; transform: translateY(-50%) translateY(0) !important; }
+
+
+/* =========================================================
+   NAV MEGA MENU OVERRIDE (CLEAN) - 2026-02-24
+   Goal:
+   - Main titles stay EN (ABOUT/SERVICES/...) and switch to KO on hover
+   - Subtitles are a 2nd-row full-width auxiliary bar
+   - Hidden by default, shown only when hovering each tab
+   - Subtitles are small, subtle, NOT clickable
+   - Prevent legacy data-ko hover system from breaking mega menu
+========================================================= */
+
+/* 1) Kill legacy data-ko hover effect INSIDE mega menu only */
+.menu.mega a::after,
+.menu.mega a::before{ content: none !important; }
+.menu.mega a:hover{ color: inherit !important; }
+
+/* 2) Main top tabs (EN->KO switch using spans) */
+.menu.mega{ display:flex !important; gap: 26px !important; align-items:center !important; }
+.menu.mega .mega-item{ position: relative !important; padding: 6px 0 !important; }
+.menu.mega .mega-top{
+  position: relative !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width: 110px !important;
+  font-size: 14px !important;
+  font-weight: 850 !important;
+  text-decoration:none !important;
+  white-space: nowrap !important;
+  color: rgba(255,255,255,.78) !important;
+}
+.menu.mega .mega-top .en{ display:inline-block !important; }
+.menu.mega .mega-top .ko{ display:none !important; }
+
+.menu.mega .mega-item:hover > .mega-top{
+  color: rgba(255,255,255,.96) !important;
+}
+.menu.mega .mega-item:hover > .mega-top .en{ display:none !important; }
+.menu.mega .mega-item:hover > .mega-top .ko{ display:inline-block !important; }
+
+/* 3) Second-row auxiliary bar (subtitles) */
+.nav{ --navH: 70px; }                /* nav height used by fixed sub-bar */
+.nav-inner{ min-height: var(--navH); }
+
+.menu.mega .mega-drop{
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: var(--navH) !important;
+
+  display:flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 22px !important;
+
+  padding: 10px 18px !important;
+  margin: 0 !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-6px) !important;
+
+  pointer-events: none !important;     /* ✅ absolutely non-clickable */
+  z-index: 55 !important;
+
+  background: rgba(0,0,0,.16) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  backdrop-filter: blur(12px) !important;
+
+  text-align:center !important;
+}
+
+/* show only on hovered tab */
+.menu.mega .mega-item:hover .mega-drop{
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  transition: opacity .22s ease, transform .22s ease, visibility .22s ease !important;
+}
+
+/* subtitle text */
+.menu.mega .mega-drop .mega-sub{
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.38) !important;
+  white-space: nowrap !important;
+}
+
+/* safety: if any old <a> remains inside mega-drop, force it to look/behave like subtitle */
+.menu.mega .mega-drop a{
+  pointer-events:none !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  color: rgba(255,255,255,.38) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+}
+
+/* 4) Light UI (index) version so it doesn't look 'dirty' */
+body.light-ui .menu.mega .mega-top{ color: rgba(11,16,32,.70) !important; }
+body.light-ui .menu.mega .mega-item:hover > .mega-top{ color: rgba(11,16,32,.92) !important; }
+
+body.light-ui .menu.mega .mega-drop{
+  background: rgba(255,255,255,.86) !important;
+  border-bottom: 1px solid rgba(0,0,0,.06) !important;
+}
+body.light-ui .menu.mega .mega-drop .mega-sub,
+body.light-ui .menu.mega .mega-drop a{
+  color: rgba(11,16,32,.38) !important;
+}
+
+/* 5) Brand hover: HANUL PLANNING -> 한울플래닝 (ensure always works) */
+.brand{ position: relative !important; }
+.brand .brand-text{ opacity: 1 !important; display:inline-block !important; }
+.brand .brand-text-ko{
+  opacity: 0 !important;
+  pointer-events:none !important;
+}
+.brand:hover .brand-text{ opacity: 0 !important; }
+.brand:hover .brand-text-ko{ opacity: 1 !important; }
+
+/* 6) Mobile: keep existing hamburger menu, hide mega drop bar */
+@media (max-width: 860px){
+  .menu.mega{ display:none !important; }
+  .menu.mega .mega-drop{ display:none !important; }
+}
