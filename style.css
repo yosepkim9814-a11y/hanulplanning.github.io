@@ -3241,3 +3241,52 @@ html{ scroll-behavior: smooth; }
   will-change: transform;
 }
 #aboutCarousel.dragging{ cursor: grabbing; }
+/* ===== Sub Tabs (page internal) ===== */
+.subtabs{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.subtab{
+  border: 0;
+  cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  background: transparent;
+  color: rgba(255,255,255,.78);
+  transition: .22s ease;
+}
+
+.subtab.is-active{
+  background: rgba(255,255,255,.92);
+  color: #0b1020;
+}
+
+.subpanel{ display:none; }
+.subpanel.is-show{ display:block; }
+
+/* 탭 아래 컨텐츠 영역 간격 */
+.subcontent{
+  margin-top: 16px;
+}
+
+/* 라이트 섹션에서 탭 컬러 반전 */
+.section.light .subtabs{
+  background: rgba(0,0,0,.02);
+  border-color: rgba(0,0,0,.10);
+}
+.section.light .subtab{
+  color: rgba(11,16,32,.72);
+}
+.section.light .subtab.is-active{
+  background: #0b1020;
+  color: #fff;
+}
