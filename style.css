@@ -108,7 +108,7 @@ body{
 }
 
 /* hover: EN -> KO */
-.menu a::after,
+.menu:not(.mega) a::after,
 .mobile-menu a::after{
   content: attr(data-ko);
   position: absolute;
@@ -123,11 +123,11 @@ body{
   font-size: 13px;
   letter-spacing: -0.02em;
 }
-.menu a:hover,
+.menu:not(.mega) a:hover,
 .mobile-menu a:hover{
   color: transparent;
 }
-.menu a:hover::after,
+.menu:not(.mega) a:hover::after,
 .mobile-menu a:hover::after{
   opacity: 1;
   transform: translate(-50%, 0);
@@ -903,7 +903,7 @@ body.light-ui .brand-ko:hover .brand-ko-text{
 .menu a, .mobile-menu a{ position: relative; white-space: nowrap; }
 .menu a .en, .mobile-menu a .en{ display:inline-block; }
 
-.menu a::after,
+.menu:not(.mega) a::after,
 .mobile-menu a::after{
   content: attr(data-ko);
   position: absolute;
@@ -921,7 +921,7 @@ body.light-ui .brand-ko:hover .brand-ko-text{
   opacity: 0;
 }
 
-.menu a:hover::after,
+.menu:not(.mega) a:hover::after,
 .mobile-menu a:hover::after{
   opacity: 1;
   transform: translate(-50%, 0);
@@ -975,13 +975,13 @@ body.light-ui .brand-ko:hover .brand-ko-text{
   box-shadow: 0 10px 28px rgba(0,0,0,.18);
 }
 /* 메뉴 hover: 사라락(느리게) */
-.menu a::after,
+.menu:not(.mega) a::after,
 .mobile-menu a::after{
   transition: opacity .32s ease, transform .32s ease; /* 기존 0.18 -> 0.32 */
   transform: translate(-50%, 6px);  /* 시작 위치를 더 아래로 */
 }
 
-.menu a:hover::after,
+.menu:not(.mega) a:hover::after,
 .mobile-menu a:hover::after{
   transform: translate(-50%, 0);
 }
@@ -2872,7 +2872,7 @@ html{ scroll-behavior: smooth; }
 }
 
 /* 2) 메뉴 한글(hover) 폰트 키우기 */
-.menu a::after,
+.menu:not(.mega) a::after,
 .mobile-menu a::after{
   font-size: 14px !important;   /* 기존보다 키움 */
   font-weight: 800 !important;
@@ -3313,15 +3313,13 @@ html{ scroll-behavior: smooth; }
 #procLbImg{
   width: 100% !important;
 }
-
-/* ===== Mega menu (hover: show Korean title + subtle sublabels) ===== */
+/* ===== Mega menu hover: EN -> KO + submenu ===== */
 .menu.mega{
   display:flex;
   gap: 26px;
   align-items: flex-start;
 }
 
-/* each top item */
 .mega-item{
   position: relative;
   padding: 6px 0;
@@ -3339,10 +3337,10 @@ html{ scroll-behavior: smooth; }
   color: rgba(255,255,255,.80);
 }
 
-/* default: show English only */
+/* 기본: 영어만 */
 .mega-top .ko{ display:none; }
 
-/* on hover: show Korean top title */
+/* hover 대상만 한글 대제목 표시 */
 .mega-item:hover .mega-top{
   color: rgba(255,255,255,.96);
 }
@@ -3353,90 +3351,51 @@ html{ scroll-behavior: smooth; }
   letter-spacing: -0.02em;
 }
 
-/* sublabels: hidden until hover, not clickable */
+/* submenu (aux 2nd row) */
 .mega-drop{
-  display:none;
-  position:absolute;
-  left: 50%;
-  top: 34px;
-  transform: translateX(-50%);
-  padding-top: 10px;
-  z-index: 80;
-
-  /* inline labels */
-  gap: 14px;
-  white-space: nowrap;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 64px; /* below the top nav row */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap: 22px;
+  padding: 10px 16px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none; /* not clickable */
+  z-index: 55;
+  background: rgba(0,0,0,.14);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(12px);
 }
 
 .mega-item:hover .mega-drop{
-  display:flex;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* sublabel text style (non-clickable) */
-.mega-drop a{
-  pointer-events: none;         /* 클릭 방지 */
-  cursor: default;
-  text-decoration:none;
-
-  background: transparent;
-  border: 0;
-  padding: 0;
-  margin: 0;
-
+/* Subtitle text */
+.mega-drop .mega-sub{
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: .22em;
+  letter-spacing: .10em;
   text-transform: uppercase;
-
-  color: rgba(255,255,255,.95);
-  opacity: .33;
-  transition: opacity .18s ease;
+  color: rgba(255,255,255,.38);
+  white-space: nowrap;
 }
 
-/* 조금 더 또렷하게 (hover한 상태 유지 중) */
-.mega-item:hover .mega-drop a{ opacity: .40; }
-
+/* On smaller screens, keep it hidden (mobile menu uses its own UI) */
+@media (max-width: 860px){
+  .mega-drop{ display:none !important; }
+}
 /* “마우스 이동하면 끊김” 방지용 hover padding */
 .mega-item::after{
   content:"";
   position:absolute;
   left:0; right:0;
   top: 26px;
-  height: 20px;
-}
-
-
-/* =========================================================
-   FIX (2026-02-23)
-   Legacy "EN -> KO on hover" styles were written for links
-   that use data-ko + ::after.
-   The new mega menu uses <span class="en"> / <span class="ko">,
-   so the legacy hover rules were making mega menu text
-   turn transparent and causing weird overlapping artifacts.
-   -> Scope legacy hover effect to ONLY anchors that have [data-ko].
-   ========================================================= */
-
-/* 1) Disable legacy ::after for links without data-ko (including mega menu) */
-.menu a:not([data-ko])::after,
-.mobile-menu a:not([data-ko])::after{
-  content: none !important;
-  display: none !important;
-}
-
-/* 2) Prevent "color: transparent" hover from applying to non data-ko links */
-.menu a:not([data-ko]):hover,
-.mobile-menu a:not([data-ko]):hover{
-  color: inherit !important;
-}
-
-/* 3) If a link has inner .en span, don't fade it out unless data-ko exists */
-.menu a:not([data-ko]):hover .en,
-.mobile-menu a:not([data-ko]):hover .en{
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* 4) Keep submenu items readable on hover (they never have data-ko) */
-.menu.mega .mega-drop a:hover{
-  color: rgba(255,255,255,.96) !important;
+  height: 18px;
 }
