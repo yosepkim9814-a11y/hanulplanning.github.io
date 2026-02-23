@@ -2959,22 +2959,11 @@ html{ scroll-behavior: smooth; }
 
 .about-carousel{
   position: relative;
-  min-height: 520px;
-}
-
-.about-slide{
-  display:none;
-}
-
-.about-slide.is-active{
-  display:block;
-  animation: aboutFade .35s ease;
-}
-
-@keyframes aboutFade{
-  from{ opacity:0; transform: translateY(6px); }
-  to{ opacity:1; transform: translateY(0); }
-}
+  overflow: hidden;
+  border-radius: 18px;
+  /* ✅ 높이 고정: 내용 단차로 아래가 흔들리지 않게 */
+  min-height: 640px;          /* 필요 시 700까지 올려도 됨 */
+  background: rgba(255,255,255,.0);
 
 /* Office teaser */
 .office-teaser{
