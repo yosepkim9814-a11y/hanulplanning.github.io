@@ -2887,7 +2887,7 @@ html{ scroll-behavior: smooth; }
 /* brand-text-ko를 “브랜드 영역 중앙”으로 띄우기 */
 .brand-text-ko{
   position: absolute !important;
-  left: 58% !important;                 /* ✅ 로고에서 떨어져 중앙쪽 */
+  left: 30% !important;                 /* ✅ 로고에서 떨어져 중앙쪽 */
   top: 50% !important;
   transform: translate(-50%, -50%) translateY(4px) !important;
   opacity: 0 !important;
