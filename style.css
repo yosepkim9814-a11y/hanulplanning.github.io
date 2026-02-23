@@ -3234,3 +3234,10 @@ html{ scroll-behavior: smooth; }
     align-items: flex-start;
   }
 }
+/* About swipe slider smoother */
+.about-carousel{ overflow:hidden; border-radius:18px; }
+.about-track{
+  transition: transform .75s cubic-bezier(.22,.8,.22,1) !important;
+  will-change: transform;
+}
+#aboutCarousel.dragging{ cursor: grabbing; }
