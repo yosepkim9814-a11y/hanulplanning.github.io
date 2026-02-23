@@ -2830,3 +2830,33 @@ html{ scroll-behavior: smooth; }
   line-height: 1.85 !important;
   color: rgba(255,255,255,.70) !important;
 }
+/* Products: photo area white background */
+.products-section{
+  background: #f3f5f7;
+  color: #0b1020;
+  padding: 72px 0;
+}
+
+/* category title colors on white */
+.products-section .cat-head{
+  border-top-color: rgba(0,0,0,.08);
+}
+.products-section .cat-head h2{
+  color: #0b1020;
+}
+.products-section .cat-sub{
+  color: rgba(11,16,32,.62);
+}
+
+/* cards on white */
+.products-section .p-card{
+  background: linear-gradient(145deg, #ffffff, #f3f4f7);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+}
+.products-section .p-card::after{
+  opacity: .35;
+}
+.products-section .p-card img{
+  filter: drop-shadow(0 22px 28px rgba(0,0,0,.25)) brightness(1.06) contrast(1.05);
+}
