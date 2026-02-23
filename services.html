@@ -1,163 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services | HANUL PLANNING</title>
-  <meta name="description" content="한울플래닝 서비스 및 제작 프로세스/생산공정" />
-
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Services | HANUL PLANNING</title>
+<meta content="한울플래닝 서비스 및 제작 프로세스/생산공정" name="description"/>
+<link href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html#top" aria-label="홈으로">
-        <img src="assets/logo-white.png" class="logo" alt="한울플래닝 로고" />
-        <span class="brand-text">HANUL PLANNING</span>
-        <span class="brand-text-ko">한울플래닝</span>
-      </a>
+<nav class="menu mega">
+<!-- ABOUT -->
+<div class="mega-item">
+<a class="mega-top" href="about.html">
+<span class="en">ABOUT</span>
+<span class="ko">회사소개</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">OVERVIEW</span><span class="mega-sub">TIMELINE</span><span class="mega-sub">OFFICE</span><span class="mega-sub">GALLERY</span></div>
+</div>
+<!-- SERVICES -->
+<div class="mega-item">
+<a class="mega-top" href="services.html">
+<span class="en">SERVICES</span>
+<span class="ko">서비스</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">PROCESS</span><span class="mega-sub">PRODUCTION</span></div>
+</div>
+<!-- PRODUCTS -->
+<div class="mega-item">
+<a class="mega-top" href="products.html">
+<span class="en">PRODUCTS</span>
+<span class="ko">제품</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">DENIM PANTS</span><span class="mega-sub">DENIM JACKET &amp; SHIRTS</span><span class="mega-sub">WOVEN SHIRTS &amp; PANTS</span><span class="mega-sub">JACKETS &amp; BLAZERS</span><span class="mega-sub">COATS &amp; OUTER</span></div>
+</div>
+<!-- LOCATIONS -->
+<div class="mega-item">
+<a class="mega-top" href="directions.html">
+<span class="en">LOCATIONS</span>
+<span class="ko">오시는 길</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">DIRECTIONS</span><span class="mega-sub">HQ</span><span class="mega-sub">DENIM FACTORY</span><span class="mega-sub">WOVEN FACTORY</span></div>
+</div>
+<!-- CONTACT -->
+<div class="mega-item">
+<a class="mega-top" href="contact.html">
+<span class="en">CONTACT</span>
+<span class="ko">문의</span>
+</a>
+<div class="mega-drop"><span class="mega-sub">INQUIRY</span><span class="mega-sub">FAQ</span></div>
+</div>
+</nav>
+<button aria-label="메뉴 열기" class="hamburger">☰</button>
 
-      <nav class="menu mega" aria-label="주요 메뉴">
-        <!-- ABOUT -->
-        <div class="mega-item">
-          <a class="mega-top" href="about.html">
-            <span class="en">ABOUT</span>
-            <span class="ko">회사소개</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">OVERVIEW</span>
-            <span class="mega-sub">TIMELINE</span>
-            <span class="mega-sub">OFFICE</span>
-            <span class="mega-sub">GALLERY</span>
-          </div>
-        </div>
+<div class="mobile-menu" id="mobileMenu">
+<a data-ko="회사소개" href="about.html"><span class="en">ABOUT</span></a>
+<a class="is-active" data-ko="서비스" href="services.html"><span class="en">SERVICES</span></a>
+<a data-ko="제품" href="products.html"><span class="en">PRODUCTS</span></a>
+<a data-ko="오시는 길" href="directions.html"><span class="en">LOCATIONS</span></a>
+<a data-ko="문의" href="contact.html"><span class="en">CONTACT</span></a>
+</div>
 
-        <!-- SERVICES -->
-        <div class="mega-item">
-          <a class="mega-top is-active" href="services.html">
-            <span class="en">SERVICES</span>
-            <span class="ko">서비스</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">PROCESS</span>
-            <span class="mega-sub">PRODUCTION</span>
-          </div>
-        </div>
-
-        <!-- PRODUCTS -->
-        <div class="mega-item">
-          <a class="mega-top" href="products.html">
-            <span class="en">PRODUCTS</span>
-            <span class="ko">제품</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">DENIM PANTS</span>
-            <span class="mega-sub">DENIM JACKET &amp; SHIRTS</span>
-            <span class="mega-sub">WOVEN SHIRTS &amp; PANTS</span>
-            <span class="mega-sub">JACKETS &amp; BLAZERS</span>
-            <span class="mega-sub">COATS &amp; OUTER</span>
-          </div>
-        </div>
-
-        <!-- LOCATIONS -->
-        <div class="mega-item">
-          <a class="mega-top" href="directions.html">
-            <span class="en">LOCATIONS</span>
-            <span class="ko">오시는 길</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">DIRECTIONS</span>
-            <span class="mega-sub">HQ</span>
-            <span class="mega-sub">DENIM FACTORY</span>
-            <span class="mega-sub">WOVEN FACTORY</span>
-          </div>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="mega-item">
-          <a class="mega-top" href="contact.html">
-            <span class="en">CONTACT</span>
-            <span class="ko">문의</span>
-          </a>
-          <div class="mega-drop" aria-hidden="true">
-            <span class="mega-sub">INQUIRY</span>
-            <span class="mega-sub">FAQ</span>
-          </div>
-        </div>
-      </nav>
-
-      <button class="hamburger" aria-label="메뉴 열기">☰</button>
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="about.html" data-ko="회사소개"><span class="en">ABOUT</span></a>
-      <a class="is-active" href="services.html" data-ko="서비스"><span class="en">SERVICES</span></a>
-      <a href="products.html" data-ko="제품"><span class="en">PRODUCTS</span></a>
-      <a href="directions.html" data-ko="오시는 길"><span class="en">LOCATIONS</span></a>
-      <a href="contact.html" data-ko="문의"><span class="en">CONTACT</span></a>
-    </div>
-  </header>
-
+<!-- HERO -->
 <main class="page-hero">
-  <div class="container">
-    <div class="kicker">COMPANY · HANUL PLANNING</div>
-    <h1 class="page-title">Services</h1>
-    <p class="page-sub">
+<div class="container">
+<div class="kicker">COMPANY · HANUL PLANNING</div>
+<h1 class="page-title">Services</h1>
+<p class="page-sub">
       제작 흐름과 생산공정을 한눈에 확인하세요.<br/>
       샘플 개발부터 벌크 생산, QC, 출고까지 전 과정을 관리합니다.
     </p>
-  </div>
+</div>
 </main>
-
-  <!-- PROCESS / MANUFACTURING (tabs + single content) -->
-  <section class="section alt service-visual">
-    <div class="container">
-      <h2 class="proc-title">제작 프로세스 · 생산공정</h2>
-
-      <div class="proc-tabs" role="tablist" aria-label="제작 정보 탭">
-        <button class="proc-tab is-active" role="tab" aria-selected="true" data-target="tab-process">
+<!-- PROCESS / MANUFACTURING (tabs + single content) -->
+<section class="section alt service-visual">
+<div class="container">
+<h2 class="proc-title">제작 프로세스 · 생산공정</h2>
+<div aria-label="제작 정보 탭" class="proc-tabs" role="tablist">
+<button aria-selected="true" class="proc-tab is-active" data-target="tab-process" role="tab">
           제작 프로세스
         </button>
-        <button class="proc-tab" role="tab" aria-selected="false" data-target="tab-manufacturing">
+<button aria-selected="false" class="proc-tab" data-target="tab-manufacturing" role="tab">
           생산공정
         </button>
-      </div>
-
-      <div class="proc-panels">
-        <div id="tab-process" class="proc-panel is-show" role="tabpanel">
+</div>
+<div class="proc-panels">
+<div class="proc-panel is-show" id="tab-process" role="tabpanel">
 <div class="proc-img">
-  <button class="proc-zoom"
-          data-full="assets/process/process.png"
-          data-cap="제작 프로세스">
-    <img src="assets/process/process.png" alt="제작 프로세스">
-  </button>
-          </div>
-        </div>
-
-        <div id="tab-manufacturing" class="proc-panel" role="tabpanel">
+<button class="proc-zoom" data-cap="제작 프로세스" data-full="assets/process/process.png">
+<img alt="제작 프로세스" src="assets/process/process.png"/>
+</button>
+</div>
+</div>
+<div class="proc-panel" id="tab-manufacturing" role="tabpanel">
 <div class="proc-img">
-  <button class="proc-zoom"
-          data-full="assets/process/manufacturing.png"
-          data-cap="생산공정">
-    <img src="assets/process/manufacturing.png" alt="생산공정">
-  </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<button class="proc-zoom" data-cap="생산공정" data-full="assets/process/manufacturing.png">
+<img alt="생산공정" src="assets/process/manufacturing.png"/>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- PROCESS LIGHTBOX -->
 <dialog class="proc-lb" id="procLb">
-  <button class="proc-lb-x" type="button">×</button>
-  <figure class="proc-lb-fig">
-    <img id="procLbImg" alt="">
-    <figcaption id="procLbCap"></figcaption>
-  </figure>
+<button class="proc-lb-x" type="button">×</button>
+<figure class="proc-lb-fig">
+<img alt="" id="procLbImg"/>
+<figcaption id="procLbCap"></figcaption>
+</figure>
 </dialog>
-
 <script>
   (function(){
     const dlg = document.getElementById('procLb');
@@ -186,8 +140,7 @@
     });
   })();
 </script>
-
-  <script>
+<script>
     // Simple tabs (no dependencies)
     (function () {
       const tabs = document.querySelectorAll(".proc-tab");
@@ -211,67 +164,60 @@
       });
     })();
   </script>
-
-  <!-- SERVICES CARDS -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>SERVICES</h2>
-        <p>샘플 개발부터 생산 운영, QC·출고까지 전 과정 운영을 지원합니다.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="tile reveal">
-          <div class="tile-body">
-            <div class="tile-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M4 7h16M7 4v16M10 9h10M10 13h10M10 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Sample Development</h3>
-            <p>샘플 개발부터 PP/QC/TOP 승인까지 단계별 관리, 소재·부자재 소싱 및 가공 방향 조율</p>
-          </div>
-        </div>
-
-        <div class="tile reveal delay-1">
-          <div class="tile-body">
-            <div class="tile-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M4 8h16M6 8v10m6-10v10m6-10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M4 18h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Production Management</h3>
-            <p>라인 계획·공장 운영·납기 스케줄을 통합 관리하여 안정적인 생산 흐름 유지</p>
-          </div>
-        </div>
-
-        <div class="tile reveal delay-2">
-          <div class="tile-body">
-            <div class="tile-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 3h10v18H7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M9 8l1.6 1.6L14.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Quality Control & Shipping</h3>
-            <p>스펙·측정·패킹 기준 표준화, 출고 전 품질 검수 및 출고 준비</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="foot reveal" style="margin-top:26px;">
-        <div>※ 문의는 CONTACT 페이지에서 접수하시면 빠르게 회신드립니다.</div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">© HANUL PLANNING CO., LTD</div>
-  </footer>
-
-  <script src="script.js"></script>
+<!-- SERVICES CARDS -->
+<section class="section" id="services">
+<div class="container">
+<div class="section-head reveal">
+<h2>SERVICES</h2>
+<p>샘플 개발부터 생산 운영, QC·출고까지 전 과정 운영을 지원합니다.</p>
+</div>
+<div class="grid-3">
+<div class="tile reveal">
+<div class="tile-body">
+<div aria-hidden="true" class="tile-ico">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M4 7h16M7 4v16M10 9h10M10 13h10M10 17h10" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path>
+</svg>
+</div>
+<h3>Sample Development</h3>
+<p>샘플 개발부터 PP/QC/TOP 승인까지 단계별 관리, 소재·부자재 소싱 및 가공 방향 조율</p>
+</div>
+</div>
+<div class="tile reveal delay-1">
+<div class="tile-body">
+<div aria-hidden="true" class="tile-ico">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M4 8h16M6 8v10m6-10v10m6-10v10" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path>
+<path d="M4 18h16" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path>
+</svg>
+</div>
+<h3>Production Management</h3>
+<p>라인 계획·공장 운영·납기 스케줄을 통합 관리하여 안정적인 생산 흐름 유지</p>
+</div>
+</div>
+<div class="tile reveal delay-2">
+<div class="tile-body">
+<div aria-hidden="true" class="tile-ico">
+<svg fill="none" viewbox="0 0 24 24">
+<path d="M7 3h10v18H7z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path>
+<path d="M9 8l1.6 1.6L14.5 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+<path d="M9 13h6" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path>
+</svg>
+</div>
+<h3>Quality Control &amp; Shipping</h3>
+<p>스펙·측정·패킹 기준 표준화, 출고 전 품질 검수 및 출고 준비</p>
+</div>
+</div>
+</div>
+<div class="foot reveal" style="margin-top:26px;">
+<div>※ 문의는 CONTACT 페이지에서 접수하시면 빠르게 회신드립니다.</div>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="container">© HANUL PLANNING CO., LTD</div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
 <script>
