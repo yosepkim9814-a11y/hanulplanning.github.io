@@ -3313,13 +3313,15 @@ html{ scroll-behavior: smooth; }
 #procLbImg{
   width: 100% !important;
 }
-/* ===== Mega menu hover: EN -> KO + submenu ===== */
+
+/* ===== Mega menu (hover: show Korean title + subtle sublabels) ===== */
 .menu.mega{
   display:flex;
   gap: 26px;
   align-items: flex-start;
 }
 
+/* each top item */
 .mega-item{
   position: relative;
   padding: 6px 0;
@@ -3337,10 +3339,10 @@ html{ scroll-behavior: smooth; }
   color: rgba(255,255,255,.80);
 }
 
-/* 기본: 영어만 */
+/* default: show English only */
 .mega-top .ko{ display:none; }
 
-/* hover 대상만 한글 대제목 표시 */
+/* on hover: show Korean top title */
 .mega-item:hover .mega-top{
   color: rgba(255,255,255,.96);
 }
@@ -3351,38 +3353,48 @@ html{ scroll-behavior: smooth; }
   letter-spacing: -0.02em;
 }
 
-/* submenu */
+/* sublabels: hidden until hover, not clickable */
 .mega-drop{
-  display: none;
+  display:none;
   position:absolute;
-  left: 0;
+  left: 50%;
   top: 34px;
+  transform: translateX(-50%);
   padding-top: 10px;
-  min-width: 170px;
   z-index: 80;
+
+  /* inline labels */
+  gap: 14px;
+  white-space: nowrap;
 }
 
 .mega-item:hover .mega-drop{
-  display: block;
+  display:flex;
 }
 
-/* submenu box */
+/* sublabel text style (non-clickable) */
 .mega-drop a{
-  display:block;
-  padding: 10px 12px;
-  margin-top: 6px;
-  border-radius: 12px;
+  pointer-events: none;         /* 클릭 방지 */
+  cursor: default;
   text-decoration:none;
-  color: rgba(255,255,255,.86);
+
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+  font-size: 12px;
   font-weight: 800;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(8px);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.95);
+  opacity: .33;
+  transition: opacity .18s ease;
 }
-.mega-drop a:hover{
-  background: rgba(255,255,255,.10);
-  border-color: rgba(255,255,255,.18);
-}
+
+/* 조금 더 또렷하게 (hover한 상태 유지 중) */
+.mega-item:hover .mega-drop a{ opacity: .40; }
 
 /* “마우스 이동하면 끊김” 방지용 hover padding */
 .mega-item::after{
@@ -3390,7 +3402,7 @@ html{ scroll-behavior: smooth; }
   position:absolute;
   left:0; right:0;
   top: 26px;
-  height: 18px;
+  height: 20px;
 }
 
 
