@@ -108,20 +108,36 @@ body{
 }
 
 /* hover: EN -> KO */
+/* ===== NAV hover Korean text color fix ===== */
 .menu a::after,
 .mobile-menu a::after{
   content: attr(data-ko);
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translate(-50%, 2px);
+  transform: translate(-50%, 6px);
   opacity: 0;
-  transition: opacity .18s ease, transform .18s ease;
-  white-space: nowrap;
   pointer-events: none;
-  color: var(--text);
-  font-size: 13px;
+
+  /* 🔥 로고와 동일한 컬러 */
+  color: #ffffff !important;
+
+  font-size: 15px !important;
+  font-weight: 800 !important;
   letter-spacing: -0.02em;
+
+  transition: opacity .32s ease, transform .32s ease;
+}
+
+.menu a:hover,
+.mobile-menu a:hover{
+  color: transparent !important;
+}
+
+.menu a:hover::after,
+.mobile-menu a:hover::after{
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 .menu a:hover,
 .mobile-menu a:hover{
