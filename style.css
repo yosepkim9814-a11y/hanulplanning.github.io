@@ -109,6 +109,7 @@ body{
 
 /* hover: EN -> KO */
 /* ===== NAV hover Korean text color fix ===== */
+/* ===== NAV hover Korean text navy color ===== */
 .menu a::after,
 .mobile-menu a::after{
   content: attr(data-ko);
@@ -119,8 +120,8 @@ body{
   opacity: 0;
   pointer-events: none;
 
-  /* 🔥 로고와 동일한 컬러 */
-  color: #ffffff !important;
+  /* 🔥 한울플래닝 호버 네이비 컬러 */
+  color: #0b1020 !important;
 
   font-size: 15px !important;
   font-weight: 800 !important;
