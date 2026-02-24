@@ -3342,3 +3342,25 @@ html{ scroll-behavior: smooth; }
 .hero-collapse {
   height: 70vh;
 }
+/* ===== SERVICES process title align fix ===== */
+
+/* 컨테이너를 기본 폭으로 복구 */
+.service-visual .container{
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}
+
+/* 제목 왼쪽 튀어나옴 방지 */
+.service-visual .proc-title{
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+  text-align: left;
+}
+
+/* 탭도 동일 라인 정렬 */
+.service-visual .proc-tabs{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
