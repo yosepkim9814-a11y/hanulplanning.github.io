@@ -1,66 +1,121 @@
-// 모바일 메뉴
-const btn = document.querySelector(".hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
 
-btn?.addEventListener("click", () => {
-  if (!mobileMenu) return;
-  mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
-});
+(() => {
+  const header = document.querySelector('.site-header');
+  const toggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-mobileMenu?.querySelectorAll("a").forEach(a =>
-  a.addEventListener("click", () => {
-    mobileMenu.style.display = "none";
-  })
-);
+  const syncHeader = () => {
+    if (!header) return;
+    if (window.scrollY > 12) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  };
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
 
-// 스크롤 리빌
-const reveals = document.querySelectorAll(".reveal");
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      e.target.classList.add("show");
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12 });
+  if (toggle && mobileMenu) {
+    const closeMenu = () => {
+      mobileMenu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('is-open')) return;
+      if (mobileMenu.contains(e.target) || toggle.contains(e.target)) return;
+      closeMenu();
+    });
+  }
 
-reveals.forEach(el => io.observe(el));
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('is-visible'));
+  }
 
-// 히어로 텍스트 페이드/이동
-const hero = document.querySelector(".hero-content");
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-  if (!hero) return;
-  const fade = Math.max(0, 1 - y / 450);
-  hero.style.opacity = String(fade);
-  hero.style.transform = `translateY(${Math.min(24, y / 18)}px)`;
-});
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
 
-// Formspree AJAX 전송 + 알림
-const form = document.getElementById("inquiryForm");
+    const openLightbox = (src, caption = '') => {
+      lightboxImage.src = src;
+      lightboxImage.alt = caption;
+      lightboxCaption.textContent = caption;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeLightbox = () => {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    };
 
-form?.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  try {
-    const data = new FormData(form);
-
-    const res = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { "Accept": "application/json" }
+    document.querySelectorAll('[data-lightbox], [data-full]').forEach((el) => {
+      el.addEventListener('click', () => {
+        const src = el.getAttribute('data-lightbox') || el.getAttribute('data-full');
+        const caption = el.getAttribute('data-caption') || el.getAttribute('data-cap') || '';
+        if (src) openLightbox(src, caption);
+      });
     });
 
-    if (res.ok) {
-      alert("문의가 접수되었습니다. 빠르게 회신드리겠습니다!");
-      form.reset();
-    } else {
-      const text = await res.text();
-      console.error("Formspree error:", res.status, text);
-      alert("전송에 실패했습니다. 입력값/설정 확인 후 다시 시도해주세요.");
-    }
-  } catch (err) {
-    console.error(err);
-    alert("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+    closeBtn?.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
   }
-});
+
+  const form = document.getElementById('inquiryForm');
+  const formStatus = document.getElementById('formStatus');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+      if (formStatus) formStatus.textContent = 'Sending your inquiry...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          if (formStatus) formStatus.textContent = 'Thank you. Your inquiry has been submitted successfully.';
+        } else {
+          if (formStatus) formStatus.textContent = 'Submission failed. Please check the form and try again.';
+        }
+      } catch (error) {
+        if (formStatus) formStatus.textContent = 'Network error. Please try again in a moment.';
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText || 'Send';
+        }
+      }
+    });
+  }
+})();
