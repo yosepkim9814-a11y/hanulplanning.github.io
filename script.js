@@ -1,121 +1,178 @@
+(function(){
+  const root = document.documentElement;
+  const storageKey = 'hanulSiteLang';
+  const defaultLang = 'ko';
+  let currentLang = localStorage.getItem(storageKey) || defaultLang;
 
-(() => {
-  const header = document.querySelector('.site-header');
-  const toggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  const syncHeader = () => {
-    if (!header) return;
-    if (window.scrollY > 12) header.classList.add('is-scrolled');
-    else header.classList.remove('is-scrolled');
-  };
-  syncHeader();
-  window.addEventListener('scroll', syncHeader, { passive: true });
-
-  if (toggle && mobileMenu) {
-    const closeMenu = () => {
-      mobileMenu.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    };
-    toggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-    document.addEventListener('click', (e) => {
-      if (!mobileMenu.classList.contains('is-open')) return;
-      if (mobileMenu.contains(e.target) || toggle.contains(e.target)) return;
-      closeMenu();
-    });
+  function setMenuAria(menuButton, expanded){
+    if(!menuButton) return;
+    const lang = currentLang;
+    const key = expanded ? (lang === 'ko' ? 'ariaCloseKo' : 'ariaCloseEn') : (lang === 'ko' ? 'ariaOpenKo' : 'ariaOpenEn');
+    if(menuButton.dataset[key]) menuButton.setAttribute('aria-label', menuButton.dataset[key]);
   }
 
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && reveals.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+  function applyLanguage(lang){
+    currentLang = lang === 'en' ? 'en' : 'ko';
+    root.setAttribute('lang', currentLang);
+    root.setAttribute('data-lang', currentLang);
+    document.querySelectorAll('[data-lang-en][data-lang-ko]').forEach((el)=>{
+      const text = currentLang === 'ko' ? el.dataset.langKo : el.dataset.langEn;
+      if(el.tagName === 'TITLE'){
+        document.title = text;
+      } else if(!el.children.length){
+        el.textContent = text;
+      }
+    });
+    document.querySelectorAll('[data-placeholder-en][data-placeholder-ko]').forEach((el)=>{
+      el.setAttribute('placeholder', currentLang === 'ko' ? el.dataset.placeholderKo : el.dataset.placeholderEn);
+    });
+    document.querySelectorAll('.lang-btn').forEach((btn)=>{
+      btn.classList.toggle('is-active', btn.dataset.setLang === currentLang);
+      btn.setAttribute('aria-pressed', btn.dataset.setLang === currentLang ? 'true' : 'false');
+    });
+    document.querySelectorAll('.gallery-item, .p-card').forEach((el)=>{
+      el.setAttribute('data-view-label', currentLang === 'ko' ? '확대 보기' : 'View');
+    });
+    const menuButton = document.getElementById('menuToggle');
+    if(menuButton) setMenuAria(menuButton, menuButton.getAttribute('aria-expanded') === 'true');
+    localStorage.setItem(storageKey, currentLang);
+  }
+
+  function initLanguageButtons(){
+    document.querySelectorAll('.lang-btn').forEach((btn)=>{
+      btn.addEventListener('click', ()=> applyLanguage(btn.dataset.setLang));
+    });
+    applyLanguage(currentLang);
+  }
+
+  function initHeaderScroll(){
+    const header = document.querySelector('.site-header');
+    if(!header) return;
+    const onScroll = ()=>{
+      if(window.scrollY > 18) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, {passive:true});
+  }
+
+  function initMobileMenu(){
+    const button = document.getElementById('menuToggle');
+    const menu = document.getElementById('mobileMenu');
+    if(!button || !menu) return;
+    const closeMenu = ()=>{
+      button.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+      setMenuAria(button, false);
+    };
+    button.addEventListener('click', ()=>{
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('is-open', !expanded);
+      setMenuAria(button, !expanded);
+    });
+    menu.querySelectorAll('a').forEach((link)=> link.addEventListener('click', closeMenu));
+    window.addEventListener('resize', ()=>{ if(window.innerWidth > 820) closeMenu(); });
+  }
+
+  function initReveal(){
+    const items = document.querySelectorAll('.reveal');
+    if(!items.length) return;
+    if(!('IntersectionObserver' in window)){
+      items.forEach((el)=>el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
           entry.target.classList.add('is-visible');
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14 });
-    reveals.forEach((el) => io.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add('is-visible'));
+    }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
+    items.forEach((el)=> io.observe(el));
   }
 
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const closeBtn = lightbox.querySelector('.lightbox-close');
+  function initLightbox(){
+    const triggers = [...document.querySelectorAll('[data-lightbox], .p-card[data-full]')];
+    if(!triggers.length) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'lightbox';
+    wrapper.setAttribute('role','dialog');
+    wrapper.setAttribute('aria-modal','true');
+    wrapper.innerHTML = `
+      <button type="button" class="lightbox-close" aria-label="Close image">×</button>
+      <figure class="lightbox-figure">
+        <img src="" alt="" />
+        <figcaption></figcaption>
+      </figure>`;
+    document.body.appendChild(wrapper);
+    const img = wrapper.querySelector('img');
+    const caption = wrapper.querySelector('figcaption');
+    const closeBtn = wrapper.querySelector('.lightbox-close');
 
-    const openLightbox = (src, caption = '') => {
-      lightboxImage.src = src;
-      lightboxImage.alt = caption;
-      lightboxCaption.textContent = caption;
-      lightbox.classList.add('is-open');
-      lightbox.setAttribute('aria-hidden', 'false');
+    const open = (src, cap, alt) => {
+      img.src = src;
+      img.alt = alt || cap || '';
+      caption.textContent = cap || '';
+      wrapper.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     };
-    const closeLightbox = () => {
-      lightbox.classList.remove('is-open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImage.src = '';
+    const close = () => {
+      wrapper.classList.remove('is-open');
       document.body.style.overflow = '';
+      setTimeout(()=>{ img.src = ''; }, 150);
     };
-
-    document.querySelectorAll('[data-lightbox], [data-full]').forEach((el) => {
-      el.addEventListener('click', () => {
-        const src = el.getAttribute('data-lightbox') || el.getAttribute('data-full');
-        const caption = el.getAttribute('data-caption') || el.getAttribute('data-cap') || '';
-        if (src) openLightbox(src, caption);
+    triggers.forEach((el)=>{
+      el.addEventListener('click', ()=>{
+        const src = el.dataset.lightbox || el.dataset.full;
+        const cap = el.dataset.caption || el.querySelector('img')?.alt || '';
+        const alt = el.querySelector('img')?.alt || cap || '';
+        if(src) open(src, cap, alt);
       });
     });
-
-    closeBtn?.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    closeBtn.addEventListener('click', close);
+    wrapper.addEventListener('click', (e)=>{ if(e.target === wrapper) close(); });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && wrapper.classList.contains('is-open')) close();
     });
   }
 
-  const form = document.getElementById('inquiryForm');
-  const formStatus = document.getElementById('formStatus');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
+  function initInquiryForm(){
+    const form = document.getElementById('inquiryForm');
+    const status = document.getElementById('formStatus');
+    if(!form || !status) return;
+    form.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn ? submitBtn.textContent : '';
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-      }
-      if (formStatus) formStatus.textContent = 'Sending your inquiry...';
-
-      try {
+      status.textContent = currentLang === 'ko' ? '문의 내용을 전송 중입니다...' : 'Sending your inquiry...';
+      try{
         const response = await fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
-
-        if (response.ok) {
+        if(response.ok){
           form.reset();
-          if (formStatus) formStatus.textContent = 'Thank you. Your inquiry has been submitted successfully.';
+          status.textContent = currentLang === 'ko'
+            ? '문의가 정상적으로 전송되었습니다. 빠르게 회신드리겠습니다.'
+            : 'Your inquiry has been sent successfully. We will get back to you soon.';
         } else {
-          if (formStatus) formStatus.textContent = 'Submission failed. Please check the form and try again.';
+          throw new Error('request failed');
         }
-      } catch (error) {
-        if (formStatus) formStatus.textContent = 'Network error. Please try again in a moment.';
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalText || 'Send';
-        }
+      }catch(err){
+        status.textContent = currentLang === 'ko'
+          ? '전송 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.'
+          : 'There was a problem sending your inquiry. Please try again later.';
       }
     });
   }
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    initLanguageButtons();
+    initHeaderScroll();
+    initMobileMenu();
+    initReveal();
+    initLightbox();
+    initInquiryForm();
+  });
 })();
