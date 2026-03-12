@@ -2,40 +2,123 @@
   const root = document.documentElement;
   const storageKey = 'hanulSiteLang';
   const defaultLang = 'ko';
-  let currentLang = localStorage.getItem(storageKey) || defaultLang;
+
+  function safeGetStoredLang(){
+    try{ return window.localStorage ? localStorage.getItem(storageKey) : null; }
+    catch(err){ return null; }
+  }
+
+  function safeSetStoredLang(lang){
+    try{ if(window.localStorage) localStorage.setItem(storageKey, lang); }
+    catch(err){}
+  }
+
+  function getLangFromUrl(){
+    try{
+      const value = new URL(window.location.href).searchParams.get('lang');
+      return value === 'en' || value === 'ko' ? value : null;
+    }catch(err){
+      return null;
+    }
+  }
+
+  let currentLang = getLangFromUrl() || safeGetStoredLang() || defaultLang;
+  currentLang = currentLang === 'en' ? 'en' : 'ko';
+
+  function updateUrlLang(){
+    try{
+      const url = new URL(window.location.href);
+      if(currentLang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      window.history.replaceState({}, '', url.toString());
+    }catch(err){}
+  }
+
+  function updateInternalLinks(){
+    document.querySelectorAll('a[href]').forEach((link)=>{
+      const rawHref = link.getAttribute('href');
+      if(!rawHref || rawHref.startsWith('#') || rawHref.startsWith('mailto:') || rawHref.startsWith('tel:') || rawHref.startsWith('javascript:')) return;
+      try{
+        const url = new URL(rawHref, window.location.href);
+        if(url.origin !== window.location.origin) return;
+        const looksLikePage = url.pathname.endsWith('.html') || url.pathname.endsWith('/');
+        if(!looksLikePage) return;
+        if(currentLang === 'en') url.searchParams.set('lang', 'en');
+        else url.searchParams.delete('lang');
+        link.setAttribute('href', url.pathname + url.search + url.hash);
+      }catch(err){}
+    });
+  }
 
   function setMenuAria(menuButton, expanded){
     if(!menuButton) return;
-    const lang = currentLang;
-    const key = expanded ? (lang === 'ko' ? 'ariaCloseKo' : 'ariaCloseEn') : (lang === 'ko' ? 'ariaOpenKo' : 'ariaOpenEn');
+    const key = expanded ? (currentLang === 'ko' ? 'ariaCloseKo' : 'ariaCloseEn') : (currentLang === 'ko' ? 'ariaOpenKo' : 'ariaOpenEn');
     if(menuButton.dataset[key]) menuButton.setAttribute('aria-label', menuButton.dataset[key]);
+  }
+
+  function setTextValue(el, text){
+    if(el.tagName === 'TITLE'){
+      document.title = text;
+      return;
+    }
+    if(el.tagName === 'META'){
+      el.setAttribute('content', text);
+      return;
+    }
+    if(el.matches('input[type="button"], input[type="submit"], input[type="reset"]')){
+      el.value = text;
+      return;
+    }
+    if(el.hasAttribute('data-lang-html')){
+      el.innerHTML = text;
+      return;
+    }
+    el.textContent = text;
+  }
+
+  function updateAttribute(selector, attrName, enKey, koKey){
+    document.querySelectorAll(selector).forEach((el)=>{
+      const value = currentLang === 'ko' ? el.dataset[koKey] : el.dataset[enKey];
+      if(typeof value !== 'string') return;
+      if(attrName === 'data-caption') el.dataset.caption = value;
+      else el.setAttribute(attrName, value);
+    });
   }
 
   function applyLanguage(lang){
     currentLang = lang === 'en' ? 'en' : 'ko';
     root.setAttribute('lang', currentLang);
     root.setAttribute('data-lang', currentLang);
+    document.body && document.body.setAttribute('data-lang', currentLang);
+
     document.querySelectorAll('[data-lang-en][data-lang-ko]').forEach((el)=>{
       const text = currentLang === 'ko' ? el.dataset.langKo : el.dataset.langEn;
-      if(el.tagName === 'TITLE'){
-        document.title = text;
-      } else if(!el.children.length){
-        el.textContent = text;
-      }
+      if(typeof text === 'string') setTextValue(el, text);
     });
-    document.querySelectorAll('[data-placeholder-en][data-placeholder-ko]').forEach((el)=>{
-      el.setAttribute('placeholder', currentLang === 'ko' ? el.dataset.placeholderKo : el.dataset.placeholderEn);
-    });
+
+    updateAttribute('[data-placeholder-en][data-placeholder-ko]', 'placeholder', 'placeholderEn', 'placeholderKo');
+    updateAttribute('[data-alt-en][data-alt-ko]', 'alt', 'altEn', 'altKo');
+    updateAttribute('[data-caption-en][data-caption-ko]', 'data-caption', 'captionEn', 'captionKo');
+    updateAttribute('[data-aria-label-en][data-aria-label-ko]', 'aria-label', 'ariaLabelEn', 'ariaLabelKo');
+
     document.querySelectorAll('.lang-btn').forEach((btn)=>{
-      btn.classList.toggle('is-active', btn.dataset.setLang === currentLang);
-      btn.setAttribute('aria-pressed', btn.dataset.setLang === currentLang ? 'true' : 'false');
+      const active = btn.dataset.setLang === currentLang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
-    document.querySelectorAll('.gallery-item, .p-card').forEach((el)=>{
-      el.setAttribute('data-view-label', currentLang === 'ko' ? '확대 보기' : 'View');
-    });
+
     const menuButton = document.getElementById('menuToggle');
     if(menuButton) setMenuAria(menuButton, menuButton.getAttribute('aria-expanded') === 'true');
-    localStorage.setItem(storageKey, currentLang);
+
+    const body = document.body;
+    if(body){
+      const title = currentLang === 'ko' ? body.dataset.pageTitleKo : body.dataset.pageTitleEn;
+      if(title) document.title = title;
+    }
+
+    updateInternalLinks();
+    updateUrlLang();
+    safeSetStoredLang(currentLang);
   }
 
   function initLanguageButtons(){
@@ -100,12 +183,7 @@
     wrapper.className = 'lightbox';
     wrapper.setAttribute('role','dialog');
     wrapper.setAttribute('aria-modal','true');
-    wrapper.innerHTML = `
-      <button type="button" class="lightbox-close" aria-label="Close image">×</button>
-      <figure class="lightbox-figure">
-        <img src="" alt="" />
-        <figcaption></figcaption>
-      </figure>`;
+    wrapper.innerHTML = '\n      <button type="button" class="lightbox-close" aria-label="Close image">×</button>\n      <figure class="lightbox-figure">\n        <img src="" alt="" />\n        <figcaption></figcaption>\n      </figure>';
     document.body.appendChild(wrapper);
     const img = wrapper.querySelector('img');
     const caption = wrapper.querySelector('figcaption');
@@ -115,6 +193,7 @@
       img.src = src;
       img.alt = alt || cap || '';
       caption.textContent = cap || '';
+      closeBtn.setAttribute('aria-label', currentLang === 'ko' ? '이미지 닫기' : 'Close image');
       wrapper.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     };
