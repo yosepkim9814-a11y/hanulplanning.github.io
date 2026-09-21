@@ -132,7 +132,7 @@ html[data-lang="ko"] .desktop-nav a{font-weight:700}
 .info-card{padding:28px}
 .info-card h3,.factory-summary-body h3,.flow-step h3,.product-category h2,.aside-card h3{margin:0 0 8px;font-size:22px;letter-spacing:-.02em}
 .info-card p,.capacity-card p,.factory-summary-body p,.product-category p,.flow-step p,.summary-item span,.summary-item strong,.aside-card p,.check-list span,.form-note,.office-contact-list span{margin:0;color:var(--muted)}
-.factory-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.factory-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .factory-summary-card{overflow:hidden}
 .factory-summary-card img{aspect-ratio:16/11;object-fit:cover;width:100%}
 .factory-summary-body{padding:22px}
